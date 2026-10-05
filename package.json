@@ -1,0 +1,15 @@
+{
+  "name": "pink-luxo-protocolo-rejuvenescedor",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Landing Page Pink Luxo Estética - Protocolo Rejuvenescedor no Tatuapé SP",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.14"
+  }
+}
