@@ -1568,105 +1568,104 @@ body {
   margin: 0 auto;
 }
 
-.mapping-grid {
-  margin-top: 3.5rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+/* ==========================================================================
+   Mapeamento Facial (Clean, Minimalist & Luxury)
+   ========================================================================== */
+.mapping-section {
+  padding: 5rem 0;
+  background-color: var(--secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
-@media (min-width: 1024px) {
+.mapping-header {
+  text-align: center;
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+.mapping-subtitle {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+
+.mapping-grid {
+  margin-top: 2.75rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  max-width: 54rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
   .mapping-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
   }
 }
 
 .mapping-card {
-  border-radius: 1.5rem;
+  border-radius: 1.25rem;
   background-color: #ffffff;
   border: 1px solid rgba(229, 221, 216, 0.85);
-  padding: 1.75rem;
-  box-shadow: 0 10px 30px -10px rgba(42, 42, 46, 0.06);
+  padding: 1.25rem;
+  box-shadow: 0 4px 20px -4px rgba(42, 42, 46, 0.05);
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@media (min-width: 640px) {
-  .mapping-card {
-    padding: 2.25rem 2rem;
-  }
-}
-
 .mapping-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 36px -10px rgba(194, 112, 116, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(178, 90, 99, 0.1);
 }
 
-.mapping-card-before {
-  border-top: 4px solid #ef4444;
+.mapping-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+  padding: 0 0.25rem;
 }
 
-.mapping-card-after {
-  border-top: 4px solid #10b981;
-}
-
-.mapping-card-header {
-  margin-bottom: 1.25rem;
-}
-
-.mapping-card-header h3 {
-  margin-top: 0.75rem;
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--ink);
-  line-height: 1.3;
-}
-
-.mapping-status-pill {
+.mapping-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
   border-radius: 9999px;
-  padding: 0.35rem 0.85rem;
-  font-size: 0.6875rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-.pill-before {
-  background-color: #fef2f2;
-  border: 1px solid rgba(239, 68, 68, 0.3);
-  color: #b91c1c;
+.mapping-badge-before {
+  background-color: #f5f2ef;
+  color: var(--muted-foreground);
+  border: 1px solid var(--border);
 }
 
-.pill-after {
-  background-color: #ecfdf5;
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  color: #047857;
+.mapping-badge-after {
+  background-color: #f7ebea;
+  color: var(--brand-rose-dark);
+  border: 1px solid rgba(178, 90, 99, 0.25);
 }
 
-.status-dot-before {
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 9999px;
-  background-color: #ef4444;
-}
-
-.status-dot-after {
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 9999px;
-  background-color: #10b981;
+.mapping-card-subtitle {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
 }
 
 .mapping-image-container {
   position: relative;
-  border-radius: 1.25rem;
+  border-radius: 0.95rem;
   overflow: hidden;
-  border: 1px solid rgba(223, 199, 188, 0.7);
+  border: 1px solid rgba(229, 221, 216, 0.75);
   background-color: #fdfaf7;
   cursor: pointer;
   aspect-ratio: 4 / 5;
@@ -1677,30 +1676,30 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform 0.35s ease;
 }
 
 .mapping-image-container:hover img {
-  transform: scale(1.03);
+  transform: scale(1.025);
 }
 
 .mapping-zoom-badge {
   position: absolute;
-  bottom: 0.85rem;
-  right: 0.85rem;
+  bottom: 0.75rem;
+  right: 0.75rem;
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(223, 199, 188, 0.8);
+  border: 1px solid rgba(223, 199, 188, 0.7);
   border-radius: 9999px;
-  padding: 0.35rem 0.75rem;
+  padding: 0.3rem 0.65rem;
   font-size: 0.6875rem;
   font-weight: 600;
   color: var(--ink);
   display: flex;
   align-items: center;
-  gap: 0.35rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  gap: 0.3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.2s ease;
 }
 
@@ -1709,90 +1708,26 @@ body {
   color: var(--brand-rose-dark);
 }
 
-.mapping-points-list {
-  margin-top: 1.75rem;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
+.mapping-card-footer {
+  margin-top: 1rem;
+  padding: 0.5rem 0.25rem 0.25rem;
 }
 
-.mapping-points-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.85rem;
-}
-
-.point-bullet {
-  width: 1.6rem;
-  height: 1.6rem;
-  border-radius: 9999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 700;
-  flex-shrink: 0;
-  margin-top: 0.15rem;
-}
-
-.bullet-before {
-  background-color: #fee2e2;
-  color: #b91c1c;
-}
-
-.bullet-after {
-  background-color: #d1fae5;
-  color: #047857;
-}
-
-.mapping-points-list strong {
-  display: block;
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: var(--ink);
-}
-
-.mapping-points-list p {
-  margin-top: 0.15rem;
-  font-size: 0.8125rem;
+.mapping-card-footer p {
+  font-size: 0.875rem;
   line-height: 1.5;
-  color: var(--muted-foreground);
-}
-
-.mapping-cta-box {
-  margin-top: 3.5rem;
-  border-radius: 1.5rem;
-  background: #ffffff;
-  border: 1.5px dashed rgba(194, 112, 116, 0.45);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  box-shadow: 0 10px 25px -8px rgba(194, 112, 116, 0.12);
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  .mapping-cta-box {
-    flex-direction: row;
-    text-align: left;
-    padding: 2.25rem 2.5rem;
-  }
-}
-
-.mapping-cta-text h4 {
-  font-size: 1.5rem;
-  font-weight: 600;
   color: var(--ink);
 }
 
-.mapping-cta-text p {
-  margin-top: 0.35rem;
-  font-size: 0.9375rem;
-  color: var(--muted-foreground);
+.mapping-card-footer strong {
+  color: var(--brand-rose-dark);
+  font-weight: 600;
+}
+
+.mapping-cta-center {
+  margin-top: 2.75rem;
+  display: flex;
+  justify-content: center;
 }
 
 
