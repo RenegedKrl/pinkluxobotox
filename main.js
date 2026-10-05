@@ -119,21 +119,7 @@ function initLightbox() {
     });
   });
 
-  // Enable click-to-zoom on mapping images
-  const mappingContainers = Array.from(document.querySelectorAll('.mapping-image-container'));
-  mappingContainers.forEach(container => {
-    container.addEventListener('click', () => {
-      const img = container.querySelector('img');
-      const title = container.getAttribute('data-title') || img?.alt || 'Mapeamento Facial';
-      if (img && modalImg) {
-        modalImg.src = img.src;
-        modalImg.alt = img.alt || title;
-        if (modalTitle) modalTitle.textContent = title;
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-    });
-  });
+
 
   closeBtn?.addEventListener('click', closeLightbox);
 

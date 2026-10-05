@@ -1667,7 +1667,6 @@ body {
   overflow: hidden;
   border: 1px solid rgba(229, 221, 216, 0.75);
   background-color: #fdfaf7;
-  cursor: pointer;
   aspect-ratio: 4 / 5;
 }
 
@@ -1676,36 +1675,6 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.35s ease;
-}
-
-.mapping-image-container:hover img {
-  transform: scale(1.025);
-}
-
-.mapping-zoom-badge {
-  position: absolute;
-  bottom: 0.75rem;
-  right: 0.75rem;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(223, 199, 188, 0.7);
-  border-radius: 9999px;
-  padding: 0.3rem 0.65rem;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  color: var(--ink);
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: all 0.2s ease;
-}
-
-.mapping-image-container:hover .mapping-zoom-badge {
-  background: #ffffff;
-  color: var(--brand-rose-dark);
 }
 
 .mapping-card-footer {
