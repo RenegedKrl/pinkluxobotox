@@ -10,23 +10,15 @@ const resultsData = [
     desc: 'Harmonização do terço superior e médio, atenuando olheiras e devolvendo o viço e jovialidade da pele.'
   },
   {
-    title: 'Caso Clínico 03 — Suavização de Linhas Laterais',
-    desc: 'Pele visivelmente mais lisa e firme na região periocular e têmporas, preservando a mímica facial.'
-  },
-  {
-    title: 'Caso Clínico 04 — Área dos Olhos & Têmporas',
+    title: 'Caso Clínico 03 — Área dos Olhos & Têmporas',
     desc: 'Eliminação dos vincos dinâmicos laterais com contorno descansado e iluminado.'
   },
   {
-    title: 'Caso Clínico 05 — Rugas Perioculares & Sorriso Renovado',
-    desc: 'Redução expressiva das linhas finas e rugas profundas ao redor dos olhos e bochecha.'
-  },
-  {
-    title: 'Caso Clínico 06 — Glabela & Rugas de Bravo entre Sobrancelhas',
+    title: 'Caso Clínico 04 — Glabela & Rugas de Bravo entre Sobrancelhas',
     desc: 'Relaxamento preciso dos músculos corrugadores, eliminando as linhas verticais profundas na fronte.'
   },
   {
-    title: 'Caso Clínico 07 — Contração Muscular & Expressão Facial',
+    title: 'Caso Clínico 05 — Contração Muscular & Expressão Facial',
     desc: 'Bloqueio da contração excessiva ao franzir a testa, proporcionando aspecto calmo, sereno e descansado.'
   }
 ];
