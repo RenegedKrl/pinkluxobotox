@@ -376,7 +376,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 8.5rem 1.5rem 5.5rem;
   background-color: #f7f4f0;
   background-image: url('images/hero-protocolo-rejuvenescedor.jpg');
-  background-position: center 20%;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
@@ -386,6 +386,7 @@ h1, h2, h3, h4, h5, h6 {
   .hero-section {
     min-height: 88vh;
     padding: 9.5rem 2rem 6.5rem;
+    background-position: center center;
   }
 }
 
@@ -393,7 +394,7 @@ h1, h2, h3, h4, h5, h6 {
   .hero-section {
     min-height: 92vh;
     padding: 10.5rem 2.5rem 7.5rem;
-    background-position: center 25%;
+    background-position: center center;
   }
 }
 
@@ -401,13 +402,13 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: radial-gradient(ellipse 65% 75% at 50% 50%, rgba(253, 250, 247, 0.94) 0%, rgba(253, 250, 247, 0.86) 45%, rgba(253, 250, 247, 0.55) 80%, rgba(253, 250, 247, 0.35) 100%);
+  background: radial-gradient(ellipse 46% 65% at 50% 50%, rgba(253, 250, 247, 0.88) 0%, rgba(253, 250, 247, 0.65) 45%, rgba(253, 250, 247, 0.15) 75%, rgba(253, 250, 247, 0) 100%);
   pointer-events: none;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .hero-bg-overlay {
-    background: rgba(253, 250, 247, 0.92);
+    background: rgba(253, 250, 247, 0.88);
   }
 }
 
