@@ -28,11 +28,103 @@ let currentLeadOrigin = 'cta_geral';
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
+  initResultsCarousel();
   initLightbox();
   initFaqAccordion();
   initWhatsappBadge();
   initLeadModal();
 });
+
+// Horizontal Results Carousel (Swipe / Drag - Imagem 1)
+function initResultsCarousel() {
+  const track = document.getElementById('resultsTrack');
+  const dots = Array.from(document.querySelectorAll('.result-dot'));
+  const cards = Array.from(document.querySelectorAll('.result-slide-card'));
+
+  if (!track || cards.length === 0) return;
+
+  function updateActiveDot() {
+    const trackRect = track.getBoundingClientRect();
+    const trackCenter = trackRect.left + trackRect.width / 2;
+
+    let closestIdx = 0;
+    let minDistance = Infinity;
+
+    cards.forEach((card, idx) => {
+      const cardRect = card.getBoundingClientRect();
+      const cardCenter = cardRect.left + cardRect.width / 2;
+      const dist = Math.abs(trackCenter - cardCenter);
+      if (dist < minDistance) {
+        minDistance = dist;
+        closestIdx = idx;
+      }
+    });
+
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === closestIdx);
+    });
+  }
+
+  // Smooth scroll sync with dots
+  let isTicking = false;
+  track.addEventListener('scroll', () => {
+    if (!isTicking) {
+      window.requestAnimationFrame(() => {
+        updateActiveDot();
+        isTicking = false;
+      });
+      isTicking = true;
+    }
+  }, { passive: true });
+
+  // Click on indicator dots
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => {
+      if (cards[idx]) {
+        cards[idx].scrollIntoView({
+          behavior: 'smooth',
+          inline: 'center',
+          block: 'nearest'
+        });
+      }
+    });
+  });
+
+  // Desktop mouse drag to swipe
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+
+  track.addEventListener('mousedown', (e) => {
+    isDown = true;
+    track.classList.add('is-dragging');
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (!isDown) return;
+    isDown = false;
+    track.classList.remove('is-dragging');
+  });
+
+  track.addEventListener('mouseleave', () => {
+    if (!isDown) return;
+    isDown = false;
+    track.classList.remove('is-dragging');
+  });
+
+  track.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    track.scrollLeft = scrollLeft - walk;
+  });
+
+  // Initial call
+  updateActiveDot();
+}
 
 // Mobile Navigation Menu
 function initMobileMenu() {
