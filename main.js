@@ -322,13 +322,23 @@ function initLeadModal() {
   });
 
   // Attach click to all WhatsApp CTA triggers
-  const ctaLinks = document.querySelectorAll('a[href*="wa.me"], .btn-luxury, .btn-wpp-flutuante');
+  const ctaLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"], .btn-luxury, .btn-result-cta, .btn-wpp-flutuante, [data-open-modal="lead"]');
   ctaLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const origin = link.getAttribute('data-section') || 'whatsapp_cta';
       openLeadModal(origin);
     });
+  });
+
+  // Event delegation fallback to ensure any result CTA always opens the modal
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('.btn-result-cta, [data-open-modal="lead"]');
+    if (trigger) {
+      e.preventDefault();
+      const origin = trigger.getAttribute('data-section') || 'before_after';
+      openLeadModal(origin);
+    }
   });
 
   // Close handlers
