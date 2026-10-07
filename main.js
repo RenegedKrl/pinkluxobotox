@@ -2,32 +2,32 @@
 
 const resultsData = [
   {
-    title: 'Caso Clínico 01 — Pés de Galinha & Rugas Perioculares',
-    desc: 'Suavização profunda das marcas de expressão no canto dos olhos e maçãs do rosto com sorriso leve e natural.'
-  },
-  {
-    title: 'Caso Clínico 02 — Rejuvenescimento Facial Global',
-    desc: 'Harmonização do terço superior e médio, atenuando linhas e devolvendo o viço e jovialidade da pele.'
-  },
-  {
-    title: 'Caso Clínico 03 — Área dos Olhos & Têmporas',
-    desc: 'Eliminação dos vincos dinâmicos laterais com contorno descansado e iluminado.'
-  },
-  {
-    title: 'Caso Clínico 04 — Linhas Frontais & Testa (Masculino)',
-    desc: 'Suavização natural das rugas dinâmicas da testa sem alterar a expressividade ou causar congelamento facial.'
-  },
-  {
-    title: 'Caso Clínico 05 — Linhas de Expressão na Fronte',
-    desc: 'Relaxamento muscular preciso das linhas horizontais proporcionando um visual mais jovem e sereno.'
-  },
-  {
-    title: 'Caso Clínico 06 — Terço Superior & Linhas Perioculares',
+    title: 'Caso Clínico 01 — Terço Superior & Linhas Perioculares',
     desc: 'Redução equilibrada das rugas na testa e contorno dos olhos mantendo a vivacidade e brilho do olhar.'
   },
   {
-    title: 'Caso Clínico 07 — Glabela & Músculos Corrugadores',
+    title: 'Caso Clínico 02 — Glabela & Músculos Corrugadores',
     desc: 'Eliminação da tensão entre as sobrancelhas (linhas de bravo), devolvendo serenidade e descanso ao rosto.'
+  },
+  {
+    title: 'Caso Clínico 03 — Pés de Galinha & Rugas Perioculares',
+    desc: 'Suavização profunda das marcas de expressão no canto dos olhos e maçãs do rosto com sorriso leve e natural.'
+  },
+  {
+    title: 'Caso Clínico 04 — Rejuvenescimento Facial Global',
+    desc: 'Harmonização do terço superior e médio, atenuando linhas e devolvendo o viço e jovialidade da pele.'
+  },
+  {
+    title: 'Caso Clínico 05 — Área dos Olhos & Têmporas',
+    desc: 'Eliminação dos vincos dinâmicos laterais com contorno descansado e iluminado.'
+  },
+  {
+    title: 'Caso Clínico 06 — Linhas Frontais & Testa (Masculino)',
+    desc: 'Suavização natural das rugas dinâmicas da testa sem alterar a expressividade ou causar congelamento facial.'
+  },
+  {
+    title: 'Caso Clínico 07 — Linhas de Expressão na Fronte',
+    desc: 'Relaxamento muscular preciso das linhas horizontais proporcionando um visual mais jovem e sereno.'
   }
 ];
 
