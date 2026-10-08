@@ -1,4 +1,4 @@
-// Pink Luxo Protocolo Rejuvenescedor - Interactivity & Logic
+// Pink Luxo Harmonização Facial - Interactivity & Logic
 
 const resultsData = [
   {
@@ -180,7 +180,7 @@ function initLightbox() {
 
     if (cardImg) {
       modalImg.src = cardImg.src;
-      modalImg.alt = cardImg.alt || data.title || 'Resultado Protocolo Rejuvenescedor';
+      modalImg.alt = cardImg.alt || data.title || 'Resultado Harmonização Facial';
     }
     if (modalTitle) {
       modalTitle.textContent = `${data.title || ''} — ${data.desc || ''}`;
@@ -387,7 +387,7 @@ function initLeadModal() {
     }
 
     // Build personalized WhatsApp URL using direct api.whatsapp.com to skip wa.me redirect delay
-    const customMessage = `Olá, vim do site protocolo o rejuvenescedor da Pink Luxo. Gostaria de agendar uma avaliação e saber mais sobre o procedimento`;
+    const customMessage = `Olá, vim do site de harmonização facial da Pink Luxo. Gostaria de agendar uma avaliação e saber mais sobre o procedimento`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=5511951047970&text=${encodeURIComponent(customMessage)}`;
 
     // 1. Salvar Lead com segurança no navegador (localStorage)

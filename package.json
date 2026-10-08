@@ -1,8 +1,8 @@
 {
-  "name": "pink-luxo-protocolo-rejuvenescedor",
+  "name": "pink-luxo-harmonizacao-facial",
   "private": true,
   "version": "1.0.0",
-  "description": "Landing Page Pink Luxo Estética - Protocolo Rejuvenescedor no Tatuapé SP",
+  "description": "Landing Page Pink Luxo Estética - Harmonização Facial no Tatuapé SP",
   "type": "module",
   "scripts": {
     "dev": "vite",
