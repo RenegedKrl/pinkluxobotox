@@ -370,18 +370,19 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hero Section */
 /* ==========================================================================
-   Hero Section (Estilo Imagem 3 — Rostos Nítidos e Visíveis, Sem Sombra)
+   Hero Section
    ========================================================================== */
 .hero-section {
   position: relative;
-  min-height: 82vh;
+  min-height: calc(100vh - 4.25rem);
+  min-height: calc(100svh - 4.25rem);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: 2.75rem 1.15rem 2rem;
+  padding: 3rem 1.25rem 2.5rem;
   background-color: #f7f3ef;
-  background-image: url('images/hero-protocolo-mobile.jpg');
-  background-position: center top;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.42) 50%, rgba(0, 0, 0, 0.25) 100%), url('images/hero-protocolo-mobile.jpg');
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
@@ -401,20 +402,20 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 640px) {
   .hero-section {
-    min-height: 80vh;
-    padding: 3.5rem 1.75rem 2.75rem;
-    background-position: center top;
+    min-height: calc(100vh - 4.25rem);
+    padding: 3.5rem 1.75rem 3rem;
+    background-position: center center;
   }
 }
 
 @media (min-width: 769px) {
   .hero-section {
-    min-height: 70vh;
+    min-height: calc(100vh - 4.25rem);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 4.5rem 2rem 3.5rem;
-    background-image: url('images/hero-protocolo-desktop.jpg');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0.36) 50%, rgba(0, 0, 0, 0.2) 100%), url('images/hero-protocolo-desktop.jpg');
     background-position: center center;
     background-size: cover;
   }
@@ -438,21 +439,22 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .hero-title {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-  font-size: 2.15rem;
+  font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.15;
-  color: #1f191b;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.85);
+  color: #ffffff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65), 0 1px 3px rgba(0, 0, 0, 0.85);
   letter-spacing: -0.015em;
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.65rem;
 }
 
 .hero-title-highlight {
-  color: var(--brand-rose-dark);
+  color: #ffffff;
 }
 
 @media (min-width: 640px) {
@@ -469,13 +471,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-subtitle {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-  margin: 0 auto 0.5rem;
+  margin: 0 auto 0.75rem;
   max-width: 28rem;
   font-size: 1.1rem;
   font-weight: 600;
   line-height: 1.35;
-  color: #2b2024;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65), 0 1px 3px rgba(0, 0, 0, 0.85);
   text-wrap: balance;
 }
 
@@ -490,34 +492,34 @@ h1, h2, h3, h4, h5, h6 {
   .hero-subtitle {
     font-size: 1.35rem;
     max-width: 38rem;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.85rem;
   }
 }
 
 .hero-description {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-  margin: 0 auto 1.35rem;
-  max-width: 23rem;
-  font-size: 0.9rem;
+  margin: 0 auto 1.5rem;
+  max-width: 25rem;
+  font-size: 0.95rem;
   font-weight: 400;
   line-height: 1.55;
-  color: #4a3e42;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.75);
   text-wrap: balance;
 }
 
 @media (min-width: 640px) {
   .hero-description {
-    font-size: 0.95rem;
+    font-size: 1rem;
     max-width: 32rem;
   }
 }
 
 @media (min-width: 1024px) {
   .hero-description {
-    font-size: 1rem;
-    max-width: 35rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    max-width: 36rem;
+    margin-bottom: 1.75rem;
   }
 }
 
