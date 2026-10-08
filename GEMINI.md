@@ -1,8 +1,8 @@
 # Diretrizes e Regras de Desenvolvimento
 
-## 1. Subir sempre para o GitHub (Push Obrigatório)
-- **Sempre que concluir alterações ou edições no código**, realizar `git add`, `git commit` com mensagem descritiva e enviar imediatamente com `git push origin main` (ou branch atual).
-- O repositório remoto no GitHub deve estar sempre atualizado ao final de cada pedido do usuário.
+## 1. REGRA MANDATÓRIA: Subir sempre para o GitHub após QUALQUER mudança (Push Obrigatório)
+- **Sempre que concluir qualquer alteração ou edição no código**, realizar imediatamente `git add`, `git commit` com mensagem descritiva e enviar com `git push origin main` (ou branch atual).
+- O repositório remoto no GitHub deve estar sempre 100% atualizado e sincronizado ao final de cada pedido do usuário antes de encerrar.
 
 ## 2. Proibido tirar Prints / Screenshots do Site
 - **NÃO tirar prints ou capturas de tela dos sites** (não usar Playwright, Puppeteer, Selenium nem subagentes para tirar screenshots).
