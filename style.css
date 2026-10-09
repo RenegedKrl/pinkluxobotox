@@ -475,16 +475,18 @@ h1, h2, h3, h4, h5, h6 {
 .hero-clean-tag {
   display: inline-block;
   font-family: 'Outfit', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--brand-rose-dark);
-  padding: 0.35rem 1rem;
+  letter-spacing: 0.12em;
+  color: #8c2e36;
+  padding: 0.42rem 1.2rem;
   border-radius: 9999px;
-  background: rgba(194, 112, 116, 0.1);
-  border: 1px solid rgba(194, 112, 116, 0.25);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(194, 112, 116, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(194, 112, 116, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .hero-clean-title {
