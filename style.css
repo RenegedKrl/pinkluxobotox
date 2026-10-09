@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Outfit:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 :root {
   --background: hsl(48, 30%, 97%);
@@ -17,6 +17,12 @@
   --brand-rose-dark: hsl(358, 32%, 55%);
   --brand-nude: hsl(24, 40%, 82%);
   --brand-blush: hsl(22, 55%, 94%);
+  --rose-gold: #dfa2a5;
+  --rose-gold-dark: #b86267;
+  --rose-gold-line: rgba(223, 199, 188, 0.65);
+  --rose-gold-line-inner: rgba(223, 199, 188, 0.38);
+  --hero-bg-mobile: url('images/hero-protocolo-mobile.jpg');
+  --hero-bg-desktop: url('images/hero-protocolo-desktop.jpg');
   --ink: hsl(240, 5%, 18%);
   --radius: 1rem;
 }
@@ -214,10 +220,11 @@ h1, h2, h3, h4, h5, h6 {
   position: sticky;
   top: 0;
   z-index: 40;
-  border-bottom: 1px solid rgba(229, 221, 216, 0.7);
-  background-color: rgba(250, 247, 242, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(223, 199, 188, 0.16);
+  background-color: rgba(20, 16, 18, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .header-inner {
@@ -270,13 +277,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-link {
-  color: var(--muted-foreground);
+  color: rgba(255, 255, 255, 0.82);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .nav-link:hover {
-  color: var(--ink);
+  color: var(--brand-nude);
 }
 
 .header-actions {
@@ -307,7 +314,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 9999px;
   background: transparent;
   border: none;
-  color: var(--ink);
+  color: #ffffff;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
@@ -319,14 +326,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .menu-toggle:hover {
-  background-color: rgba(248, 239, 235, 0.7);
+  background-color: rgba(223, 199, 188, 0.15);
 }
 
 .nav-mobile {
   display: none;
-  border-top: 1px solid rgba(229, 221, 216, 0.7);
-  background-color: rgba(250, 247, 242, 0.98);
-  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(223, 199, 188, 0.15);
+  background-color: rgba(22, 17, 19, 0.98);
+  backdrop-filter: blur(16px);
   padding: 0.75rem 1rem;
 }
 
@@ -358,210 +365,298 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
   font-size: 0.9375rem;
-  color: var(--ink);
+  color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
   font-weight: 500;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .nav-mobile a:hover {
-  background-color: var(--brand-blush);
+  background-color: rgba(194, 112, 116, 0.2);
+  color: #ffffff;
 }
 
-/* Hero Section */
 /* ==========================================================================
-   Hero Section
+   Hero Section — Inspiração Dra. Anita Casanova com Paleta Pink Luxo
    ========================================================================== */
-.hero-section {
+.font-editorial {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif !important;
+}
+
+.hero-section.hero-casanova {
   position: relative;
   min-height: calc(100vh - 4.25rem);
   min-height: calc(100svh - 4.25rem);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem 1.25rem 2.5rem;
-  background-color: #f7f3ef;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.42) 50%, rgba(0, 0, 0, 0.25) 100%), url('images/hero-protocolo-mobile.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  padding: 1.25rem 1rem 3rem;
+  background-color: #141012;
+  background-image: 
+    radial-gradient(ellipse at 50% 25%, rgba(194, 112, 116, 0.22) 0%, rgba(20, 16, 18, 0.98) 75%);
   overflow: hidden;
 }
 
-.hero-section::after {
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 50% 15%, rgba(223, 199, 188, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 50% 85%, rgba(194, 112, 116, 0.1) 0%, transparent 50%);
+  z-index: 1;
+}
+
+/* Transição suave do Hero escuro para as seções claras do site */
+.hero-section.hero-casanova::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60px;
-  background: linear-gradient(to bottom, rgba(247, 243, 239, 0) 0%, #faf7f2 100%);
+  height: 90px;
+  background: linear-gradient(to bottom, rgba(20, 16, 18, 0) 0%, var(--background) 100%);
   pointer-events: none;
-  z-index: 1;
-}
-
-@media (min-width: 640px) {
-  .hero-section {
-    min-height: calc(100vh - 4.25rem);
-    padding: 3.5rem 1.75rem 3rem;
-    background-position: center center;
-  }
-}
-
-@media (min-width: 769px) {
-  .hero-section {
-    min-height: calc(100vh - 4.25rem);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4.5rem 2rem 3.5rem;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0.36) 50%, rgba(0, 0, 0, 0.2) 100%), url('images/hero-protocolo-desktop.jpg');
-    background-position: center center;
-    background-size: cover;
-  }
-}
-
-/* Remover sombra opaca da hero */
-.hero-bg-overlay {
-  display: none !important;
+  z-index: 5;
 }
 
 .hero-container {
   position: relative;
   z-index: 2;
   width: 100%;
+  max-width: 72rem;
+  display: flex;
+  justify-content: center;
 }
 
-.hero-content-centered {
-  max-width: 44rem;
+/* Moldura Arquitetônica em Arco (Arch Frame) */
+.hero-arch-card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  min-height: calc(100vh - 6.5rem);
+  min-height: calc(100svh - 6.5rem);
+  max-height: 860px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 1.25rem 3.5rem;
   margin: 0 auto;
+  border-top-left-radius: 220px;
+  border-top-right-radius: 220px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .hero-section.hero-casanova {
+    padding: 2.25rem 2rem 4rem;
+  }
+  .hero-arch-card {
+    max-width: 500px;
+    min-height: 740px;
+    padding: 0 2rem 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-arch-card {
+    max-width: 540px;
+    min-height: 780px;
+    padding: 0 2.5rem 4.5rem;
+  }
+}
+
+/* Camada da Foto de Fundo do Protótipo dentro do Arco */
+.hero-arch-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--hero-bg-mobile);
+  background-position: center 22%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  transition: transform 0.6s ease;
+}
+
+@media (min-width: 768px) {
+  .hero-arch-bg {
+    background-image: var(--hero-bg-desktop);
+    background-position: center 20%;
+  }
+}
+
+/* Gradiente de Profundidade (garante leitura cristalina do texto e botão) */
+.hero-arch-gradient-fade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 16, 18, 0.08) 0%,
+    rgba(20, 16, 18, 0.15) 32%,
+    rgba(20, 16, 18, 0.68) 55%,
+    rgba(20, 16, 18, 0.94) 75%,
+    #141012 100%
+  );
+}
+
+/* Linhas Metálicas Duplas do Arco (Rose Gold / Nude da Pink Luxo) */
+.hero-arch-line {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.arch-line-outer {
+  top: 0.6rem;
+  left: 0.6rem;
+  right: 0.6rem;
+  bottom: 0;
+  border-top-left-radius: 215px;
+  border-top-right-radius: 215px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top: 1.5px solid var(--rose-gold-line);
+  border-left: 1.5px solid var(--rose-gold-line);
+  border-right: 1.5px solid var(--rose-gold-line);
+  border-bottom: none;
+  box-shadow: 0 0 16px rgba(223, 199, 188, 0.15);
+}
+
+.arch-line-inner {
+  top: 1.25rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  bottom: 0;
+  border-top-left-radius: 203px;
+  border-top-right-radius: 203px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top: 1px solid var(--rose-gold-line-inner);
+  border-left: 1px solid var(--rose-gold-line-inner);
+  border-right: 1px solid var(--rose-gold-line-inner);
+  border-bottom: none;
+}
+
+/* Conteúdo Editorial e Tipografia */
+.hero-arch-content {
+  position: relative;
+  z-index: 4;
+  width: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
-.hero-title {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-  font-size: 2.25rem;
-  font-weight: 700;
-  line-height: 1.15;
-  color: #ffffff;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65), 0 1px 3px rgba(0, 0, 0, 0.85);
-  letter-spacing: -0.015em;
-  margin-bottom: 0.65rem;
+.hero-arch-tag-wrapper {
+  margin-bottom: 0.75rem;
 }
 
-.hero-title-highlight {
-  color: #ffffff;
-}
-
-@media (min-width: 640px) {
-  .hero-title {
-    font-size: 2.75rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-title {
-    font-size: 3.25rem;
-  }
-}
-
-.hero-subtitle {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-  margin: 0 auto 0.75rem;
-  max-width: 28rem;
-  font-size: 1.1rem;
+.hero-arch-tag {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.725rem;
   font-weight: 600;
-  line-height: 1.35;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--brand-nude);
+  padding: 0.32rem 0.95rem;
+  border-radius: 9999px;
+  background: rgba(223, 199, 188, 0.12);
+  border: 1px solid rgba(223, 199, 188, 0.28);
+  backdrop-filter: blur(8px);
+}
+
+.hero-arch-title {
+  font-size: 1.95rem;
+  line-height: 1.22;
+  font-weight: 500;
   color: #ffffff;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65), 0 1px 3px rgba(0, 0, 0, 0.85);
+  letter-spacing: -0.015em;
+  margin-bottom: 0.85rem;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
   text-wrap: balance;
 }
 
 @media (min-width: 640px) {
-  .hero-subtitle {
-    font-size: 1.25rem;
-    max-width: 34rem;
+  .hero-arch-title {
+    font-size: 2.35rem;
+    line-height: 1.2;
   }
 }
 
 @media (min-width: 1024px) {
-  .hero-subtitle {
-    font-size: 1.35rem;
-    max-width: 38rem;
-    margin-bottom: 0.85rem;
+  .hero-arch-title {
+    font-size: 2.65rem;
+    line-height: 1.18;
   }
 }
 
-.hero-description {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-  margin: 0 auto 1.5rem;
-  max-width: 25rem;
-  font-size: 0.95rem;
+.hero-arch-italic {
+  display: inline-block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--rose-gold);
+  text-shadow: 0 2px 16px rgba(223, 162, 165, 0.5);
+}
+
+.hero-arch-subtitle {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 0.935rem;
   font-weight: 400;
   line-height: 1.55;
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.75);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 24rem;
+  margin: 0 auto 1.6rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
   text-wrap: balance;
 }
 
 @media (min-width: 640px) {
-  .hero-description {
+  .hero-arch-subtitle {
     font-size: 1rem;
-    max-width: 32rem;
+    max-width: 27rem;
+    margin-bottom: 1.85rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .hero-description {
-    font-size: 1.05rem;
-    max-width: 36rem;
-    margin-bottom: 1.75rem;
-  }
-}
-
-/* Pill Badge de Oferta Exclusiva — Estilo Idêntico à Imagem 3 */
-.hero-badge-pill {
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid rgba(194, 112, 116, 0.45);
+/* Botão Pill Luxury — Estilo Pílula Metálica Luminous */
+.btn-arch-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
   border-radius: 9999px;
-  padding: 0.65rem 1.4rem;
-  margin: 0 auto 1.35rem;
-  box-shadow: 0 10px 28px -4px rgba(0, 0, 0, 0.22);
-  max-width: 25rem;
-  width: 100%;
-  text-align: center;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, #e4a2a6 0%, #c9757a 38%, #ab565b 75%, #8f4045 100%);
+  padding: 1.05rem 2.4rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid rgba(255, 230, 232, 0.45);
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.55), 0 10px 28px -4px rgba(184, 98, 103, 0.5);
 }
 
-.hero-badge-tag {
-  display: block;
-  font-size: 0.6875rem;
-  font-weight: 800;
-  color: var(--brand-rose-dark);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.2rem;
+.btn-arch-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.7), 0 14px 34px -2px rgba(184, 98, 103, 0.65);
+  filter: brightness(1.04);
+  color: #ffffff;
 }
 
-.hero-badge-title {
-  display: block;
-  font-size: 0.9375rem;
-  font-weight: 700;
-  color: var(--ink);
-  line-height: 1.25;
-}
-
-.hero-badge-note {
-  display: block;
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: var(--muted-foreground);
-  margin-top: 0.2rem;
+.btn-arch-pill:active {
+  transform: translateY(0);
 }
 
 .hero-cta-wrapper {
@@ -570,28 +665,12 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   align-items: center;
   gap: 0.65rem;
+  width: 100%;
 }
 
-.btn-hero-cta {
-  padding: 0.95rem 2.25rem;
-  font-size: 1.05rem;
-  font-weight: 700;
-  border-radius: 9999px;
-  background-color: var(--brand-rose);
-  color: #ffffff;
-  box-shadow: 0 10px 25px -4px rgba(178, 90, 99, 0.5);
-  text-decoration: none;
-}
-
-.btn-hero-cta:hover {
-  background-color: var(--brand-rose-dark);
-}
-
-.hero-trust-text {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+.hero-cta-wrapper .btn-arch-pill {
+  width: auto;
+  max-width: 100%;
 }
 
 /* Benefícios Section */
