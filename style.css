@@ -432,7 +432,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   Hero Section — Clean, Luminoso & Autêntico Pink Luxo (Sem Moldura)
+   Hero Section — Referência Editorial de Luxo com Moldura Arquitetônica em Arco
+   Inspirado no padrão estético internacional de clínicas de alta gama
    ========================================================================== */
 .font-editorial {
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif !important;
@@ -443,152 +444,151 @@ h1, h2, h3, h4, h5, h6 {
   min-height: calc(100vh - 4.25rem);
   min-height: calc(100svh - 4.25rem);
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
   align-items: center;
-  padding: 1.5rem 1rem 3.25rem;
-  background-color: #ffffff;
+  justify-content: center;
+  padding: 2.25rem 1rem 3.5rem;
+  background: radial-gradient(circle at 75% 38%, rgba(223, 199, 188, 0.32) 0%, rgba(255, 255, 255, 0) 65%),
+              radial-gradient(circle at 20% 80%, rgba(223, 162, 165, 0.12) 0%, rgba(255, 255, 255, 0) 50%),
+              #ffffff;
   overflow: hidden;
 }
 
 @media (min-width: 768px) {
   .hero-section {
-    padding: 2.25rem 2rem 4rem;
+    padding: 3rem 1.5rem 4rem;
   }
 }
 
-/* Camada da Foto de Fundo da Modelo */
-.hero-bg,
-.hero-arch-bg,
-.hero-clean-media {
+@media (min-width: 1024px) {
+  .hero-section {
+    padding: 3.5rem 2rem 4.5rem;
+  }
+}
+
+/* Aura de Iluminação Suave */
+.hero-ambient-aura {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-image: var(--hero-bg-mobile);
-  background-position: center 8%;
-  background-repeat: no-repeat;
-  background-size: cover;
+  top: 15%;
+  right: 12%;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(223, 162, 165, 0.22) 0%, rgba(223, 199, 188, 0.08) 50%, transparent 70%);
+  filter: blur(48px);
+  pointer-events: none;
   z-index: 1;
 }
 
-@media (min-width: 768px) {
-  .hero-bg,
-  .hero-arch-bg,
-  .hero-clean-media {
-    background-image: var(--hero-bg-desktop);
-    background-position: center 15%;
-  }
-}
-
-/* Gradiente Branco / Blush de Limpeza (garante leitura cristalina do texto e botão) */
-.hero-gradient-fade,
-.hero-arch-gradient-fade,
-.hero-clean-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0) 24%,
-    rgba(255, 255, 255, 0.5) 48%,
-    rgba(255, 255, 255, 0.94) 68%,
-    #ffffff 84%,
-    #ffffff 100%
-  );
-}
-
-/* Container & Conteúdo Centralizado */
 .hero-container {
   position: relative;
   z-index: 4;
   width: 100%;
   max-width: 72rem;
-  display: flex;
-  justify-content: center;
-}
-
-.hero-content,
-.hero-arch-content,
-.hero-clean-content {
-  width: 100%;
-  max-width: 440px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin: 0 auto;
 }
 
+/* Grid Editorial de 2 Colunas */
+.hero-editorial-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.25rem;
+}
+
 @media (min-width: 1024px) {
-  .hero-content,
-  .hero-arch-content,
-  .hero-clean-content {
-    max-width: 530px;
+  .hero-editorial-grid {
+    display: grid;
+    grid-template-columns: 1.12fr 0.88fr;
+    align-items: center;
+    gap: 3.5rem;
   }
 }
 
-.hero-tag-wrapper,
-.hero-arch-tag-wrapper,
-.hero-clean-tag-wrapper {
-  margin-bottom: 0.75rem;
+@media (min-width: 1200px) {
+  .hero-editorial-grid {
+    gap: 4.5rem;
+  }
 }
 
-.hero-tag,
-.hero-arch-tag,
-.hero-clean-tag {
-  display: inline-block;
+/* Coluna de Conteúdo Editorial */
+.hero-content-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 580px;
+}
+
+@media (min-width: 1024px) {
+  .hero-content-col {
+    align-items: flex-start;
+    text-align: left;
+    max-width: 100%;
+  }
+}
+
+.hero-tag-wrapper {
+  margin-bottom: 0.85rem;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   font-family: 'Outfit', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: #8c2e36;
-  padding: 0.38rem 1.05rem;
+  padding: 0.42rem 1.15rem;
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(194, 112, 116, 0.32);
-  box-shadow: 0 4px 14px rgba(194, 112, 116, 0.12);
+  border: 1px solid rgba(194, 112, 116, 0.35);
+  box-shadow: 0 4px 14px rgba(194, 112, 116, 0.14);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
-.hero-title,
-.hero-arch-title,
-.hero-clean-title {
-  font-size: 1.95rem;
-  line-height: 1.2;
+.hero-tag-icon {
+  color: var(--brand-rose);
+  flex-shrink: 0;
+}
+
+.hero-title {
+  font-size: 2.15rem;
+  line-height: 1.18;
   font-weight: 600;
   color: var(--ink);
-  letter-spacing: -0.015em;
-  margin-bottom: 0.8rem;
+  letter-spacing: -0.018em;
+  margin-bottom: 1rem;
   text-wrap: balance;
 }
 
 @media (min-width: 640px) {
-  .hero-title,
-  .hero-arch-title,
-  .hero-clean-title {
-    font-size: 2.3rem;
-    line-height: 1.18;
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.16;
   }
 }
 
 @media (min-width: 1024px) {
-  .hero-title,
-  .hero-arch-title,
-  .hero-clean-title {
-    font-size: 2.5rem;
-    line-height: 1.16;
-    margin-bottom: 0.85rem;
+  .hero-title {
+    font-size: 2.85rem;
+    line-height: 1.14;
+    margin-bottom: 1.15rem;
   }
 }
 
-.hero-italic,
-.hero-arch-italic,
-.hero-clean-italic {
+@media (min-width: 1200px) {
+  .hero-title {
+    font-size: 3.15rem;
+    line-height: 1.12;
+  }
+}
+
+.hero-italic {
   display: inline-block;
   font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
@@ -596,41 +596,72 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--brand-rose-dark);
 }
 
-.hero-subtitle,
-.hero-arch-subtitle,
-.hero-clean-subtitle {
+.hero-subtitle {
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif !important;
-  font-size: 0.925rem;
+  font-size: 0.975rem;
   font-weight: 400;
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--muted-foreground);
-  max-width: 25rem;
-  margin: 0 auto 1.55rem;
+  max-width: 32rem;
+  margin-bottom: 1.5rem;
   text-wrap: balance;
 }
 
-@media (min-width: 640px) {
-  .hero-subtitle,
-  .hero-arch-subtitle,
-  .hero-clean-subtitle {
-    font-size: 0.975rem;
-    max-width: 28rem;
-    margin-bottom: 1.75rem;
+@media (min-width: 1024px) {
+  .hero-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.62;
+    margin-bottom: 1.65rem;
   }
 }
 
-/* Botão Pill Luxury — Estilo Pílula Metálica Rose Gold da Marca */
-.btn-hero-pill,
-.btn-arch-pill,
-.btn-clean-pill {
+/* Destaques de Excelência Clínica (Value Pills) */
+.hero-feature-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.85rem;
+  width: 100%;
+}
+
+@media (max-width: 1023px) {
+  .hero-feature-pills {
+    align-items: center;
+  }
+}
+
+.hero-pill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: hsl(240, 5%, 26%);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(223, 199, 188, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  max-width: max-content;
+}
+
+.hero-pill-bullet {
+  color: var(--brand-rose-dark);
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+/* Botão Pill Luxury */
+.btn-hero-pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
   border-radius: 9999px;
-  background: linear-gradient(135deg, hsl(357, 48%, 70%) 0%, hsl(358, 38%, 58%) 50%, hsl(358, 42%, 48%) 100%);
-  padding: 1.05rem 2.4rem;
-  font-size: 1.025rem;
+  background: linear-gradient(135deg, hsl(357, 50%, 68%) 0%, hsl(358, 40%, 56%) 50%, hsl(358, 44%, 46%) 100%);
+  padding: 1.1rem 2.5rem;
+  font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: 0.015em;
   color: #ffffff;
@@ -638,38 +669,390 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(255, 255, 255, 0.45);
   cursor: pointer;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5), 0 8px 24px -2px rgba(194, 112, 116, 0.45);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5), 0 10px 28px -3px rgba(194, 112, 116, 0.45);
 }
 
-.btn-hero-pill:hover,
-.btn-arch-pill:hover,
-.btn-clean-pill:hover {
-  background: linear-gradient(135deg, hsl(357, 50%, 66%) 0%, hsl(358, 40%, 54%) 50%, hsl(358, 44%, 44%) 100%);
+.btn-hero-pill:hover {
+  background: linear-gradient(135deg, hsl(357, 52%, 64%) 0%, hsl(358, 42%, 52%) 50%, hsl(358, 46%, 42%) 100%);
   transform: translateY(-2px);
-  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.65), 0 12px 30px -2px rgba(194, 112, 116, 0.58);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.65), 0 14px 32px -2px rgba(194, 112, 116, 0.6);
   color: #ffffff;
 }
 
-.btn-hero-pill:active,
-.btn-arch-pill:active,
-.btn-clean-pill:active {
+.btn-hero-pill:active {
   transform: translateY(0);
 }
 
 .hero-cta-wrapper {
-  margin-top: 0.25rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.65rem;
+  margin-bottom: 1.25rem;
   width: 100%;
 }
 
-.hero-cta-wrapper .btn-hero-pill,
-.hero-cta-wrapper .btn-arch-pill,
-.hero-cta-wrapper .btn-clean-pill {
-  width: auto;
-  max-width: 100%;
+@media (max-width: 639px) {
+  .hero-cta-wrapper .btn-hero-pill {
+    width: 100%;
+    padding: 1rem 1.75rem;
+    font-size: 0.98rem;
+  }
+}
+
+/* Social Proof Micro-Bar */
+.hero-social-proof {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  padding: 0.35rem 0.85rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 9999px;
+  border: 1px solid rgba(229, 221, 216, 0.7);
+}
+
+.proof-stars {
+  color: #eab308;
+  letter-spacing: 0.1em;
+  font-size: 0.95rem;
+}
+
+.proof-text strong {
+  color: var(--ink);
+}
+
+/* ==========================================================================
+   Coluna 2 — A Moldura Arquitetônica em Arco (Arch Portal)
+   ========================================================================== */
+.hero-arch-showcase {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+@media (max-width: 1023px) {
+  /* No mobile e tablet, o arco fica perfeitamente posicionado */
+  .hero-arch-showcase {
+    order: -1;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.arch-frame-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 310px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .arch-frame-wrapper {
+    max-width: 350px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .arch-frame-wrapper {
+    max-width: 410px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .arch-frame-wrapper {
+    max-width: 440px;
+  }
+}
+
+/* Halo Luminoso no topo do Arco */
+.arch-halo {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 108%;
+  height: 90%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(223, 162, 165, 0.35) 0%, rgba(223, 199, 188, 0.16) 45%, transparent 70%);
+  filter: blur(28px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* O Cartão do Arco */
+.arch-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 430px;
+  border-top-left-radius: 190px;
+  border-top-right-radius: 190px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  background-color: #ffffff;
+  box-shadow: 0 24px 60px -15px rgba(184, 98, 103, 0.22),
+              0 6px 24px rgba(0, 0, 0, 0.05),
+              0 0 0 1px rgba(223, 199, 188, 0.35);
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+}
+
+@media (min-width: 640px) {
+  .arch-card {
+    height: 480px;
+    border-top-left-radius: 215px;
+    border-top-right-radius: 215px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .arch-card {
+    height: 540px;
+    border-top-left-radius: 240px;
+    border-top-right-radius: 240px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .arch-card {
+    height: 580px;
+    border-top-left-radius: 260px;
+    border-top-right-radius: 260px;
+  }
+}
+
+.arch-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 32px 70px -18px rgba(184, 98, 103, 0.3),
+              0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Linhas Metálicas Duplas Rose Gold / Nude do Arco */
+.arch-line-outer {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  right: 7px;
+  bottom: 7px;
+  border-top-left-radius: 184px;
+  border-top-right-radius: 184px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  border: 1.5px solid rgba(223, 162, 165, 0.65);
+  box-shadow: inset 0 0 12px rgba(223, 162, 165, 0.2);
+  pointer-events: none;
+  z-index: 3;
+}
+
+@media (min-width: 640px) {
+  .arch-line-outer {
+    top: 9px;
+    left: 9px;
+    right: 9px;
+    bottom: 9px;
+    border-top-left-radius: 207px;
+    border-top-right-radius: 207px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .arch-line-outer {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-top-left-radius: 232px;
+    border-top-right-radius: 232px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+  }
+}
+
+.arch-line-inner {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  border-top-left-radius: 177px;
+  border-top-right-radius: 177px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border: 1px solid rgba(223, 199, 188, 0.5);
+  pointer-events: none;
+  z-index: 3;
+}
+
+@media (min-width: 640px) {
+  .arch-line-inner {
+    top: 17px;
+    left: 17px;
+    right: 17px;
+    bottom: 17px;
+    border-top-left-radius: 199px;
+    border-top-right-radius: 199px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .arch-line-inner {
+    top: 19px;
+    left: 19px;
+    right: 19px;
+    bottom: 19px;
+    border-top-left-radius: 223px;
+    border-top-right-radius: 223px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+}
+
+/* Imagem da Foto do Procedimento */
+.arch-img-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.arch-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+  transform: scale(1.02);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.arch-card:hover .arch-photo {
+  transform: scale(1.06);
+}
+
+.arch-sheen-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(223, 162, 165, 0.05) 70%,
+    rgba(32, 22, 26, 0.16) 100%
+  );
+  z-index: 2;
+}
+
+/* Floating Glass Badges */
+.arch-floating-badge {
+  position: absolute;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(223, 199, 188, 0.85);
+  border-radius: 1rem;
+  padding: 0.55rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 14px 34px -8px rgba(184, 98, 103, 0.25), 0 4px 12px rgba(0, 0, 0, 0.05);
+  pointer-events: auto;
+}
+
+.badge-precision {
+  top: 12%;
+  left: -12px;
+  animation: floatBadgeA 5.5s ease-in-out infinite;
+}
+
+.badge-glow {
+  bottom: 8%;
+  right: -12px;
+  animation: floatBadgeB 6.2s ease-in-out infinite 0.6s;
+}
+
+@media (min-width: 640px) {
+  .badge-precision {
+    left: -20px;
+    padding: 0.65rem 1.15rem;
+  }
+  .badge-glow {
+    right: -20px;
+    padding: 0.65rem 1.15rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .badge-precision {
+    left: -28px;
+  }
+  .badge-glow {
+    right: -28px;
+  }
+}
+
+@keyframes floatBadgeA {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes floatBadgeB {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+.badge-icon-circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, hsl(357, 50%, 94%) 0%, hsl(24, 40%, 90%) 100%);
+  color: var(--brand-rose-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(184, 98, 103, 0.15);
+}
+
+.badge-icon-sparkle {
+  color: #dfa2a5;
+}
+
+.badge-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.badge-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.badge-sub {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
 }
 
 /* Benefícios Section */
