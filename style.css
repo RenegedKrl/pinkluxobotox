@@ -20,9 +20,6 @@
   --rose-gold: #dfa2a5;
   --rose-gold-dark: #b86267;
   --rose-gold-line: rgba(223, 199, 188, 0.65);
-  --rose-gold-line-inner: rgba(223, 199, 188, 0.38);
-  --hero-bg-mobile: url('images/hero-protocolo-mobile.jpg');
-  --hero-bg-desktop: url('images/hero-protocolo-desktop.jpg');
   --ink: hsl(240, 5%, 18%);
   --radius: 1rem;
 }
@@ -432,210 +429,303 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   Hero Section — Clean, Luminoso & Autêntico Pink Luxo (Sem Moldura)
+   Hero Section — Direção Minimalista, Elegante e Premium (Pink Luxô)
    ========================================================================== */
-.font-editorial {
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif !important;
-}
-
 .hero-section {
   position: relative;
-  min-height: calc(100vh - 4.25rem);
-  min-height: calc(100svh - 4.25rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 1.5rem 1rem 3.25rem;
-  background-color: #ffffff;
+  background: linear-gradient(180deg, #fdfbf9 0%, #f9f5f1 100%);
+  padding: 1.25rem 0 2.75rem;
   overflow: hidden;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .hero-section {
-    padding: 2.25rem 2rem 4rem;
+    padding: 2rem 0 3.75rem;
   }
 }
 
-/* Camada da Foto de Fundo da Modelo */
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-image: var(--hero-bg-mobile);
-  background-position: center 3%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: 1;
-}
-
-@media (min-width: 768px) {
-  .hero-bg {
-    background-image: var(--hero-bg-desktop);
-    background-position: center 4%;
+@media (min-width: 1024px) {
+  .hero-section {
+    padding: 3.5rem 0 4.5rem;
+    min-height: calc(100vh - 4.25rem);
+    min-height: calc(100svh - 4.25rem);
+    display: flex;
+    align-items: center;
   }
 }
 
-/* Gradiente Branco / Blush de Limpeza (garante leitura cristalina do texto e botão) */
-.hero-gradient-fade {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0) 24%,
-    rgba(255, 255, 255, 0.5) 48%,
-    rgba(255, 255, 255, 0.94) 68%,
-    #ffffff 84%,
-    #ffffff 100%
-  );
-}
-
-/* Container & Conteúdo Centralizado */
 .hero-container {
-  position: relative;
-  z-index: 4;
   width: 100%;
   max-width: 72rem;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 
-.hero-content {
+@media (min-width: 1024px) {
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 3.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-container {
+    gap: 4.5rem;
+  }
+}
+
+/* Coluna Visual: Imagem Protagonista do Procedimento */
+.hero-media-col {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  order: 1; /* No mobile a foto é a primeira coisa no topo */
+}
+
+@media (min-width: 1024px) {
+  .hero-media-col {
+    order: 2; /* No desktop a foto fica à direita */
+  }
+}
+
+.hero-image-card {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 16px 36px -12px rgba(184, 104, 109, 0.16), 0 4px 14px rgba(42, 30, 34, 0.04);
+  border: 1px solid rgba(223, 204, 196, 0.55);
+  background-color: #f7f2ed;
+}
+
+@media (min-width: 1024px) {
+  .hero-image-card {
+    max-width: 520px;
+    border-radius: 2rem;
+    box-shadow: 0 24px 50px -16px rgba(184, 104, 109, 0.22), 0 6px 20px rgba(42, 30, 34, 0.05);
+  }
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 20%;
+  aspect-ratio: 4 / 4.4;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 640px) {
+  .hero-photo {
+    aspect-ratio: 4 / 4.2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-photo {
+    aspect-ratio: 4 / 4.8;
+    max-height: 580px;
+  }
+}
+
+.hero-image-card:hover .hero-photo {
+  transform: scale(1.02);
+}
+
+/* Coluna Editorial: Área Clara, Arejada e com Máxima Legibilidade */
+.hero-content-col {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 2; /* No mobile fica abaixo da foto */
+  padding-top: 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .hero-content-col {
+    padding-top: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-content-col {
+    order: 1; /* No desktop fica à esquerda */
+    padding-top: 0;
+    justify-content: flex-start;
+  }
+}
+
+.hero-content-inner {
   width: 100%;
   max-width: 440px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
 }
 
 @media (min-width: 1024px) {
-  .hero-content {
-    max-width: 530px;
+  .hero-content-inner {
+    max-width: 540px;
+    text-align: left;
+    align-items: flex-start;
   }
 }
 
-.hero-tag-wrapper {
-  margin-bottom: 0.75rem;
+/* Etiqueta Pequena */
+.hero-tag-wrap {
+  margin-bottom: 0.85rem;
 }
 
-.hero-tag {
+.hero-tag-clean {
   display: inline-block;
   font-family: 'Outfit', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.725rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #8c2e36;
-  padding: 0.38rem 1.05rem;
+  letter-spacing: 0.16em;
+  color: #8c3b42;
+  background-color: #f7ebe8;
+  padding: 0.38rem 1rem;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(194, 112, 116, 0.32);
-  box-shadow: 0 4px 14px rgba(194, 112, 116, 0.12);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(184, 104, 109, 0.22);
+  box-shadow: 0 2px 8px rgba(184, 104, 109, 0.06);
 }
 
-.hero-title {
-  font-size: 1.95rem;
-  line-height: 1.2;
+/* Título Serifado Editorial */
+.hero-title-editorial {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: 2.1rem;
+  line-height: 1.18;
   font-weight: 600;
-  color: var(--ink);
+  color: #242022;
   letter-spacing: -0.015em;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
   text-wrap: balance;
 }
 
 @media (min-width: 640px) {
-  .hero-title {
-    font-size: 2.3rem;
-    line-height: 1.18;
+  .hero-title-editorial {
+    font-size: 2.5rem;
+    line-height: 1.16;
   }
 }
 
 @media (min-width: 1024px) {
-  .hero-title {
-    font-size: 2.5rem;
-    line-height: 1.16;
-    margin-bottom: 0.85rem;
+  .hero-title-editorial {
+    font-size: 3.15rem;
+    line-height: 1.12;
+    margin-bottom: 1.25rem;
   }
 }
 
-.hero-italic {
+@media (min-width: 1200px) {
+  .hero-title-editorial {
+    font-size: 3.45rem;
+  }
+}
+
+/* Destaque "de forma natural" */
+.hero-title-delicate {
   display: inline-block;
   font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
   font-weight: 500;
-  color: var(--brand-rose-dark);
+  color: #b56066;
 }
 
-.hero-subtitle {
-  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif !important;
-  font-size: 0.925rem;
+/* Texto de Apoio */
+.hero-support-text {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.96rem;
   font-weight: 400;
-  line-height: 1.55;
-  color: var(--muted-foreground);
-  max-width: 25rem;
-  margin: 0 auto 1.55rem;
+  line-height: 1.62;
+  color: #5c5556;
+  max-width: 25.5rem;
+  margin: 0 auto 1.65rem;
   text-wrap: balance;
 }
 
 @media (min-width: 640px) {
-  .hero-subtitle {
-    font-size: 0.975rem;
-    max-width: 28rem;
-    margin-bottom: 1.75rem;
+  .hero-support-text {
+    font-size: 1rem;
+    max-width: 27rem;
+    margin-bottom: 1.85rem;
   }
 }
 
-/* Botão Pill Luxury — Estilo Pílula Metálica Rose Gold da Marca */
-.btn-hero-pill {
+@media (min-width: 1024px) {
+  .hero-support-text {
+    font-size: 1.05rem;
+    max-width: 28rem;
+    margin: 0 0 2.25rem 0;
+  }
+}
+
+/* CTA Wrapper */
+.hero-cta-group {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-cta-group {
+    justify-content: flex-start;
+  }
+}
+
+/* Botão CTA Premium — Rosa Queimado / Dusty Pink */
+.btn-hero-premium {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 0.7rem;
+  width: 100%;
+  max-width: 340px;
   border-radius: 9999px;
-  background: linear-gradient(135deg, hsl(357, 48%, 70%) 0%, hsl(358, 38%, 58%) 50%, hsl(358, 42%, 48%) 100%);
-  padding: 1.05rem 2.4rem;
-  font-size: 1.025rem;
+  background: linear-gradient(135deg, #b8686d 0%, #a45258 50%, #8e3e44 100%);
+  padding: 1.05rem 2.25rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.015em;
   color: #ffffff;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5), 0 8px 24px -2px rgba(194, 112, 116, 0.45);
+  box-shadow: 0 10px 25px -4px rgba(168, 88, 94, 0.38), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-hero-pill:hover {
-  background: linear-gradient(135deg, hsl(357, 50%, 66%) 0%, hsl(358, 40%, 54%) 50%, hsl(358, 44%, 44%) 100%);
+@media (min-width: 640px) {
+  .btn-hero-premium {
+    width: auto;
+    padding: 1.1rem 2.5rem;
+    font-size: 1.03rem;
+  }
+}
+
+.btn-hero-premium:hover {
+  background: linear-gradient(135deg, #be7075 0%, #aa585e 50%, #94444a 100%);
   transform: translateY(-2px);
-  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.65), 0 12px 30px -2px rgba(194, 112, 116, 0.58);
+  box-shadow: 0 14px 30px -4px rgba(168, 88, 94, 0.48), inset 0 1px 2px rgba(255, 255, 255, 0.65);
   color: #ffffff;
 }
 
-.btn-hero-pill:active {
+.btn-hero-premium:active {
   transform: translateY(0);
 }
 
-.hero-cta-wrapper {
-  margin-top: 0.25rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.65rem;
-  width: 100%;
-}
-
-.hero-cta-wrapper .btn-hero-pill {
-  width: auto;
-  max-width: 100%;
+.cta-icon-wpp {
+  flex-shrink: 0;
+  color: #ffffff;
 }
 
 /* Benefícios Section */
