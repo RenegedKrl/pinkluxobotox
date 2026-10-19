@@ -7,3 +7,9 @@
 ## 2. Nunca tirar Prints / Screenshots dos Sites
 - Não executar scripts para tirar prints/screenshots (Playwright, Puppeteer, Selenium, etc.).
 - Validações devem ser feitas diretamente no código e de forma rápida, sem atrasar o serviço.
+
+## 3. Comandos Rápidos e Automação de Alta Performance
+- **Sync Instantâneo no GitHub:** Sempre execute `cmd.exe /c sync.bat "mensagem do commit"`. Ele compila a produção (`vite build`), adiciona arquivos ao git, commita e faz o push para o GitHub em segundos.
+- **Build Rápido:** Execute `cmd.exe /c build.bat`.
+- **Caminhos do Sistema:** Git está em `G:\Program Files (x86)\Git\cmd` e Node em `C:\Program Files\nodejs`.
+

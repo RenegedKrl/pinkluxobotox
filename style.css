@@ -458,9 +458,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Camada da Foto de Fundo da Modelo */
-.hero-bg,
-.hero-arch-bg,
-.hero-clean-media {
+.hero-bg {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -473,18 +471,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 768px) {
-  .hero-bg,
-  .hero-arch-bg,
-  .hero-clean-media {
+  .hero-bg {
     background-image: var(--hero-bg-desktop);
     background-position: center 4%;
   }
 }
 
 /* Gradiente Branco / Blush de Limpeza (garante leitura cristalina do texto e botão) */
-.hero-gradient-fade,
-.hero-arch-gradient-fade,
-.hero-clean-overlay {
+.hero-gradient-fade {
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -510,9 +504,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
 }
 
-.hero-content,
-.hero-arch-content,
-.hero-clean-content {
+.hero-content {
   width: 100%;
   max-width: 440px;
   text-align: center;
@@ -523,22 +515,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 1024px) {
-  .hero-content,
-  .hero-arch-content,
-  .hero-clean-content {
+  .hero-content {
     max-width: 530px;
   }
 }
 
-.hero-tag-wrapper,
-.hero-arch-tag-wrapper,
-.hero-clean-tag-wrapper {
+.hero-tag-wrapper {
   margin-bottom: 0.75rem;
 }
 
-.hero-tag,
-.hero-arch-tag,
-.hero-clean-tag {
+.hero-tag {
   display: inline-block;
   font-family: 'Outfit', sans-serif;
   font-size: 0.75rem;
@@ -555,9 +541,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-backdrop-filter: blur(10px);
 }
 
-.hero-title,
-.hero-arch-title,
-.hero-clean-title {
+.hero-title {
   font-size: 1.95rem;
   line-height: 1.2;
   font-weight: 600;
@@ -568,27 +552,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 640px) {
-  .hero-title,
-  .hero-arch-title,
-  .hero-clean-title {
+  .hero-title {
     font-size: 2.3rem;
     line-height: 1.18;
   }
 }
 
 @media (min-width: 1024px) {
-  .hero-title,
-  .hero-arch-title,
-  .hero-clean-title {
+  .hero-title {
     font-size: 2.5rem;
     line-height: 1.16;
     margin-bottom: 0.85rem;
   }
 }
 
-.hero-italic,
-.hero-arch-italic,
-.hero-clean-italic {
+.hero-italic {
   display: inline-block;
   font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
@@ -596,9 +574,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--brand-rose-dark);
 }
 
-.hero-subtitle,
-.hero-arch-subtitle,
-.hero-clean-subtitle {
+.hero-subtitle {
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif !important;
   font-size: 0.925rem;
   font-weight: 400;
@@ -610,9 +586,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 640px) {
-  .hero-subtitle,
-  .hero-arch-subtitle,
-  .hero-clean-subtitle {
+  .hero-subtitle {
     font-size: 0.975rem;
     max-width: 28rem;
     margin-bottom: 1.75rem;
@@ -620,9 +594,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Botão Pill Luxury — Estilo Pílula Metálica Rose Gold da Marca */
-.btn-hero-pill,
-.btn-arch-pill,
-.btn-clean-pill {
+.btn-hero-pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -641,18 +613,14 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5), 0 8px 24px -2px rgba(194, 112, 116, 0.45);
 }
 
-.btn-hero-pill:hover,
-.btn-arch-pill:hover,
-.btn-clean-pill:hover {
+.btn-hero-pill:hover {
   background: linear-gradient(135deg, hsl(357, 50%, 66%) 0%, hsl(358, 40%, 54%) 50%, hsl(358, 44%, 44%) 100%);
   transform: translateY(-2px);
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.65), 0 12px 30px -2px rgba(194, 112, 116, 0.58);
   color: #ffffff;
 }
 
-.btn-hero-pill:active,
-.btn-arch-pill:active,
-.btn-clean-pill:active {
+.btn-hero-pill:active {
   transform: translateY(0);
 }
 
@@ -665,9 +633,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-.hero-cta-wrapper .btn-hero-pill,
-.hero-cta-wrapper .btn-arch-pill,
-.hero-cta-wrapper .btn-clean-pill {
+.hero-cta-wrapper .btn-hero-pill {
   width: auto;
   max-width: 100%;
 }
@@ -1727,57 +1693,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.75rem;
   color: var(--muted-foreground);
   margin-top: 0.15rem;
-}
-
-/* Hero Before/After Indicator Tags */
-.hero-tag-pill {
-  position: absolute;
-  top: 0.85rem;
-  z-index: 5;
-  padding: 0.35rem 0.85rem;
-  border-radius: 9999px;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.hero-tag-before {
-  left: 0.85rem;
-  background: rgba(42, 42, 46, 0.82);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-}
-
-.hero-tag-after {
-  right: 0.85rem;
-  background: rgba(178, 90, 99, 0.92);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* ==========================================================================
-   Mapeamento Facial (Antes vs Depois Detalhado)
-   ========================================================================== */
-.mapping-section {
-  border-top: 1px solid rgba(229, 221, 216, 0.7);
-  background: linear-gradient(180deg, var(--background) 0%, rgba(248, 239, 235, 0.6) 50%, var(--background) 100%);
-  padding: 4.5rem 0;
-}
-
-@media (min-width: 640px) {
-  .mapping-section {
-    padding: 6rem 0;
-  }
-}
-
-.mapping-header {
-  text-align: center;
-  max-width: 46rem;
-  margin: 0 auto;
 }
 
 /* ==========================================================================
