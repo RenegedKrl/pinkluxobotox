@@ -564,24 +564,26 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Badge Pílula */
+/* Tag / Kicker sem balão */
 .hero-badge-wrap {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.65rem;
 }
 
 .hero-badge {
   display: inline-block;
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #7d2e36;
-  background-color: #fcedea;
-  padding: 0.38rem 1.15rem;
-  border-radius: 9999px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.16em;
+  color: #f8c2c5;
+  background: none;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
 /* Título Serifado Editorial — Grande, Marcante e com Alta Legibilidade */
@@ -613,16 +615,14 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Destaque do Título — Fonte Limpa, Moderna e de Alta Legibilidade (Outfit) */
-.hero-italic,
-.hero-highlight {
+/* Destaque Itálico */
+.hero-italic {
   display: inline-block;
-  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  color: #f8b4b8;
-  letter-spacing: -0.01em;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  color: #f8c2c5;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7), 0 0 20px rgba(248, 194, 197, 0.35);
 }
 
 /* Subtítulo / Texto de Apoio — Tamanho Confortável e Nítido */
