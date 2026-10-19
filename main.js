@@ -35,6 +35,7 @@ let currentLightboxIndex = 0;
 let currentLeadOrigin = 'cta_geral';
 
 document.addEventListener('DOMContentLoaded', () => {
+  initHeaderScroll();
   initMobileMenu();
   initScrollSpy();
   initResultsCarousel();
@@ -135,8 +136,26 @@ function initResultsCarousel() {
   updateActiveDot();
 }
 
+// Header Scroll — Fundo transparente na Hero e branco sólido elegante ao rolar
+function initHeaderScroll() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  function updateHeader() {
+    if (window.scrollY > 40) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+}
+
 // Mobile Navigation Menu
 function initMobileMenu() {
+  const header = document.querySelector('.site-header');
   const menuToggle = document.getElementById('menuToggle');
   const navMobile = document.getElementById('navMobile');
   const menuIcon = document.getElementById('menuIcon');
@@ -145,12 +164,14 @@ function initMobileMenu() {
 
   function closeMenu() {
     navMobile.classList.remove('open');
+    header?.classList.remove('menu-open');
     menuToggle.setAttribute('aria-expanded', 'false');
     menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
   }
 
   function openMenu() {
     navMobile.classList.add('open');
+    header?.classList.add('menu-open');
     menuToggle.setAttribute('aria-expanded', 'true');
     menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
   }
