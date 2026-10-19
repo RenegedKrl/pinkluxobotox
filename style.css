@@ -528,17 +528,15 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   max-width: 72rem;
   margin: 0 auto;
-  min-height: 100vh;
-  min-height: 100svh;
-  padding: 4.25rem 1.25rem 2rem 1.25rem;
+  padding: 4rem 1.25rem 2rem 1.25rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 @media (min-width: 640px) {
   .hero-container {
-    padding: 4.85rem 1.75rem 2.5rem 1.75rem;
+    padding: 4.75rem 1.75rem 2.5rem 1.75rem;
   }
 }
 
@@ -546,27 +544,9 @@ h1, h2, h3, h4, h5, h6 {
   .hero-container {
     min-height: 100vh;
     min-height: 100svh;
-    justify-content: space-between;
-    padding: 5.5rem 2rem 4rem 2rem;
+    justify-content: center;
+    padding: 5rem 2rem 4rem 2rem;
   }
-}
-
-/* Tag de Localização no Topo (como na referência) */
-.hero-top-tag {
-  width: 100%;
-  padding-top: 0.65rem;
-}
-
-.hero-location-text {
-  display: inline-block;
-  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: #ffffff;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
-  opacity: 0.95;
 }
 
 .hero-content {
@@ -584,12 +564,32 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Título Inspirado na Referência: Sans-serif Bold + Destaques em Itálico Serifado */
-.hero-title {
+/* Badge Pílula */
+.hero-badge-wrap {
+  margin-bottom: 0.75rem;
+}
+
+.hero-badge {
+  display: inline-block;
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: clamp(1.95rem, 6.6vw, 2.75rem);
-  line-height: 1.18;
+  font-size: 0.75rem;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #7d2e36;
+  background-color: #fcedea;
+  padding: 0.38rem 1.15rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Título Serifado Editorial — Grande, Marcante e com Alta Legibilidade */
+.hero-title {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.85rem, 6.2vw, 2.6rem);
+  line-height: 1.18;
+  font-weight: 600;
   color: #ffffff;
   letter-spacing: -0.015em;
   margin-bottom: 0.95rem;
@@ -600,27 +600,27 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 640px) {
   .hero-title {
     font-size: 2.65rem;
-    line-height: 1.15;
+    line-height: 1.16;
     margin-bottom: 1.1rem;
   }
 }
 
 @media (min-width: 1024px) {
   .hero-title {
-    font-size: 3.45rem;
+    font-size: 3.5rem;
     line-height: 1.12;
     margin-bottom: 1.35rem;
   }
 }
 
-/* Palavras em Destaque Itálico Serifado (estilo editorial da referência) */
-.hero-highlight {
-  display: inline;
+/* Destaque Itálico */
+.hero-italic {
+  display: inline-block;
   font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
   font-weight: 500;
-  color: #fceeed;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7), 0 0 18px rgba(252, 238, 237, 0.3);
+  color: #f8c2c5;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7), 0 0 20px rgba(248, 194, 197, 0.35);
 }
 
 /* Subtítulo / Texto de Apoio — Tamanho Confortável e Nítido */
@@ -628,9 +628,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.975rem;
   font-weight: 400;
-  line-height: 1.55;
+  line-height: 1.58;
   color: #ffffff;
-  max-width: 27rem;
+  max-width: 26.5rem;
   margin-bottom: 1.65rem;
   text-wrap: balance;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8), 0 2px 14px rgba(0, 0, 0, 0.5);
