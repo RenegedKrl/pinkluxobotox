@@ -259,6 +259,13 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   text-decoration: none;
   transition: opacity 0.2s ease;
+  margin-left: -0.45rem; /* Puxa um pouco mais para a esquerda apenas no mobile */
+}
+
+@media (min-width: 768px) {
+  .header-logo {
+    margin-left: 0;
+  }
 }
 
 .header-logo:hover {
