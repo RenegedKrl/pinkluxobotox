@@ -573,12 +573,8 @@ button {
   }
 }
 
-/* Tag / Kicker sem balão e sem bolinha com localização minimalista */
+/* Tag / Kicker sem balão e sem bolinha (conforme solicitado) */
 .hero-badge-wrap {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem 0.65rem;
   margin-bottom: 1.35rem; /* Respiro generoso de um dedo */
 }
 
@@ -603,32 +599,6 @@ button {
   box-shadow: none;
   border: none;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-}
-
-.hero-badge-sep {
-  color: rgba(248, 194, 197, 0.55);
-  font-size: 0.65rem;
-  line-height: 1;
-}
-
-.hero-location {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-family: var(--font-outfit);
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: rgba(245, 240, 236, 0.9);
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
-}
-
-.hero-location-icon {
-  width: 11px;
-  height: 11px;
-  flex-shrink: 0;
-  color: #f8c2c5;
 }
 
 /* Título Principal — Tipografia Moderna e Marcante */
