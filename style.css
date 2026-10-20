@@ -867,263 +867,301 @@ button {
 }
 
 /* --- VERSÃO DESKTOP (Apenas >= 1024px) --- */
-@media (min-width: 1024px) {
-  .regions-mobile-layout {
-    display: none !important;
-  }
+/* ==========================================================================
+   SEÇÃO 3 — REGIÕES DO ROSTO (FOTO INTERATIVA + ABINHAS EXPANSÍVEIS)
+   Conforme solicitado: a imagem complementa o foco anatômico enquanto
+   o usuário rola a página ou clica abrindo abinha por abinha.
+   ========================================================================== */
 
-  .regions-desktop-layout {
-    display: grid;
+.regions-section {
+  background-color: var(--bg-soft);
+}
+
+.regions-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .regions-layout {
     grid-template-columns: 0.95fr 1.05fr;
     gap: 3.5rem;
-    align-items: start;
-  }
-
-  /* Card Visual Grande à Esquerda com a Fotografia Clínica Real */
-  .regions-visual-card {
-    position: sticky;
-    top: 6rem;
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-    background-color: #ffffff;
-    border: 1px solid var(--border-card);
-    box-shadow: var(--shadow-card);
-    width: 100%;
-  }
-
-  .regions-visual-inner {
-    position: relative;
-    width: 100%;
-    background-color: #f7f1ee;
-  }
-
-  .regions-visual-img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    display: block;
-  }
-
-  .regions-visual-caption {
-    padding: 1.25rem 1.5rem;
-    background-color: #ffffff;
-    border-top: 1px solid var(--champagne-hairline);
-  }
-
-  .visual-caption-badge {
-    display: inline-block;
-    font-size: 0.6875rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--rose-deep);
-    background-color: var(--rose-subtle);
-    border: 1px solid var(--rose-border);
-    padding: 0.2rem 0.6rem;
-    border-radius: var(--radius-pill);
-    margin-bottom: 0.4rem;
-  }
-
-  .visual-caption-text {
-    font-size: 0.8125rem;
-    color: var(--ink-muted);
-    line-height: 1.5;
-  }
-
-  /* Lista Editorial das 7 Regiões à Direita */
-  .regions-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .region-item {
-    background-color: #ffffff;
-    border: 1px solid var(--border-card);
-    border-radius: var(--radius-lg);
-    padding: 1.35rem 1.6rem;
-    transition: all var(--transition-fast);
-  }
-
-  .region-item:hover {
-    border-color: var(--rose-border);
-    box-shadow: var(--shadow-subtle);
-    transform: translateX(3px);
-  }
-
-  .region-item-header {
-    display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
-    margin-bottom: 0.45rem;
-  }
-
-  .region-item-index {
-    font-size: 0.8125rem;
-    font-weight: 700;
-    color: var(--rose-primary);
-    letter-spacing: 0.05em;
-  }
-
-  .region-item-title {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: var(--ink-primary);
-    letter-spacing: -0.01em;
-  }
-
-  .region-item-desc {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: var(--ink-muted);
-    padding-left: 1.85rem;
   }
 }
 
-/* --- VERSÃO MOBILE (Apenas < 1024px: Scroll Contínuo de Cards) --- */
+/* Card Visual Interativo com a Fotografia Clínica Real */
+.regions-visual-card {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-card);
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .regions-visual-card {
+    position: sticky;
+    top: 6rem;
+  }
+}
+
 @media (max-width: 1023px) {
-  .regions-desktop-layout {
-    display: none !important;
+  .regions-visual-card {
+    position: sticky;
+    top: 4.25rem;
+    z-index: 10;
+    max-width: 540px;
+    margin: 0 auto 0.75rem;
+    border-radius: var(--radius-lg);
   }
+}
 
-  .regions-mobile-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-    max-width: 520px;
-    margin: 0 auto;
-  }
+.regions-visual-inner {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #f7f1ee;
+}
 
-  .region-card {
-    background-color: #ffffff;
-    border: 1px solid var(--border-card);
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-    box-shadow: var(--shadow-card);
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+@media (min-width: 640px) {
+  .regions-visual-inner {
+    height: 260px;
   }
+}
 
-  .region-card-media {
-    position: relative;
-    width: 100%;
-    height: 190px;
-    overflow: hidden;
-    background-color: #f7f1ee;
+@media (min-width: 1024px) {
+  .regions-visual-inner {
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
+}
 
-  .region-card-media::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(to top, rgba(20, 15, 17, 0.35) 0%, transparent 45%);
-  }
+.regions-visual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+  transform-origin: 48% 20%;
+  transform: scale(2.2);
+}
 
-  .region-img-crop {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+/* Foco dinâmico em cada região da foto clínica real */
+.regions-visual-img.focus-region-all {
+  transform-origin: center center;
+  transform: scale(1);
+}
 
-  /* Crops focados nas marcações e setas da fotografia clínica */
-  .crop-terco-superior {
-    transform-origin: 48% 20%;
-    transform: scale(2.2);
-  }
+.regions-visual-img.focus-region-1 {
+  transform-origin: 48% 20%;
+  transform: scale(2.2);
+}
 
-  .crop-malar {
-    transform-origin: 62% 46%;
-    transform: scale(2.2);
-  }
+.regions-visual-img.focus-region-2 {
+  transform-origin: 62% 46%;
+  transform: scale(2.2);
+}
 
-  .crop-mandibula {
-    transform-origin: 58% 64%;
-    transform: scale(2.2);
-  }
+.regions-visual-img.focus-region-3 {
+  transform-origin: 58% 64%;
+  transform: scale(2.2);
+}
 
-  .crop-mento {
-    transform-origin: 46% 68%;
-    transform: scale(2.4);
-  }
+.regions-visual-img.focus-region-4 {
+  transform-origin: 46% 68%;
+  transform: scale(2.4);
+}
 
-  .crop-periocular {
-    transform-origin: 58% 38%;
-    transform: scale(2.4);
-  }
+.regions-visual-img.focus-region-5 {
+  transform-origin: 58% 38%;
+  transform: scale(2.4);
+}
 
-  .crop-labios {
-    transform-origin: 46% 58%;
-    transform: scale(2.4);
-  }
+.regions-visual-img.focus-region-6 {
+  transform-origin: 46% 58%;
+  transform: scale(2.4);
+}
 
-  .crop-rinomodelacao {
-    transform-origin: 44% 46%;
-    transform: scale(2.3);
-  }
+.regions-visual-img.focus-region-7 {
+  transform-origin: 44% 46%;
+  transform: scale(2.3);
+}
 
-  .region-pin-badge {
-    position: absolute;
-    bottom: 0.75rem;
-    left: 0.75rem;
-    z-index: 2;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.35rem 0.75rem;
-    background: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(190, 112, 118, 0.25);
-    border-radius: var(--radius-pill);
-    font-size: 0.6875rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--ink-secondary);
-    box-shadow: 0 4px 12px rgba(45, 30, 35, 0.08);
-  }
+.region-pin-badge {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.8rem;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(190, 112, 118, 0.3);
+  border-radius: var(--radius-pill);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-secondary);
+  box-shadow: 0 4px 14px rgba(45, 30, 35, 0.12);
+  transition: all 0.3s ease;
+}
 
-  .region-pin-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: var(--rose-primary);
-    box-shadow: 0 0 0 2px rgba(190, 112, 118, 0.25);
-  }
+.region-pin-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--rose-primary);
+  box-shadow: 0 0 0 2px rgba(190, 112, 118, 0.25);
+}
 
-  .region-card-body {
-    padding: 1.5rem 1.4rem 1.6rem;
-    display: flex;
-    flex-direction: column;
-  }
+.regions-visual-caption {
+  padding: 1.15rem 1.4rem;
+  background-color: #ffffff;
+  border-top: 1px solid var(--champagne-hairline);
+}
 
-  .region-card-tag {
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--rose-deep);
-    margin-bottom: 0.45rem;
+@media (max-width: 1023px) {
+  .regions-visual-caption {
+    display: none;
   }
+}
 
-  .region-card-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--ink-primary);
-    letter-spacing: -0.015em;
-    margin-bottom: 0.65rem;
-    line-height: 1.25;
-  }
+.visual-caption-badge {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--rose-deep);
+  background-color: var(--rose-subtle);
+  border: 1px solid var(--rose-border);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.4rem;
+}
 
-  .region-card-desc {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: var(--ink-muted);
+.visual-caption-text {
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+/* Lista de Abinhas Interativas (Accordion / Abinha por Abinha) */
+.regions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .regions-list {
+    max-width: none;
+    gap: 1rem;
   }
+}
+
+.region-item {
+  background-color: #ffffff;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.region-item:hover {
+  border-color: var(--rose-border);
+  box-shadow: var(--shadow-subtle);
+}
+
+.region-item.active {
+  border-color: var(--rose-primary);
+  box-shadow: 0 8px 24px -4px rgba(190, 112, 118, 0.12);
+  background-color: #ffffff;
+}
+
+.region-item-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  padding: 1.25rem 1.4rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: color var(--transition-fast);
+}
+
+.region-header-left {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.region-item-index {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--rose-primary);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.region-item-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  letter-spacing: -0.01em;
+  transition: color var(--transition-fast);
+}
+
+.region-item.active .region-item-title {
+  color: var(--rose-deep);
+}
+
+.region-chevron {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+  color: var(--ink-muted);
+  transition: transform var(--transition-smooth), color var(--transition-fast);
+}
+
+.region-item.active .region-chevron {
+  transform: rotate(180deg);
+  color: var(--rose-primary);
+}
+
+.region-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+  padding: 0 1.4rem;
+}
+
+.region-item.active .region-item-body {
+  max-height: 200px;
+  padding: 0 1.4rem 1.35rem 1.4rem;
+}
+
+.region-item-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  border-top: 1px solid rgba(228, 218, 212, 0.45);
+  padding-top: 0.85rem;
 }
 
 /* ==========================================================================

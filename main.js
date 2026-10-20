@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initResultsCarousel();
   initLightbox();
   initFaqAccordion();
+  initRegionsAccordion();
 });
 
 // Header Scroll — Fundo translúcido no topo e sólido elegante com sombra suave ao rolar
@@ -376,3 +377,90 @@ function initFaqAccordion() {
     });
   });
 }
+
+// Accordion Interativo das Regiões Faciais com Sincronização Dinâmica da Fotografia Clínica
+function initRegionsAccordion() {
+  const accordion = document.getElementById('regionsAccordion');
+  const dynamicImg = document.getElementById('regionsDynamicImg');
+  const badgeText = document.getElementById('regionsBadgeText');
+  if (!accordion || !dynamicImg) return;
+
+  const items = Array.from(accordion.querySelectorAll('.region-item'));
+
+  const regionNames = {
+    '1': 'Foco: Testa & Glabela',
+    '2': 'Foco: Maçãs do Rosto',
+    '3': 'Foco: Linha Mandibular',
+    '4': 'Foco: Mento (Queixo)',
+    '5': 'Foco: Área Periocular',
+    '6': 'Foco: Lábios & Perioral',
+    '7': 'Foco: Rinomodelação'
+  };
+
+  function activateRegion(regionId, shouldOpen = true) {
+    items.forEach(item => {
+      const isTarget = item.getAttribute('data-region') === String(regionId);
+      const btn = item.querySelector('.region-item-header');
+      if (isTarget) {
+        if (shouldOpen) {
+          item.classList.add('active');
+          if (btn) btn.setAttribute('aria-expanded', 'true');
+        }
+      } else {
+        item.classList.remove('active');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    dynamicImg.className = `regions-visual-img focus-region-${regionId}`;
+    if (badgeText && regionNames[regionId]) {
+      badgeText.textContent = regionNames[regionId];
+    }
+  }
+
+  // Interação ao clicar na abinha
+  items.forEach(item => {
+    const header = item.querySelector('.region-item-header');
+    const regionId = item.getAttribute('data-region');
+
+    if (header) {
+      header.addEventListener('click', () => {
+        const isOpen = item.classList.contains('active');
+        if (isOpen) {
+          item.classList.remove('active');
+          header.setAttribute('aria-expanded', 'false');
+        } else {
+          activateRegion(regionId, true);
+        }
+      });
+    }
+
+    // No desktop, hover leve atualiza o foco dinamicamente
+    item.addEventListener('mouseenter', () => {
+      if (window.innerWidth >= 1024) {
+        activateRegion(regionId, true);
+      }
+    });
+  });
+
+  // No mobile, enquanto rola a página, abre abinha por abinha e atualiza o foco
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      if (window.innerWidth >= 1024) return;
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const regionId = entry.target.getAttribute('data-region');
+          if (regionId) {
+            activateRegion(regionId, true);
+          }
+        }
+      });
+    }, {
+      rootMargin: '-25% 0px -45% 0px',
+      threshold: 0.1
+    });
+
+    items.forEach(item => observer.observe(item));
+  }
+}
+

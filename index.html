@@ -258,18 +258,25 @@
           </div>
 
           <!-- =================================================================
-               VERSÃO DESKTOP (Layout Anterior Restaurado: Foto à Esquerda + Lista à Direita)
+               SEÇÃO DE REGIÕES: FOTO CLÍNICA INTERATIVA + ABINHAS EXPANSÍVEIS
+               Conforme solicitado: a imagem complementa o foco anatômico enquanto
+               o usuário rola a página ou clica abrindo abinha por abinha.
                ================================================================= -->
-          <div class="regions-desktop-layout">
-            <!-- Coluna Visual com a Nova Fotografia Real de Paciente com Setas Clínicas -->
+          <div class="regions-layout">
+            <!-- Card Visual Interativo com Fotografia Clínica Real e Foco Dinâmico -->
             <div class="regions-visual-card">
               <div class="regions-visual-inner">
                 <img 
+                  id="regionsDynamicImg"
                   src="images/mapeamento-facial-real.jpg" 
                   alt="Mapeamento Clínico e Regiões Faciais com Demarcação de Vetores" 
-                  class="regions-visual-img"
+                  class="regions-visual-img focus-region-1"
                   loading="lazy"
                 />
+                <div class="region-pin-badge" id="regionsDynamicBadge">
+                  <span class="region-pin-dot"></span>
+                  <span id="regionsBadgeText">Foco: Testa & Glabela</span>
+                </div>
               </div>
               <div class="regions-visual-caption">
                 <span class="visual-caption-badge">Planejamento Facial</span>
@@ -279,217 +286,134 @@
               </div>
             </div>
 
-            <!-- Coluna Editorial com a Lista de Regiões -->
-            <div class="regions-list">
-              <!-- Região 1 -->
-              <div class="region-item">
-                <div class="region-item-header">
-                  <span class="region-item-index">01</span>
-                  <h3 class="region-item-title">Terço Superior: Testa e Glabela</h3>
+            <!-- Lista de Abinhas Interativas (Abinha por Abinha) -->
+            <div class="regions-list" id="regionsAccordion">
+              <!-- Abinha 1 -->
+              <div class="region-item active" data-region="1">
+                <button type="button" class="region-item-header" aria-expanded="true">
+                  <div class="region-header-left">
+                    <span class="region-item-index">01</span>
+                    <h3 class="region-item-title">Terço Superior: Testa e Glabela</h3>
+                  </div>
+                  <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="region-item-body">
+                  <p class="region-item-desc">
+                    Relaxamento preciso dos músculos frontais e corrugadores para amenizar marcas horizontais e a expressão de tensão entre as sobrancelhas, preservando a mímica natural.
+                  </p>
                 </div>
-                <p class="region-item-desc">
-                  Relaxamento preciso dos músculos frontais e corrugadores para amenizar marcas horizontais e a expressão de tensão entre as sobrancelhas, preservando a mímica natural.
-                </p>
               </div>
 
-              <!-- Região 2 -->
-              <div class="region-item">
-                <div class="region-item-header">
-                  <span class="region-item-index">02</span>
-                  <h3 class="region-item-title">Região Malar & Maçãs do Rosto</h3>
+              <!-- Abinha 2 -->
+              <div class="region-item" data-region="2">
+                <button type="button" class="region-item-header" aria-expanded="false">
+                  <div class="region-header-left">
+                    <span class="region-item-index">02</span>
+                    <h3 class="region-item-title">Região Malar & Maçãs do Rosto</h3>
+                  </div>
+                  <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="region-item-body">
+                  <p class="region-item-desc">
+                    Recuperação da sustentação e do ponto de luz no terço médio, promovendo leve ancoragem dos tecidos faciais e suavizando a formação precoce do bigode chinês.
+                  </p>
                 </div>
-                <p class="region-item-desc">
-                  Recuperação da sustentação e do ponto de luz no terço médio, promovendo leve ancoragem dos tecidos faciais e suavizando a formação precoce do bigode chinês.
-                </p>
               </div>
 
-              <!-- Região 3 -->
-              <div class="region-item">
-                <div class="region-item-header">
-                  <span class="region-item-index">03</span>
-                  <h3 class="region-item-title">Linha Mandibular</h3>
+              <!-- Abinha 3 -->
+              <div class="region-item" data-region="3">
+                <button type="button" class="region-item-header" aria-expanded="false">
+                  <div class="region-header-left">
+                    <span class="region-item-index">03</span>
+                    <h3 class="region-item-title">Linha Mandibular</h3>
+                  </div>
+                  <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="region-item-body">
+                  <p class="region-item-desc">
+                    Estruturação do ângulo e borda mandibular para delinear o contorno inferior da face, criando uma transição elegante e definida com a área cervical (pescoço).
+                  </p>
                 </div>
-                <p class="region-item-desc">
-                  Estruturação do ângulo e borda mandibular para delinear o contorno inferior da face, criando uma transição elegante e definida com a área cervical (pescoço).
-                </p>
               </div>
 
-              <!-- Região 4 -->
-              <div class="region-item">
-                <div class="region-item-header">
-                  <span class="region-item-index">04</span>
-                  <h3 class="region-item-title">Mento (Queixo)</h3>
+              <!-- Abinha 4 -->
+              <div class="region-item" data-region="4">
+                <button type="button" class="region-item-header" aria-expanded="false">
+                  <div class="region-header-left">
+                    <span class="region-item-index">04</span>
+                    <h3 class="region-item-title">Mento (Queixo)</h3>
+                  </div>
+                  <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="region-item-body">
+                  <p class="region-item-desc">
+                    Alinhamento da projeção e do comprimento do queixo para equilibrar o perfil e harmonizar a proporção do terço inferior com o nariz e os lábios.
+                  </p>
                 </div>
-                <p class="region-item-desc">
-                  Alinhamento da projeção e do comprimento do queixo para equilibrar o perfil e harmonizar a proporção do terço inferior com o nariz e os lábios.
-                </p>
               </div>
 
-              <!-- Região 5 -->
-              <div class="region-item">
-                <div class="region-item-header">
-                  <span class="region-item-index">05</span>
-                  <h3 class="region-item-title">Área Periocular (Pés de Galinha)</h3>
+              <!-- Abinha 5 -->
+              <div class="region-item" data-region="5">
+                <button type="button" class="region-item-header" aria-expanded="false">
+                  <div class="region-header-left">
+                    <span class="region-item-index">05</span>
+                    <h3 class="region-item-title">Área Periocular (Pés de Galinha)</h3>
+                  </div>
+                  <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="region-item-body">
+                  <p class="region-item-desc">
+                    Suavização de linhas finas que se acentuam ao sorrir, descansando o olhar e mantendo a luminosidade e vivacidade espontânea dos olhos.
+                  </p>
                 </div>
-                <p class="region-item-desc">
-                  Suavização de linhas finas que se acentuam ao sorrir, descansando o olhar e mantendo a luminosidade e vivacidade espontânea dos olhos.
-                </p>
               </div>
 
-              <!-- Região 6 -->
-              <div class="region-item">
-                <div class="region-item-header">
-                  <span class="region-item-index">06</span>
-                  <h3 class="region-item-title">Lábios e Região Perioral</h3>
+              <!-- Abinha 6 -->
+              <div class="region-item" data-region="6">
+                <button type="button" class="region-item-header" aria-expanded="false">
+                  <div class="region-header-left">
+                    <span class="region-item-index">06</span>
+                    <h3 class="region-item-title">Lábios e Região Perioral</h3>
+                  </div>
+                  <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="region-item-body">
+                  <p class="region-item-desc">
+                    Hidratação dérmica, sutil definição de contorno ou volume proporcional, preservando rigorosamente o arco do cupido e o equilíbrio com o formato do rosto.
+                  </p>
                 </div>
-                <p class="region-item-desc">
-                  Hidratação dérmica, sutil definição de contorno ou volume proporcional, preservando rigorosamente o arco do cupido e o equilíbrio com o formato do rosto.
-                </p>
               </div>
 
-              <!-- Região 7 -->
-              <div class="region-item">
-                <div class="region-item-header">
-                  <span class="region-item-index">07</span>
-                  <h3 class="region-item-title">Rinomodelação Sutil</h3>
+              <!-- Abinha 7 -->
+              <div class="region-item" data-region="7">
+                <button type="button" class="region-item-header" aria-expanded="false">
+                  <div class="region-header-left">
+                    <span class="region-item-index">07</span>
+                    <h3 class="region-item-title">Rinomodelação Sutil</h3>
+                  </div>
+                  <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="region-item-body">
+                  <p class="region-item-desc">
+                    Ajuste milimétrico de pequenas irregularidades do dorso nasal ou discreta sustentação da ponta com preenchedor biocompatível, sem cirurgia.
+                  </p>
                 </div>
-                <p class="region-item-desc">
-                  Ajuste milimétrico de pequenas irregularidades do dorso nasal ou discreta sustentação da ponta com preenchedor biocompatível, sem cirurgia.
-                </p>
               </div>
             </div>
-          </div>
-
-          <!-- =================================================================
-               VERSÃO MOBILE (Scroll Contínuo: Foto com Foco + Texto de Cada Área)
-               Conforme solicitado: ao rolar, aparece a imagem e o texto da região tratada
-               ================================================================= -->
-          <div class="regions-mobile-layout">
-            <!-- Região 1: Terço Superior -->
-            <article class="region-card">
-              <div class="region-card-media">
-                <img src="images/mapeamento-facial-real.jpg" alt="Mapeamento Clínico: Terço Superior (Testa e Glabela)" class="region-img-crop crop-terco-superior" loading="lazy" />
-                <div class="region-pin-badge">
-                  <span class="region-pin-dot"></span>
-                  <span>Foco: Testa & Glabela</span>
-                </div>
-              </div>
-              <div class="region-card-body">
-                <span class="region-card-tag">01 &middot; Terço Superior</span>
-                <h3 class="region-card-title">Testa e Glabela</h3>
-                <p class="region-card-desc">
-                  Relaxamento preciso dos músculos frontais e corrugadores para amenizar marcas horizontais e a expressão de tensão entre as sobrancelhas, preservando a mímica natural.
-                </p>
-              </div>
-            </article>
-
-            <!-- Região 2: Região Malar -->
-            <article class="region-card">
-              <div class="region-card-media">
-                <img src="images/mapeamento-facial-real.jpg" alt="Mapeamento Clínico: Região Malar (Maçãs do Rosto)" class="region-img-crop crop-malar" loading="lazy" />
-                <div class="region-pin-badge">
-                  <span class="region-pin-dot"></span>
-                  <span>Foco: Maçãs do Rosto</span>
-                </div>
-              </div>
-              <div class="region-card-body">
-                <span class="region-card-tag">02 &middot; Sustentação</span>
-                <h3 class="region-card-title">Região Malar & Maçãs</h3>
-                <p class="region-card-desc">
-                  Recuperação da sustentação e do ponto de luz no terço médio, promovendo leve ancoragem dos tecidos faciais e suavizando a formação precoce do bigode chinês.
-                </p>
-              </div>
-            </article>
-
-            <!-- Região 3: Linha Mandibular -->
-            <article class="region-card">
-              <div class="region-card-media">
-                <img src="images/mapeamento-facial-real.jpg" alt="Mapeamento Clínico: Linha Mandibular" class="region-img-crop crop-mandibula" loading="lazy" />
-                <div class="region-pin-badge">
-                  <span class="region-pin-dot"></span>
-                  <span>Foco: Linha Mandibular</span>
-                </div>
-              </div>
-              <div class="region-card-body">
-                <span class="region-card-tag">03 &middot; Contorno Inferior</span>
-                <h3 class="region-card-title">Linha Mandibular</h3>
-                <p class="region-card-desc">
-                  Estruturação do ângulo e borda mandibular para delinear o contorno inferior da face, criando uma transição elegante e definida com a área cervical (pescoço).
-                </p>
-              </div>
-            </article>
-
-            <!-- Região 4: Mento (Queixo) -->
-            <article class="region-card">
-              <div class="region-card-media">
-                <img src="images/mapeamento-facial-real.jpg" alt="Mapeamento Clínico: Mento (Queixo)" class="region-img-crop crop-mento" loading="lazy" />
-                <div class="region-pin-badge">
-                  <span class="region-pin-dot"></span>
-                  <span>Foco: Mento (Queixo)</span>
-                </div>
-              </div>
-              <div class="region-card-body">
-                <span class="region-card-tag">04 &middot; Projeção & Perfil</span>
-                <h3 class="region-card-title">Mento (Queixo)</h3>
-                <p class="region-card-desc">
-                  Alinhamento da projeção e do comprimento do queixo para equilibrar o perfil e harmonizar a proporção do terço inferior com o nariz e os lábios.
-                </p>
-              </div>
-            </article>
-
-            <!-- Região 5: Área Periocular -->
-            <article class="region-card">
-              <div class="region-card-media">
-                <img src="images/mapeamento-facial-real.jpg" alt="Mapeamento Clínico: Área Periocular (Pés de Galinha)" class="region-img-crop crop-periocular" loading="lazy" />
-                <div class="region-pin-badge">
-                  <span class="region-pin-dot"></span>
-                  <span>Foco: Área Periocular</span>
-                </div>
-              </div>
-              <div class="region-card-body">
-                <span class="region-card-tag">05 &middot; Olhar & Descanso</span>
-                <h3 class="region-card-title">Área Periocular</h3>
-                <p class="region-card-desc">
-                  Suavização de linhas finas que se acentuam ao sorrir, descansando o olhar e mantendo a luminosidade e vivacidade espontânea dos olhos.
-                </p>
-              </div>
-            </article>
-
-            <!-- Região 6: Lábios & Região Perioral -->
-            <article class="region-card">
-              <div class="region-card-media">
-                <img src="images/mapeamento-facial-real.jpg" alt="Mapeamento Clínico: Lábios e Região Perioral" class="region-img-crop crop-labios" loading="lazy" />
-                <div class="region-pin-badge">
-                  <span class="region-pin-dot"></span>
-                  <span>Foco: Lábios & Perioral</span>
-                </div>
-              </div>
-              <div class="region-card-body">
-                <span class="region-card-tag">06 &middot; Perioral & Arco</span>
-                <h3 class="region-card-title">Lábios e Região Perioral</h3>
-                <p class="region-card-desc">
-                  Hidratação dérmica, sutil definição de contorno ou volume proporcional, preservando rigorosamente o arco do cupido e o equilíbrio com o formato do rosto.
-                </p>
-              </div>
-            </article>
-
-            <!-- Região 7: Rinomodelação Sutil -->
-            <article class="region-card">
-              <div class="region-card-media">
-                <img src="images/mapeamento-facial-real.jpg" alt="Mapeamento Clínico: Rinomodelação Sutil" class="region-img-crop crop-rinomodelacao" loading="lazy" />
-                <div class="region-pin-badge">
-                  <span class="region-pin-dot"></span>
-                  <span>Foco: Dorso & Ponta</span>
-                </div>
-              </div>
-              <div class="region-card-body">
-                <span class="region-card-tag">07 &middot; Alinhamento Não-Cirúrgico</span>
-                <h3 class="region-card-title">Rinomodelação Sutil</h3>
-                <p class="region-card-desc">
-                  Ajuste milimétrico de pequenas irregularidades do dorso nasal ou discreta sustentação da ponta com preenchedor biocompatível, sem cirurgia.
-                </p>
-              </div>
-            </article>
           </div>
         </div>
       </section>
