@@ -466,32 +466,11 @@ function initRegionsAccordion() {
   }
 }
 
-// Vídeo de Antes e Depois em Movimento (Controle de Som e Playback)
+// Vídeo de Antes e Depois em Movimento
 function initTransformationVideo() {
   const video = document.getElementById('transformationVideo');
-  const soundBtn = document.getElementById('videoSoundBtn');
-  if (!video || !soundBtn) return;
+  if (!video) return;
 
-  const offIcon = soundBtn.querySelector('.sound-off-icon');
-  const onIcon = soundBtn.querySelector('.sound-on-icon');
-  const label = soundBtn.querySelector('.sound-label');
-
-  function updateSoundUI() {
-    const isMuted = video.muted;
-    if (offIcon) offIcon.style.display = isMuted ? 'inline-block' : 'none';
-    if (onIcon) onIcon.style.display = isMuted ? 'none' : 'inline-block';
-    if (label) label.textContent = isMuted ? 'Ativar Som' : 'Desativar Som';
-  }
-
-  soundBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    video.muted = !video.muted;
-    updateSoundUI();
-    if (video.paused) {
-      video.play().catch(() => {});
-    }
-  });
-
-  video.addEventListener('volumechange', updateSoundUI);
-  updateSoundUI();
+  video.muted = true;
+  video.play().catch(() => {});
 }

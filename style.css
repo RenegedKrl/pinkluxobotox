@@ -1430,19 +1430,19 @@ button {
 }
 
 /* ==========================================================================
-   SHOWCASE DE VÍDEO — ANTES E DEPOIS EM MOVIMENTO (Perto das Etapas)
+   CASO REAL EM VÍDEO — DESIGN LIMPO, HUMANO E OBJETIVO
    ========================================================================== */
 
 .assessment-video-showcase {
   margin-bottom: 3.5rem;
 }
 
-.video-showcase-card {
+.video-case-container {
   background-color: #ffffff;
-  border: 1px solid var(--rose-border);
+  border: 1px solid var(--border-card);
   border-radius: var(--radius-xl);
-  padding: 1.75rem;
-  box-shadow: 0 16px 36px -12px rgba(214, 51, 132, 0.08), 0 2px 10px rgba(0, 0, 0, 0.03);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -1450,27 +1450,24 @@ button {
 }
 
 @media (min-width: 1024px) {
-  .video-showcase-card {
-    grid-template-columns: 340px 1fr;
-    padding: 2.5rem;
-    gap: 3.5rem;
+  .video-case-container {
+    grid-template-columns: 320px 1fr;
+    padding: 2.25rem 2.5rem;
+    gap: 3rem;
   }
 }
 
-.video-media-col {
+.video-player-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.video-device-frame {
-  position: relative;
-  width: 100%;
-  max-width: 320px;
-  border-radius: 20px;
+  border-radius: 18px;
   overflow: hidden;
-  background-color: #0b0b0e;
-  box-shadow: 0 16px 35px -10px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(214, 51, 132, 0.2);
+  background-color: #000000;
+  box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.18);
+  max-width: 320px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .transformation-video-player {
@@ -1478,158 +1475,82 @@ button {
   aspect-ratio: 9 / 16;
   object-fit: cover;
   display: block;
-  background-color: #0b0b0e;
+  background-color: #000000;
 }
 
-.video-top-indicator {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  right: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.video-live-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.65rem;
-  background-color: rgba(15, 15, 20, 0.72);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius-pill);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #ffffff;
-}
-
-.live-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: var(--rose-primary);
-  box-shadow: 0 0 8px var(--rose-primary);
-  animation: pulseDot 2s infinite ease-in-out;
-}
-
-@keyframes pulseDot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
-}
-
-.video-sound-toggle {
-  pointer-events: auto;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.35rem 0.65rem;
-  background-color: rgba(15, 15, 20, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius-pill);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  color: #ffffff;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.video-sound-toggle:hover {
-  background-color: rgba(214, 51, 132, 0.85);
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-.video-content-col {
+.video-case-info {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.15rem;
 }
 
-.video-badge-tag {
-  display: inline-block;
+.video-case-tag {
   font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--rose-deep);
-  background-color: var(--rose-subtle);
-  border: 1px solid var(--rose-border);
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-pill);
-  margin-bottom: 0.5rem;
-  align-self: flex-start;
+  display: inline-block;
 }
 
-.video-content-title {
-  font-size: 1.45rem;
+.video-case-title {
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--ink-primary);
-  line-height: 1.3;
-  margin-bottom: 0.5rem;
+  line-height: 1.25;
 }
 
 @media (min-width: 768px) {
-  .video-content-title {
-    font-size: 1.75rem;
+  .video-case-title {
+    font-size: 1.65rem;
   }
 }
 
-.video-content-desc {
+.video-case-desc {
   font-size: 0.95rem;
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--ink-muted);
 }
 
-.video-highlights-grid {
+.video-case-summary {
+  background-color: var(--bg-soft);
+  border: 1px solid var(--champagne-hairline);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.35rem;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
-  margin-top: 0.25rem;
-}
-
-.video-highlight-item {
-  display: flex;
-  align-items: flex-start;
   gap: 0.85rem;
 }
 
-.v-icon-wrap {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background-color: var(--rose-subtle);
-  color: var(--rose-deep);
-  border: 1px solid var(--rose-border);
+.summary-row {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 0.1rem;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.9rem;
 }
 
-.v-item-title {
-  font-size: 0.9375rem;
+@media (min-width: 640px) {
+  .summary-row {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.65rem;
+  }
+}
+
+.summary-label {
   font-weight: 700;
   color: var(--ink-primary);
-  margin-bottom: 0.15rem;
+  min-width: 155px;
+  flex-shrink: 0;
 }
 
-.v-item-desc {
-  font-size: 0.85rem;
-  color: var(--ink-muted);
+.summary-value {
+  color: var(--ink-secondary);
   line-height: 1.45;
 }
 
-.video-cta-wrap {
-  margin-top: 0.5rem;
+.video-case-cta {
+  margin-top: 0.35rem;
 }
 
 /* Divisor e cabeçalho das etapas */
