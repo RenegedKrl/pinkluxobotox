@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PINK LUXO — HARMONIZAÇÃO FACIAL | ESTILO EDITORIAL PREMIUM
+   PINK LUXO — HARMONIZAÇÃO FACIAL | ESTÉTICA LOVABLE CLEAN & MODERNA
    ========================================================================== */
 
 :root {
@@ -7,51 +7,56 @@
   --bg-page: #ffffff;
   --bg-pure: #ffffff;
   --bg-card: #ffffff;
-  --bg-soft: #ffffff;
+  --bg-soft: #faf7f5;
+  --bg-blush: #f8efe9;
   --bg-tint: #ffffff;
 
-  /* Tipografia & Textos */
-  --ink-primary: #191617;
-  --ink-secondary: #3c3436;
-  --ink-muted: #5e5355;
-  --ink-subtle: #8a7e81;
+  /* Tipografia & Textos (Lovable Clean) */
+  --ink-primary: #1a1a1a;
+  --ink-secondary: #333333;
+  --ink-muted: #666666;
+  --ink-subtle: #8e8e93;
 
-  /* Cores de Assinatura */
-  --rose-primary: #be7076;
-  --rose-hover: #a65b61;
-  --rose-deep: #8a4147;
-  --rose-soft: #fcf4f5;
-  --rose-subtle: #fdf9f9;
-  --rose-border: rgba(190, 112, 118, 0.25);
+  /* Cores de Assinatura Lovable (hsl(357, 40%, 68%) e variações) */
+  --rose-primary: #c87b80;
+  --rose-hover: #9e4e53;
+  --rose-deep: #9e4e53;
+  --rose-soft: #f8efe9;
+  --rose-subtle: #fdfbf9;
+  --rose-border: #e7ded8;
+  --rose-focus: rgba(200, 123, 128, 0.35);
 
-  /* Bordas e Delimitadores Finos e Limpos */
-  --champagne-border: #eaedf1;
-  --champagne-hairline: #eef1f4;
-  --border-fine: #eaedf1;
-  --border-card: #eaedf1;
+  /* Bordas e Delimitadores Finos Lovable (hsl(24, 25%, 88%)) */
+  --champagne-border: #e7ded8;
+  --champagne-hairline: #f0e9e4;
+  --border-fine: #e7ded8;
+  --border-card: #e7ded8;
 
-  /* Sombras Naturais e Leves (Sem manchas pesadas ou artificiais) */
-  --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.03);
-  --shadow-card: 0 4px 20px -2px rgba(25, 20, 22, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
-  --shadow-hover: 0 10px 24px -4px rgba(190, 112, 118, 0.1), 0 3px 8px -2px rgba(0, 0, 0, 0.03);
-  --shadow-modal: 0 24px 60px -12px rgba(0, 0, 0, 0.35);
+  /* Sombras Sutis e Naturais (Sem aspecto pesado de IA) */
+  --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 2px 8px -2px rgba(0, 0, 0, 0.05), 0 1px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.07), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --shadow-btn: 0 8px 20px -4px rgba(200, 123, 128, 0.35);
+  --shadow-btn-hover: 0 12px 26px -4px rgba(158, 78, 83, 0.45);
+  --shadow-modal: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 
-  /* Tipografia */
-  --font-editorial: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Playfair Display', Georgia, serif;
+  /* Tipografia Baseada no Lovable */
+  --font-editorial: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-outfit: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Raios de Curvatura */
+  /* Raios de Curvatura (12px / 16px / 20px / Pill) */
   --radius-sm: 0.5rem;
-  --radius-md: 0.875rem;
-  --radius-lg: 1.25rem;
-  --radius-xl: 1.75rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
   --radius-pill: 9999px;
 
-  /* Transições */
-  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-fast: 0.2s var(--ease-editorial);
-  --transition-smooth: 0.3s var(--ease-editorial);
+  /* Transições Suaves */
+  --ease-clean: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.2s var(--ease-clean);
+  --transition-smooth: 0.3s var(--ease-clean);
 }
 
 /* ==========================================================================
@@ -126,33 +131,33 @@ button {
 }
 
 /* ==========================================================================
-   BOTÕES GLOBAIS
+   BOTÕES GLOBAIS (ESTÉTICA LOVABLE PILL SÓLIDO)
    ========================================================================== */
 
 .btn-luxury {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
   border-radius: var(--radius-pill);
-  background-color: #be7076;
-  background: linear-gradient(135deg, #be7076 0%, #aa585e 100%);
-  padding: 0.95rem 2rem;
-  font-size: 1rem;
+  background-color: var(--rose-primary);
+  padding: 0.85rem 1.85rem;
+  font-family: var(--font-editorial);
+  font-size: 0.9375rem;
   line-height: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #ffffff;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(190, 112, 118, 0.35);
-  transition: all 0.25s var(--ease-editorial);
+  box-shadow: var(--shadow-btn);
+  transition: all 0.22s var(--ease-clean);
 }
 
 .btn-luxury:hover {
-  background: linear-gradient(135deg, #c97b81 0%, #b56268 100%);
+  background-color: var(--rose-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(170, 88, 94, 0.45);
+  box-shadow: var(--shadow-btn-hover);
   color: #ffffff;
 }
 
@@ -161,7 +166,6 @@ button {
 }
 
 .btn-cta-pulse {
-  /* Efeito de pulso desativado para estética clínica refinada e sóbria */
   animation: none;
 }
 
@@ -172,14 +176,15 @@ button {
   gap: 0.625rem;
   background-color: var(--rose-primary);
   color: #ffffff;
-  font-weight: 600;
+  font-family: var(--font-editorial);
+  font-weight: 500;
   font-size: 0.9375rem;
-  letter-spacing: 0.02em;
-  padding: 0.875rem 1.75rem;
+  letter-spacing: 0.01em;
+  padding: 0.85rem 1.75rem;
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
-  box-shadow: 0 4px 16px -2px rgba(190, 112, 118, 0.28);
+  box-shadow: var(--shadow-btn);
   transition: all var(--transition-fast);
   white-space: nowrap;
 }
@@ -188,11 +193,11 @@ button {
   background-color: var(--rose-hover);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px -2px rgba(166, 91, 97, 0.35);
+  box-shadow: var(--shadow-btn-hover);
 }
 
 .btn-compact {
-  padding: 0.65rem 1.35rem;
+  padding: 0.6rem 1.25rem;
   font-size: 0.875rem;
   gap: 0.5rem;
 }
@@ -222,9 +227,11 @@ button {
 
 .site-header.scrolled,
 .site-header.menu-open {
-  background-color: rgba(255, 255, 255, 0.98);
-  border-bottom: 1px solid var(--champagne-hairline);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-card);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
 }
 
 .header-inner {
@@ -290,6 +297,7 @@ button {
   display: none;
   align-items: center;
   gap: clamp(0.75rem, 1.4vw, 1.6rem);
+  font-family: var(--font-editorial);
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -304,7 +312,7 @@ button {
   color: var(--ink-secondary);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.25s ease;
+  transition: color 0.22s ease;
   white-space: nowrap;
   position: relative;
   padding: 0.4rem 0.1rem;
@@ -332,10 +340,10 @@ button {
   left: 50%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, #be7076 0%, #aa585e 100%);
+  background: var(--rose-primary);
   border-radius: var(--radius-pill);
   transform: translateX(-50%) scaleX(0);
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.22s var(--ease-clean);
 }
 
 .nav-link:hover::after,
@@ -351,9 +359,9 @@ button {
 
 .btn-header-cta {
   display: none;
-  padding: 0.55rem 1.15rem !important;
+  padding: 0.55rem 1.25rem !important;
   font-size: 0.875rem !important;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 @media (min-width: 768px) {
@@ -594,11 +602,11 @@ button {
 
 .hero-badge {
   display: inline-block;
-  font-family: var(--font-outfit);
-  font-size: 0.875rem;
-  font-weight: 800;
+  font-family: var(--font-editorial);
+  font-size: 0.8125rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   color: #ffd8dc;
   background: none;
   background-color: transparent;
@@ -612,12 +620,12 @@ button {
     0 0 16px rgba(0, 0, 0, 0.85);
 }
 
-/* Título Principal — Tipografia Moderna e Marcante */
+/* Título Principal — Tipografia Limpa e Harmônica (Poppins) */
 .hero-title {
-  font-family: var(--font-outfit), -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: clamp(2rem, 6.6vw, 3.25rem);
-  line-height: 1.22;
-  font-weight: 800;
+  font-family: var(--font-editorial), sans-serif;
+  font-size: clamp(2rem, 6.4vw, 3.25rem);
+  line-height: 1.2;
+  font-weight: 600;
   color: #ffffff;
   letter-spacing: -0.025em;
   margin-bottom: 1.5rem;
@@ -635,7 +643,7 @@ button {
 
 @media (min-width: 1024px) {
   .hero-title {
-    font-size: 3.65rem;
+    font-size: 3.5rem;
     line-height: 1.14;
     margin-bottom: 2rem;
     max-width: 640px;
@@ -648,7 +656,7 @@ button {
   display: inline;
   font-family: inherit;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 600;
   color: #f8c2c5; /* Rosa característico da Pink Luxo */
   background: none;
   -webkit-text-fill-color: initial;
@@ -684,7 +692,7 @@ button {
   }
 }
 
-/* Botão Principal Rosa Queimado */
+/* Botão Principal Rosa Queimado (Estética Lovable) */
 .hero-cta-wrap {
   width: 100%;
 }
@@ -695,19 +703,18 @@ button {
   justify-content: center;
   gap: 0.75rem;
   border-radius: var(--radius-pill);
-  background-color: #b56b71;
-  background: linear-gradient(135deg, #be7076 0%, #aa585e 100%);
-  padding: 1.05rem 2.2rem;
-  font-family: var(--font-outfit);
-  font-size: 1.02rem;
-  font-weight: 600;
-  letter-spacing: 0.015em;
+  background-color: var(--rose-primary);
+  padding: 0.95rem 2.2rem;
+  font-family: var(--font-editorial);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   color: #ffffff;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.45);
-  transition: all 0.26s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), var(--shadow-btn);
+  transition: all 0.22s var(--ease-clean);
   width: 100%;
   max-width: 335px;
 }
@@ -715,15 +722,15 @@ button {
 @media (min-width: 640px) {
   .btn-hero-cta {
     width: auto;
-    padding: 1.1rem 2.5rem;
-    font-size: 1.03rem;
+    padding: 1rem 2.4rem;
+    font-size: 1rem;
   }
 }
 
 .btn-hero-cta:hover {
-  background: linear-gradient(135deg, #c97b81 0%, #b56268 100%);
+  background-color: var(--rose-hover);
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), var(--shadow-btn-hover);
   color: #ffffff;
 }
 
@@ -743,16 +750,16 @@ button {
   align-items: center;
   gap: 0.35rem;
   margin-top: 0.85rem;
-  font-family: var(--font-outfit);
+  font-family: var(--font-editorial);
   font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   color: rgba(245, 240, 236, 0.88);
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
 }
 
 /* ==========================================================================
-   CABEÇALHOS DE SEÇÕES GLOBAIS
+   CABEÇALHOS DE SEÇÕES GLOBAIS (ESTÉTICA LOVABLE CLEAN)
    ========================================================================== */
 
 .section {
@@ -774,19 +781,27 @@ button {
 }
 
 .section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-editorial);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.08em;
   color: var(--rose-deep);
-  margin-bottom: 0.65rem;
-  display: inline-block;
+  background-color: var(--rose-soft);
+  border: 1px solid var(--border-card);
+  padding: 0.32rem 0.85rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.85rem;
 }
 
 .section-title {
-  font-size: clamp(1.85rem, 3.8vw, 2.75rem);
-  line-height: 1.15;
-  font-weight: 700;
+  font-family: var(--font-editorial);
+  font-size: clamp(1.85rem, 3.8vw, 2.65rem);
+  line-height: 1.2;
+  font-weight: 500;
   letter-spacing: -0.02em;
   color: var(--ink-primary);
   text-wrap: balance;
@@ -794,6 +809,7 @@ button {
 
 .section-subtitle {
   margin-top: 0.85rem;
+  font-family: var(--font-editorial);
   font-size: 1rem;
   line-height: 1.6;
   color: var(--ink-muted);
@@ -808,7 +824,7 @@ button {
 }
 
 /* ==========================================================================
-   SEÇÃO 2 — BENEFÍCIOS
+   SEÇÃO 2 — BENEFÍCIOS (ESTÉTICA LOVABLE CARDS)
    ========================================================================== */
 
 .benefits-section {
@@ -838,7 +854,7 @@ button {
   background-color: #ffffff;
   border: 1px solid var(--border-card);
   border-radius: var(--radius-lg);
-  padding: 2.25rem 1.85rem;
+  padding: 2rem 1.75rem;
   display: flex;
   flex-direction: column;
   box-shadow: var(--shadow-subtle);
@@ -846,8 +862,8 @@ button {
 }
 
 .benefit-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--rose-border);
+  transform: translateY(-3px);
+  border-color: var(--rose-primary);
   box-shadow: var(--shadow-hover);
   background-color: #ffffff;
 }
@@ -862,16 +878,17 @@ button {
   align-items: center;
   justify-content: center;
   margin-bottom: 1.25rem;
-  border: 1px solid var(--rose-border);
+  border: 1px solid var(--border-card);
 }
 
 .benefit-card-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: -0.015em;
+  font-family: var(--font-editorial);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--ink-primary);
-  margin-bottom: 0.75rem;
-  line-height: 1.3;
+  margin-bottom: 0.65rem;
+  line-height: 1.35;
 }
 
 .benefit-card-desc {
@@ -913,7 +930,7 @@ button {
 
 /* Card Visual Interativo com a Fotografia Clínica Real */
 .regions-visual-card {
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background-color: #ffffff;
   border: 1px solid var(--border-card);
@@ -941,8 +958,9 @@ button {
 
 .regions-toggle-bar {
   display: flex;
-  background-color: #f1f4f8;
-  padding: 0.35rem;
+  background-color: var(--rose-soft);
+  border: 1px solid var(--border-card);
+  padding: 0.3rem;
   border-radius: var(--radius-pill);
   gap: 0.35rem;
   margin: 1.25rem 1.25rem 0.85rem;
@@ -950,12 +968,13 @@ button {
 
 .btn-mapping-toggle {
   flex: 1;
-  padding: 0.55rem 0.75rem;
+  padding: 0.5rem 0.75rem;
   border: none;
   border-radius: var(--radius-pill);
   background: transparent;
+  font-family: var(--font-editorial);
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--ink-muted);
   cursor: pointer;
   transition: all 0.2s ease;
@@ -965,7 +984,8 @@ button {
 .btn-mapping-toggle.active {
   background-color: #ffffff;
   color: var(--rose-deep);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  font-weight: 600;
 }
 
 .regions-visual-inner {
@@ -997,19 +1017,21 @@ button {
 
 .visual-caption-badge {
   display: inline-block;
+  font-family: var(--font-editorial);
   font-size: 0.6875rem;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   color: var(--rose-deep);
-  background-color: var(--rose-subtle);
-  border: 1px solid var(--rose-border);
-  padding: 0.2rem 0.6rem;
+  background-color: var(--rose-soft);
+  border: 1px solid var(--border-card);
+  padding: 0.2rem 0.65rem;
   border-radius: var(--radius-pill);
   margin-bottom: 0.4rem;
 }
 
 .visual-caption-text {
+  font-family: var(--font-editorial);
   font-size: 0.8125rem;
   color: var(--ink-muted);
   line-height: 1.5;
@@ -1035,19 +1057,19 @@ button {
 .region-item {
   background-color: #ffffff;
   border: 1px solid var(--border-card);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   overflow: hidden;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 
 .region-item:hover {
-  border-color: var(--rose-border);
+  border-color: var(--rose-primary);
   box-shadow: var(--shadow-subtle);
 }
 
 .region-item.active {
   border-color: var(--rose-primary);
-  box-shadow: 0 8px 24px -4px rgba(190, 112, 118, 0.12);
+  box-shadow: 0 4px 14px -2px rgba(200, 123, 128, 0.15);
   background-color: #ffffff;
 }
 
@@ -1057,12 +1079,12 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 0.85rem;
-  padding: 1.25rem 1.4rem;
+  padding: 1.15rem 1.35rem;
   background: transparent;
   border: none;
   cursor: pointer;
   text-align: left;
-  font-family: inherit;
+  font-family: var(--font-editorial);
   transition: color var(--transition-fast);
 }
 
@@ -1073,16 +1095,18 @@ button {
 }
 
 .region-item-index {
+  font-family: var(--font-editorial);
   font-size: 0.8125rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--rose-primary);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   flex-shrink: 0;
 }
 
 .region-item-title {
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-family: var(--font-editorial);
+  font-size: 1rem;
+  font-weight: 500;
   color: var(--ink-primary);
   letter-spacing: -0.01em;
   transition: color var(--transition-fast);
@@ -1090,6 +1114,7 @@ button {
 
 .region-item.active .region-item-title {
   color: var(--rose-deep);
+  font-weight: 600;
 }
 
 .region-chevron {
@@ -1109,15 +1134,16 @@ button {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
-  padding: 0 1.4rem;
+  padding: 0 1.35rem;
 }
 
 .region-item.active .region-item-body {
   max-height: 200px;
-  padding: 0 1.4rem 1.35rem 1.4rem;
+  padding: 0 1.35rem 1.25rem 1.35rem;
 }
 
 .region-item-desc {
+  font-family: var(--font-editorial);
   font-size: 0.9rem;
   line-height: 1.6;
   color: var(--ink-muted);
@@ -1167,10 +1193,10 @@ button {
   min-width: 280px;
   scroll-snap-align: start;
   background-color: #ffffff;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   border: 1px solid var(--border-card);
   box-shadow: var(--shadow-card);
-  padding: 1.25rem 1.25rem 1.5rem;
+  padding: 1.15rem 1.15rem 1.35rem;
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -1180,18 +1206,18 @@ button {
 
 .result-slide-card:hover,
 .result-slide-card:focus-visible {
-  transform: translateY(-4px);
-  border-color: var(--rose-border);
+  transform: translateY(-3px);
+  border-color: var(--rose-primary);
   box-shadow: var(--shadow-hover);
 }
 
 .result-slide-media {
   position: relative;
   width: 100%;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   overflow: hidden;
   aspect-ratio: 4 / 4.9;
-  background-color: #f8fafc;
+  background-color: var(--bg-soft);
 }
 
 .result-slide-media img {
@@ -1205,10 +1231,11 @@ button {
 .result-pill-badge {
   position: absolute;
   z-index: 2;
+  font-family: var(--font-editorial);
   font-size: 0.65rem;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   padding: 0.35rem 0.75rem;
   border-radius: var(--radius-pill);
   line-height: 1;
@@ -1218,7 +1245,7 @@ button {
 .pill-before {
   top: 0.75rem;
   left: 0.75rem;
-  background-color: rgba(30, 24, 26, 0.72);
+  background-color: rgba(26, 26, 26, 0.75);
   color: #ffffff;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -1229,7 +1256,7 @@ button {
   right: 0.75rem;
   background-color: var(--rose-primary);
   color: #ffffff;
-  box-shadow: 0 2px 8px rgba(190, 112, 118, 0.4);
+  box-shadow: 0 2px 8px rgba(200, 123, 128, 0.4);
 }
 
 .result-slide-info {
@@ -1238,13 +1265,15 @@ button {
 }
 
 .result-slide-title {
-  font-size: 1rem;
-  font-weight: 700;
+  font-family: var(--font-editorial);
+  font-size: 0.95rem;
+  font-weight: 600;
   color: var(--ink-primary);
   margin-bottom: 0.35rem;
 }
 
 .result-slide-caption {
+  font-family: var(--font-editorial);
   font-size: 0.85rem;
   line-height: 1.5;
   color: var(--ink-muted);
@@ -1262,7 +1291,7 @@ button {
   height: 7px;
   width: 7px;
   border-radius: var(--radius-pill);
-  background-color: var(--champagne-border);
+  background-color: var(--border-card);
   border: none;
   padding: 0;
   cursor: pointer;
@@ -1382,7 +1411,7 @@ button {
 .video-case-container {
   background-color: #ffffff;
   border: 1px solid var(--border-card);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   padding: 1.5rem;
   box-shadow: var(--shadow-card);
   display: grid;
@@ -1403,10 +1432,10 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   background-color: #000000;
-  box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.18);
   max-width: 320px;
   margin: 0 auto;
   width: 100%;
@@ -1427,36 +1456,46 @@ button {
 }
 
 .video-case-tag {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-editorial);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--rose-deep);
-  display: inline-block;
+  background-color: var(--rose-soft);
+  border: 1px solid var(--border-card);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  align-self: flex-start;
 }
 
 .video-case-title {
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-family: var(--font-editorial);
+  font-size: 1.35rem;
+  font-weight: 600;
   color: var(--ink-primary);
   line-height: 1.25;
 }
 
 @media (min-width: 768px) {
   .video-case-title {
-    font-size: 1.65rem;
+    font-size: 1.6rem;
   }
 }
 
 .video-case-desc {
+  font-family: var(--font-editorial);
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--ink-muted);
 }
 
 .video-case-summary {
-  background-color: #f8fafc;
-  border: 1px solid var(--champagne-border);
+  background-color: var(--bg-soft);
+  border: 1px solid var(--border-card);
   border-radius: var(--radius-md);
   padding: 1.25rem 1.35rem;
   display: flex;
@@ -1480,13 +1519,15 @@ button {
 }
 
 .summary-label {
-  font-weight: 700;
+  font-family: var(--font-editorial);
+  font-weight: 600;
   color: var(--ink-primary);
   min-width: 155px;
   flex-shrink: 0;
 }
 
 .summary-value {
+  font-family: var(--font-editorial);
   color: var(--ink-secondary);
   line-height: 1.45;
 }
@@ -1503,19 +1544,26 @@ button {
 }
 
 .steps-mini-tag {
-  display: inline-block;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-editorial);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--rose-deep);
-  margin-bottom: 0.5rem;
-  text-align: left;
+  background-color: var(--rose-soft);
+  border: 1px solid var(--border-card);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.65rem;
 }
 
 .steps-main-title {
+  font-family: var(--font-editorial);
   font-size: 1.45rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--ink-primary);
   margin-bottom: 0.5rem;
   text-align: left;
@@ -1528,7 +1576,8 @@ button {
 }
 
 .steps-main-subtitle {
-  font-size: 0.925rem;
+  font-family: var(--font-editorial);
+  font-size: 0.95rem;
   color: var(--ink-muted);
   line-height: 1.55;
   text-align: left;
@@ -1559,12 +1608,14 @@ button {
   padding: 2rem 1.75rem;
   display: flex;
   flex-direction: column;
-  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  box-shadow: var(--shadow-subtle);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
 }
 
 .assessment-step-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card);
+  transform: translateY(-3px);
+  border-color: var(--rose-primary);
+  box-shadow: var(--shadow-hover);
 }
 
 .step-card-header {
@@ -1580,33 +1631,36 @@ button {
   border-radius: 50%;
   background-color: var(--rose-soft);
   color: var(--rose-deep);
-  font-weight: 700;
+  font-family: var(--font-editorial);
+  font-weight: 600;
   font-size: 0.9375rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--rose-border);
+  border: 1px solid var(--border-card);
 }
 
 .step-card-title {
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-family: var(--font-editorial);
+  font-size: 1.15rem;
+  font-weight: 600;
   color: var(--ink-primary);
   margin-bottom: 0.75rem;
-  line-height: 1.3;
+  line-height: 1.35;
 }
 
 .step-card-desc {
+  font-family: var(--font-editorial);
   font-size: 0.925rem;
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--ink-muted);
 }
 
 .assessment-callout {
   margin-top: 3.5rem;
   background-color: #ffffff;
-  border: 1px solid var(--champagne-border);
-  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
   padding: 2.25rem 2.5rem;
   display: flex;
   flex-direction: column;
@@ -1624,23 +1678,32 @@ button {
 }
 
 .callout-tag {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-editorial);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--rose-deep);
-  margin-bottom: 0.5rem;
-  display: block;
+  background-color: var(--rose-soft);
+  border: 1px solid var(--border-card);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.65rem;
 }
 
 .callout-title {
+  font-family: var(--font-editorial);
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--ink-primary);
   margin-bottom: 0.5rem;
 }
 
 .callout-text {
+  font-family: var(--font-editorial);
   font-size: 0.95rem;
   color: var(--ink-muted);
   max-width: 44rem;
@@ -1668,17 +1731,19 @@ button {
 }
 
 .about-lead {
-  font-size: 1.15rem;
-  line-height: 1.55;
-  font-weight: 500;
+  font-family: var(--font-editorial);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 400;
   color: var(--ink-secondary);
   margin-top: 1.25rem;
   margin-bottom: 1rem;
 }
 
 .about-paragraph {
+  font-family: var(--font-editorial);
   font-size: 0.95rem;
-  line-height: 1.7;
+  line-height: 1.65;
   color: var(--ink-muted);
   margin-bottom: 2rem;
 }
@@ -1700,23 +1765,25 @@ button {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background-color: var(--rose-subtle);
+  background-color: var(--rose-soft);
   color: var(--rose-deep);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  border: 1px solid var(--rose-border);
+  border: 1px solid var(--border-card);
 }
 
 .highlight-title {
+  font-family: var(--font-editorial);
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--ink-primary);
   margin-bottom: 0.2rem;
 }
 
 .highlight-desc {
+  font-family: var(--font-editorial);
   font-size: 0.875rem;
   color: var(--ink-muted);
   line-height: 1.5;
@@ -1756,8 +1823,9 @@ button {
 }
 
 .stat-number {
+  font-family: var(--font-editorial);
   font-size: clamp(1.65rem, 5.2vw, 2.5rem);
-  font-weight: 800;
+  font-weight: 600;
   color: var(--rose-deep);
   line-height: 1;
   letter-spacing: -0.02em;
@@ -1765,6 +1833,7 @@ button {
 }
 
 .stat-label {
+  font-family: var(--font-editorial);
   font-size: clamp(0.6875rem, 2.2vw, 0.8125rem);
   color: var(--ink-muted);
   margin-top: 0.35rem;
@@ -1773,9 +1842,9 @@ button {
 }
 
 .about-photo-card {
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--champagne-border);
+  border: 1px solid var(--border-card);
   box-shadow: var(--shadow-card);
   background-color: #ffffff;
 }
@@ -1796,17 +1865,20 @@ button {
 }
 
 .photo-card-caption strong {
+  font-family: var(--font-editorial);
   font-size: 0.95rem;
+  font-weight: 600;
   color: var(--ink-primary);
 }
 
 .photo-card-caption span {
+  font-family: var(--font-editorial);
   font-size: 0.8125rem;
   color: var(--ink-muted);
 }
 
 /* ==========================================================================
-   SEÇÃO 7 — PROVA SOCIAL (MARQUEE DEPOIMENTOS)
+   SEÇÃO 7 — PROVA SOCIAL (DEPOIMENTOS & GOOGLE REVIEWS)
    ========================================================================== */
 
 .testimonials-section {
@@ -1851,13 +1923,15 @@ button {
 }
 
 .google-badge-title {
+  font-family: var(--font-editorial);
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--ink-primary);
   display: block;
 }
 
 .google-badge-subtitle {
+  font-family: var(--font-editorial);
   font-size: 0.8125rem;
   color: var(--ink-muted);
 }
@@ -1869,8 +1943,9 @@ button {
 }
 
 .google-badge-score {
+  font-family: var(--font-editorial);
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--ink-primary);
   line-height: 1;
 }
@@ -1882,6 +1957,7 @@ button {
 }
 
 .google-count {
+  font-family: var(--font-editorial);
   font-size: 0.75rem;
   color: var(--ink-muted);
   display: block;
@@ -1904,16 +1980,17 @@ button {
   background-color: #ffffff;
   border: 1px solid var(--border-card);
   border-radius: var(--radius-lg);
-  padding: 1.85rem;
+  padding: 1.75rem;
   box-shadow: var(--shadow-subtle);
   display: flex;
   flex-direction: column;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
 
 .review-card:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-card);
+  border-color: var(--rose-primary);
+  box-shadow: var(--shadow-hover);
 }
 
 .review-card-top {
@@ -1933,9 +2010,10 @@ button {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, #be7076 0%, #8a4147 100%);
+  background: var(--rose-primary);
   color: #ffffff;
-  font-weight: 700;
+  font-family: var(--font-editorial);
+  font-weight: 500;
   font-size: 0.875rem;
   display: flex;
   align-items: center;
@@ -1944,12 +2022,14 @@ button {
 }
 
 .review-author-name {
+  font-family: var(--font-editorial);
   font-size: 0.9375rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--ink-primary);
 }
 
 .review-time {
+  font-family: var(--font-editorial);
   font-size: 0.75rem;
   color: var(--ink-subtle);
   display: block;
@@ -1962,13 +2042,15 @@ button {
 }
 
 .review-text {
+  font-family: var(--font-editorial);
   font-size: 0.925rem;
   line-height: 1.6;
   color: var(--ink-secondary);
+  font-weight: 400;
 }
 
 /* ==========================================================================
-   SEÇÃO 8 — FAQ (ACCORDION EDITORIAL)
+   SEÇÃO 8 — FAQ (ACCORDION EDITORIAL CLEAN)
    ========================================================================== */
 
 .faq-section {
@@ -1997,9 +2079,9 @@ button {
 }
 
 .faq-item.open {
-  border-color: var(--rose-border);
+  border-color: var(--rose-primary);
   background-color: #ffffff;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 4px 14px -2px rgba(200, 123, 128, 0.12);
 }
 
 .faq-trigger {
@@ -2008,12 +2090,13 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem;
-  padding: 1.25rem 1.5rem;
+  padding: 1.15rem 1.4rem;
   background: transparent;
   border: none;
   text-align: left;
-  font-size: 1.025rem;
-  font-weight: 600;
+  font-family: var(--font-editorial);
+  font-size: 1rem;
+  font-weight: 500;
   color: var(--ink-primary);
   transition: color var(--transition-fast);
 }
@@ -2038,21 +2121,22 @@ button {
   max-height: 0;
   overflow: hidden;
   transition: max-height var(--transition-smooth), padding var(--transition-smooth);
-  padding: 0 1.5rem;
+  padding: 0 1.4rem;
 }
 
 .faq-item.open .faq-content {
-  padding: 0 1.5rem 1.35rem 1.5rem;
+  padding: 0 1.4rem 1.25rem 1.4rem;
 }
 
 .faq-content p {
+  font-family: var(--font-editorial);
   font-size: 0.925rem;
   line-height: 1.65;
   color: var(--ink-muted);
 }
 
 /* ==========================================================================
-   LOCALIZAÇÃO & CONTATO
+   LOCALIZAÇÃO & CONTATO (ESTÉTICA LOVABLE CLEAN)
    ========================================================================== */
 
 .contact-section {
@@ -2074,7 +2158,7 @@ button {
 .contact-info-card {
   background-color: #ffffff;
   border: 1px solid var(--border-card);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   padding: 2.25rem 2rem;
   box-shadow: var(--shadow-subtle);
   display: flex;
@@ -2091,23 +2175,25 @@ button {
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 50%;
-  background-color: var(--rose-subtle);
+  background-color: var(--rose-soft);
   color: var(--rose-deep);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  border: 1px solid var(--rose-border);
+  border: 1px solid var(--border-card);
 }
 
 .contact-heading {
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-family: var(--font-editorial);
+  font-size: 1.1rem;
+  font-weight: 600;
   color: var(--ink-primary);
   margin-bottom: 0.35rem;
 }
 
 .contact-p {
+  font-family: var(--font-editorial);
   font-size: 0.925rem;
   line-height: 1.6;
   color: var(--ink-muted);
@@ -2124,11 +2210,12 @@ button {
 }
 
 .social-kicker {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-family: var(--font-editorial);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ink-subtle);
+  color: var(--rose-deep);
   margin-bottom: 0.75rem;
 }
 
@@ -2144,10 +2231,11 @@ button {
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--border-fine);
-  background-color: var(--bg-page);
+  border: 1px solid var(--border-card);
+  background-color: #ffffff;
+  font-family: var(--font-editorial);
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--ink-secondary);
   transition: all var(--transition-fast);
 }
@@ -2155,7 +2243,7 @@ button {
 .btn-social:hover {
   border-color: var(--rose-primary);
   color: var(--rose-deep);
-  background-color: #ffffff;
+  background-color: var(--rose-soft);
 }
 
 .contact-cta-box {
@@ -2165,7 +2253,7 @@ button {
 }
 
 .contact-map-card {
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border-card);
   min-height: 380px;
@@ -2204,7 +2292,7 @@ button {
   width: 3.25rem;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 0 1px var(--champagne-border);
+  box-shadow: 0 0 0 1px var(--border-card);
   transition: transform var(--transition-fast);
 }
 
@@ -2213,18 +2301,21 @@ button {
 }
 
 .footer-brand {
+  font-family: var(--font-editorial);
   font-size: 0.9375rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--ink-primary);
   margin-top: 0.25rem;
 }
 
 .footer-copy {
+  font-family: var(--font-editorial);
   font-size: 0.8125rem;
   color: var(--ink-muted);
 }
 
 .footer-cnpj {
+  font-family: var(--font-editorial);
   font-size: 0.75rem;
   color: var(--ink-subtle);
 }
