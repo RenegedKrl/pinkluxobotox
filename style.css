@@ -457,7 +457,7 @@ button {
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
-  background-color: #1a1415;
+  background-color: #e8ded7;
 }
 
 /* Camada da Foto de Fundo da Modelo */
@@ -490,7 +490,7 @@ button {
   }
 }
 
-/* Gradiente de Suavização para Leitura 100% Cristalina */
+/* Overlay Suave e Translúcido (Sem Fundo Preto: a Foto Permanece 100% Visível) */
 .hero-gradient-overlay {
   position: absolute;
   inset: 0;
@@ -498,12 +498,10 @@ button {
   pointer-events: none;
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0.15) 0%,
-    rgba(20, 14, 15, 0) 38%,
-    rgba(18, 12, 13, 0.35) 50%,
-    rgba(16, 11, 12, 0.76) 66%,
-    rgba(14, 9, 10, 0.94) 84%,
-    rgba(12, 8, 9, 0.98) 100%
+    rgba(20, 14, 15, 0.1) 0%,
+    rgba(20, 14, 15, 0) 35%,
+    rgba(20, 14, 15, 0.12) 60%,
+    rgba(20, 14, 15, 0.38) 100%
   );
 }
 
@@ -511,16 +509,10 @@ button {
   .hero-gradient-overlay {
     background: linear-gradient(
       to right,
-      rgba(16, 11, 12, 0.95) 0%,
-      rgba(16, 11, 12, 0.86) 38%,
-      rgba(16, 11, 12, 0.45) 60%,
-      rgba(16, 11, 12, 0.1) 78%,
-      rgba(16, 11, 12, 0) 100%
-    ),
-    linear-gradient(
-      to bottom,
-      rgba(16, 11, 12, 0) 60%,
-      rgba(16, 11, 12, 0.6) 100%
+      rgba(20, 14, 15, 0.78) 0%,
+      rgba(20, 14, 15, 0.52) 42%,
+      rgba(20, 14, 15, 0.15) 70%,
+      transparent 90%
     );
   }
 }
@@ -568,48 +560,35 @@ button {
   }
 }
 
-/* Tag / Kicker com visual moderno e respiro generoso */
+/* Tag / Kicker sem balão e sem bolinha (conforme solicitado) */
 .hero-badge-wrap {
-  margin-bottom: 1.5rem; /* Respiro generoso de um dedo no mobile */
+  margin-bottom: 1.35rem; /* Respiro generoso de um dedo */
 }
 
 @media (min-width: 640px) {
   .hero-badge-wrap {
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.6rem;
   }
 }
 
 .hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+  display: inline-block;
   font-family: var(--font-outfit);
   font-size: 0.8125rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: #fce4e6;
-  background: rgba(30, 20, 22, 0.62);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(248, 194, 197, 0.35);
-  padding: 0.42rem 1rem;
-  border-radius: var(--radius-pill);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  color: #f8c2c5;
+  background: none;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-.hero-badge::before {
-  content: '';
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: #f48b94;
-  box-shadow: 0 0 10px #f48b94, 0 0 2px #ffffff;
-}
-
-/* Título Principal — Tipografia Moderna, Atual e Marcante (sem aspecto antigo) */
+/* Título Principal — Tipografia Moderna e Marcante */
 .hero-title {
   font-family: var(--font-outfit), -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(2rem, 6.6vw, 3.25rem);
@@ -617,9 +596,9 @@ button {
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.025em;
-  margin-bottom: 1.5rem; /* Respiro generoso antes do subtítulo */
+  margin-bottom: 1.5rem;
   text-wrap: balance;
-  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.8), 0 1px 6px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.85), 0 1px 6px rgba(0, 0, 0, 0.65);
 }
 
 @media (min-width: 640px) {
@@ -639,18 +618,17 @@ button {
   }
 }
 
-/* Destaque Iluminado em Rosa Champagne */
+/* Destaque no Tom Rosa da Marca (sem gradiente escurecido) */
 .hero-highlight,
 .hero-italic {
   display: inline;
   font-family: inherit;
   font-style: normal;
   font-weight: 800;
-  color: #f8c2c5;
-  background: linear-gradient(135deg, #ffffff 0%, #ffd4d8 45%, #f4a5aa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 14px rgba(190, 112, 118, 0.45));
+  color: #f8c2c5; /* Rosa característico da Pink Luxo */
+  background: none;
+  -webkit-text-fill-color: initial;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75), 0 0 20px rgba(248, 194, 197, 0.4);
 }
 
 /* Subtítulo Arejado e Confortável para Leitura */
