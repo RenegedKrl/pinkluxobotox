@@ -1559,9 +1559,9 @@ button {
 
 /* Divisor e cabeçalho das etapas */
 .assessment-steps-header {
-  text-align: center;
-  max-width: 40rem;
-  margin: 0 auto 2.25rem auto;
+  text-align: left;
+  max-width: 42rem;
+  margin: 0 0 2.25rem 0;
 }
 
 .steps-mini-tag {
@@ -1572,6 +1572,7 @@ button {
   text-transform: uppercase;
   color: var(--rose-deep);
   margin-bottom: 0.5rem;
+  text-align: left;
 }
 
 .steps-main-title {
@@ -1579,6 +1580,7 @@ button {
   font-weight: 700;
   color: var(--ink-primary);
   margin-bottom: 0.5rem;
+  text-align: left;
 }
 
 @media (min-width: 768px) {
@@ -1591,6 +1593,7 @@ button {
   font-size: 0.925rem;
   color: var(--ink-muted);
   line-height: 1.55;
+  text-align: left;
 }
 
 .assessment-steps-grid {
