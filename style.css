@@ -878,209 +878,273 @@ button {
    da página, eliminando qualquer elemento arrastando ou pulando na rolagem.
    ========================================================================== */
 
+/* ==========================================================================
+   SEÇÃO 3 — REGIÕES DO ROSTO
+   - Desktop (>= 1024px): Layout anterior restaurado (Foto grande à esquerda + lista à direita)
+   - Mobile (< 1024px): Scroll contínuo de cards (Foto focada + texto por área)
+   ========================================================================== */
+
 .regions-section {
   background-color: var(--bg-soft);
 }
 
-.regions-cards-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-@media (min-width: 640px) {
-  .regions-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-}
-
+/* --- VERSÃO DESKTOP (Apenas >= 1024px) --- */
 @media (min-width: 1024px) {
-  .regions-cards-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.75rem;
+  .regions-mobile-layout {
+    display: none !important;
   }
-}
 
-.region-card {
-  background-color: #ffffff;
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  display: flex;
-  flex-direction: column;
-  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
-}
-
-.region-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--rose-border);
-  box-shadow: var(--shadow-hover);
-}
-
-.region-card-media {
-  position: relative;
-  width: 100%;
-  height: 190px;
-  overflow: hidden;
-  background-color: #f7f1ee;
-}
-
-.region-card-media::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(to top, rgba(247, 241, 238, 0.4) 0%, transparent 40%);
-}
-
-.region-img-crop {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s var(--ease-editorial);
-}
-
-.region-card:hover .region-img-crop {
-  filter: contrast(1.04);
-}
-
-/* Crops e enquadramentos focados em cada região anatômica da fotografia clínica real */
-.crop-terco-superior {
-  transform-origin: 48% 20%;
-  transform: scale(2.2);
-}
-.region-card:hover .crop-terco-superior {
-  transform: scale(2.3);
-}
-
-.crop-malar {
-  transform-origin: 62% 46%;
-  transform: scale(2.2);
-}
-.region-card:hover .crop-malar {
-  transform: scale(2.3);
-}
-
-.crop-mandibula {
-  transform-origin: 58% 64%;
-  transform: scale(2.2);
-}
-.region-card:hover .crop-mandibula {
-  transform: scale(2.3);
-}
-
-.crop-mento {
-  transform-origin: 46% 68%;
-  transform: scale(2.4);
-}
-.region-card:hover .crop-mento {
-  transform: scale(2.5);
-}
-
-.crop-periocular {
-  transform-origin: 58% 38%;
-  transform: scale(2.4);
-}
-.region-card:hover .crop-periocular {
-  transform: scale(2.5);
-}
-
-.crop-labios {
-  transform-origin: 46% 58%;
-  transform: scale(2.4);
-}
-.region-card:hover .crop-labios {
-  transform: scale(2.5);
-}
-
-.crop-rinomodelacao {
-  transform-origin: 44% 46%;
-  transform: scale(2.3);
-}
-.region-card:hover .crop-rinomodelacao {
-  transform: scale(2.4);
-}
-
-.region-pin-badge {
-  position: absolute;
-  bottom: 0.75rem;
-  left: 0.75rem;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.35rem 0.75rem;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(190, 112, 118, 0.25);
-  border-radius: var(--radius-pill);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--ink-secondary);
-  box-shadow: 0 4px 12px rgba(45, 30, 35, 0.08);
-}
-
-.region-pin-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--rose-primary);
-  box-shadow: 0 0 0 2px rgba(190, 112, 118, 0.25);
-}
-
-.region-card-body {
-  padding: 1.5rem 1.4rem 1.6rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.region-card-tag {
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--rose-deep);
-  margin-bottom: 0.45rem;
-}
-
-.region-card-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--ink-primary);
-  letter-spacing: -0.015em;
-  margin-bottom: 0.65rem;
-  line-height: 1.25;
-}
-
-.region-card-desc {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: var(--ink-muted);
-}
-
-/* Card 7 Wide no Desktop */
-@media (min-width: 1024px) {
-  .region-card-wide {
-    grid-column: span 3;
+  .regions-desktop-layout {
     display: grid;
-    grid-template-columns: 360px 1fr;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 3.5rem;
+    align-items: start;
   }
 
-  .region-card-wide .region-card-media {
+  /* Card Visual Grande à Esquerda com a Fotografia Clínica Real */
+  .regions-visual-card {
+    position: sticky;
+    top: 6rem;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid var(--border-card);
+    box-shadow: var(--shadow-card);
+    width: 100%;
+  }
+
+  .regions-visual-inner {
+    position: relative;
+    width: 100%;
+    background-color: #f7f1ee;
+  }
+
+  .regions-visual-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+  }
+
+  .regions-visual-caption {
+    padding: 1.25rem 1.5rem;
+    background-color: #ffffff;
+    border-top: 1px solid var(--champagne-hairline);
+  }
+
+  .visual-caption-badge {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--rose-deep);
+    background-color: var(--rose-subtle);
+    border: 1px solid var(--rose-border);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-pill);
+    margin-bottom: 0.4rem;
+  }
+
+  .visual-caption-text {
+    font-size: 0.8125rem;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  /* Lista Editorial das 7 Regiões à Direita */
+  .regions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .region-item {
+    background-color: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: 1.35rem 1.6rem;
+    transition: all var(--transition-fast);
+  }
+
+  .region-item:hover {
+    border-color: var(--rose-border);
+    box-shadow: var(--shadow-subtle);
+    transform: translateX(3px);
+  }
+
+  .region-item-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .region-item-index {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--rose-primary);
+    letter-spacing: 0.05em;
+  }
+
+  .region-item-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    letter-spacing: -0.01em;
+  }
+
+  .region-item-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    padding-left: 1.85rem;
+  }
+}
+
+/* --- VERSÃO MOBILE (Apenas < 1024px: Scroll Contínuo de Cards) --- */
+@media (max-width: 1023px) {
+  .regions-desktop-layout {
+    display: none !important;
+  }
+
+  .regions-mobile-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .region-card {
+    background-color: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .region-card-media {
+    position: relative;
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    background-color: #f7f1ee;
+  }
+
+  .region-card-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(to top, rgba(20, 15, 17, 0.35) 0%, transparent 45%);
+  }
+
+  .region-img-crop {
+    width: 100%;
     height: 100%;
-    min-height: 190px;
+    object-fit: cover;
+    display: block;
   }
 
-  .region-card-wide .region-card-body {
-    justify-content: center;
-    padding: 2rem 2.5rem;
+  /* Crops focados nas marcações e setas da fotografia clínica */
+  .crop-terco-superior {
+    transform-origin: 48% 20%;
+    transform: scale(2.2);
+  }
+
+  .crop-malar {
+    transform-origin: 62% 46%;
+    transform: scale(2.2);
+  }
+
+  .crop-mandibula {
+    transform-origin: 58% 64%;
+    transform: scale(2.2);
+  }
+
+  .crop-mento {
+    transform-origin: 46% 68%;
+    transform: scale(2.4);
+  }
+
+  .crop-periocular {
+    transform-origin: 58% 38%;
+    transform: scale(2.4);
+  }
+
+  .crop-labios {
+    transform-origin: 46% 58%;
+    transform: scale(2.4);
+  }
+
+  .crop-rinomodelacao {
+    transform-origin: 44% 46%;
+    transform: scale(2.3);
+  }
+
+  .region-pin-badge {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.35rem 0.75rem;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(190, 112, 118, 0.25);
+    border-radius: var(--radius-pill);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-secondary);
+    box-shadow: 0 4px 12px rgba(45, 30, 35, 0.08);
+  }
+
+  .region-pin-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--rose-primary);
+    box-shadow: 0 0 0 2px rgba(190, 112, 118, 0.25);
+  }
+
+  .region-card-body {
+    padding: 1.5rem 1.4rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .region-card-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--rose-deep);
+    margin-bottom: 0.45rem;
+  }
+
+  .region-card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    letter-spacing: -0.015em;
+    margin-bottom: 0.65rem;
+    line-height: 1.25;
+  }
+
+  .region-card-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--ink-muted);
   }
 }
 
