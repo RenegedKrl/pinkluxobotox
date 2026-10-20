@@ -205,60 +205,65 @@
       <section id="beneficios" class="section benefits-section">
         <div class="container">
           <div class="section-header">
-            <p class="section-tag">OBJETIVOS CLÍNICOS E ESTÉTICOS</p>
+            <p class="section-tag">CUIDADO INDIVIDUALIZADO</p>
             <h2 class="section-title">O que a Harmonização Facial proporciona ao seu rosto</h2>
             <p class="section-subtitle">
-              Harmonia global, sustentação e equilíbrio que respeitam sua identidade.
+              Procedimentos planejados para valorizar sua beleza natural, com discrição e respeito total à sua identidade.
             </p>
           </div>
 
           <div class="benefits-grid">
             <!-- Pilar 1: Equilíbrio de Proporções -->
             <article class="benefit-card">
-              <div class="benefit-card-number">01</div>
-              <h3 class="benefit-card-title">Simetria & Proporção Facial</h3>
-              <p class="benefit-card-desc">
-                Alinhamento harmonioso entre o terço superior, médio e inferior da face, corrigindo assimetrias naturais e valorizando a relação visual entre olhos, nariz, lábios e queixo.
-              </p>
-              <div class="benefit-card-footer">
-                <span class="benefit-tag">Simetria Facial</span>
+              <div class="benefit-card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M12 3v18"/>
+                </svg>
               </div>
+              <h3 class="benefit-card-title">Harmonia & Proporção</h3>
+              <p class="benefit-card-desc">
+                Equilíbrio delicado entre testa, olhos, nariz e queixo, corrigindo assimetrias naturais sem transformar ou congelar sua expressão.
+              </p>
             </article>
 
             <!-- Pilar 2: Definição de Contornos -->
             <article class="benefit-card">
-              <div class="benefit-card-number">02</div>
-              <h3 class="benefit-card-title">Contornos Definidos & Mandíbula</h3>
-              <p class="benefit-card-desc">
-                Destaque refinado dos ângulos da mandíbula e projeção discreta do queixo, desenhando uma transição sutil e nítida entre o rosto e o pescoço, sem peso visual.
-              </p>
-              <div class="benefit-card-footer">
-                <span class="benefit-tag">Perfil & Mandíbula</span>
+              <div class="benefit-card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M4 6c4 4 6 10 8 12 2-2 4-8 8-12"/>
+                </svg>
               </div>
+              <h3 class="benefit-card-title">Contornos Definidos</h3>
+              <p class="benefit-card-desc">
+                Realce refinado da linha da mandíbula e do queixo, criando uma transição nítida com o pescoço e reduzindo a sensação visual de flacidez.
+              </p>
             </article>
 
             <!-- Pilar 3: Reposição Estrutural de Volume -->
             <article class="benefit-card">
-              <div class="benefit-card-number">03</div>
-              <h3 class="benefit-card-title">Sustentação & Efeito Lifting</h3>
-              <p class="benefit-card-desc">
-                Restauração sutil do suporte malar e zigomático (maçãs do rosto), recuperando a convexidade jovem perdida com a reabsorção natural dos tecidos ao longo dos anos.
-              </p>
-              <div class="benefit-card-footer">
-                <span class="benefit-tag">Efeito Lifting Sutil</span>
+              <div class="benefit-card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M12 19V5M5 12l7-7 7 7"/>
+                </svg>
               </div>
+              <h3 class="benefit-card-title">Sustentação & Viço</h3>
+              <p class="benefit-card-desc">
+                Suporte sutil para as maçãs do rosto com leve efeito lifting, devolvendo o aspecto descansado e suavizando o bigode chinês.
+              </p>
             </article>
 
             <!-- Pilar 4: Suavização dos Sinais do Tempo -->
             <article class="benefit-card">
-              <div class="benefit-card-number">04</div>
-              <h3 class="benefit-card-title">Suavização de Rugas de Expressão</h3>
-              <p class="benefit-card-desc">
-                Atenuação calculada de rugas e vincos dinâmicos na fronte, glabela e olhos, preservando totalmente a mímica facial espontânea e o frescor de uma expressão descansada.
-              </p>
-              <div class="benefit-card-footer">
-                <span class="benefit-tag">Expressão Leve</span>
+              <div class="benefit-card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
               </div>
+              <h3 class="benefit-card-title">Linhas Suavizadas</h3>
+              <p class="benefit-card-desc">
+                Atenuação das marcas na testa, entre as sobrancelhas e ao redor dos olhos, trazendo leveza e frescor ao olhar sem tirar sua espontaneidade.
+              </p>
             </article>
           </div>
         </div>
@@ -460,37 +465,42 @@
                o usuário rola a página ou clica abrindo abinha por abinha.
                ================================================================= -->
           <div class="regions-layout">
-            <!-- Card Visual Interativo com Fotografia Clínica Real e Foco Dinâmico -->
+            <!-- Card Visual com Fotografia Clínica Real da Paciente (Antes e Depois com Marcações) -->
             <div class="regions-visual-card">
+              <div class="regions-toggle-bar">
+                <button type="button" class="btn-mapping-toggle active" id="btnMapAntes" data-target="antes">
+                  <span>Mapeamento Inicial</span>
+                </button>
+                <button type="button" class="btn-mapping-toggle" id="btnMapDepois" data-target="depois">
+                  <span>Resultado Harmonizado</span>
+                </button>
+              </div>
+
               <div class="regions-visual-inner">
                 <img 
                   id="regionsDynamicImg"
-                  src="images/mapeamento-facial-real.jpg" 
-                  alt="Mapeamento Clínico e Regiões Faciais com Demarcação de Vetores" 
-                  class="regions-visual-img focus-region-1"
+                  src="images/mapeamento-antes.jpg" 
+                  alt="Mapeamento Clínico Real de Paciente na Pink Luxo — Análise de Linhas e Contornos" 
+                  class="regions-visual-img"
                   loading="lazy"
                 />
-                <div class="region-pin-badge" id="regionsDynamicBadge">
-                  <span class="region-pin-dot"></span>
-                  <span id="regionsBadgeText">Foco: Testa, Glabela & Olhos</span>
-                </div>
               </div>
+
               <div class="regions-visual-caption">
-                <span class="visual-caption-badge">Planejamento Facial</span>
+                <span class="visual-caption-badge">Caso Clínico Real</span>
                 <p class="visual-caption-text">
-                  Cada ponto de aplicação é calculado milimetricamente para preservar a identidade e harmonia individual do seu rosto.
+                  Registro autêntico de paciente na Pink Luxo: demarcação milimétrica de queixas anatômicas e resultado com harmonia natural.
                 </p>
               </div>
             </div>
 
-            <!-- Lista de Abinhas Interativas (As 4 Principais Queixas e Regiões Faciais) -->
+            <!-- Lista de Abinhas de Regiões Faciais (Linguagem Direta e Acolhedora) -->
             <div class="regions-list" id="regionsAccordion">
-              <!-- Abinha 1: Terço Superior / Rugas de Expressão -->
+              <!-- Abinha 1: Testa e Olhos -->
               <div class="region-item active" data-region="1">
                 <button type="button" class="region-item-header" aria-expanded="true">
                   <div class="region-header-left">
-                    <span class="region-item-index">01</span>
-                    <h3 class="region-item-title">Rugas de Expressão (Testa, Glabela e Olhos)</h3>
+                    <h3 class="region-item-title">Testa, Glabela & Área dos Olhos</h3>
                   </div>
                   <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <polyline points="6 9 12 15 18 9"></polyline>
@@ -498,17 +508,16 @@
                 </button>
                 <div class="region-item-body">
                   <p class="region-item-desc">
-                    Suavização precisa das rugas dinâmicas na fronte, da marca de tensão entre as sobrancelhas ("cara de brava") e dos pés de galinha ao redor dos olhos, devolvendo um olhar descansado e luminoso sem congelar sua expressão natural.
+                    Suavização das rugas que marcam a testa ao falar, alívio da marquinha de tensão entre as sobrancelhas ("cara de brava") e dos pés de galinha ao sorrir. Seu olhar ganha descanso e serenidade, sem congelar suas expressões.
                   </p>
                 </div>
               </div>
 
-              <!-- Abinha 2: Terço Médio / Maçãs e Bigode Chinês -->
+              <!-- Abinha 2: Maçãs do Rosto e Bigode Chinês -->
               <div class="region-item" data-region="2">
                 <button type="button" class="region-item-header" aria-expanded="false">
                   <div class="region-header-left">
-                    <span class="region-item-index">02</span>
-                    <h3 class="region-item-title">Maçãs do Rosto & Bigode Chinês (Sustentação)</h3>
+                    <h3 class="region-item-title">Maçãs do Rosto & Bigode Chinês</h3>
                   </div>
                   <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <polyline points="6 9 12 15 18 9"></polyline>
@@ -516,17 +525,16 @@
                 </button>
                 <div class="region-item-body">
                   <p class="region-item-desc">
-                    Reposição estrutural do volume no terço médio da face, recuperando o ponto de luz e criando um efeito lifting sutil que suspende os tecidos e ameniza diretamente o sulco nasogeniano ("bigode chinês").
+                    Sustentação delicada das maçãs do rosto com efeito lifting leve, que devolve o suporte jovem da face e ameniza a profundidade do vinco ao redor da boca de forma sutil e elegante.
                   </p>
                 </div>
               </div>
 
-              <!-- Abinha 3: Terço Inferior / Linha Mandibular e Queixo -->
+              <!-- Abinha 3: Contorno Mandibular e Queixo -->
               <div class="region-item" data-region="3">
                 <button type="button" class="region-item-header" aria-expanded="false">
                   <div class="region-header-left">
-                    <span class="region-item-index">03</span>
-                    <h3 class="region-item-title">Contorno Mandibular & Queixo (Definição)</h3>
+                    <h3 class="region-item-title">Contorno Mandibular & Queixo</h3>
                   </div>
                   <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <polyline points="6 9 12 15 18 9"></polyline>
@@ -534,7 +542,7 @@
                 </button>
                 <div class="region-item-body">
                   <p class="region-item-desc">
-                    Estruturação da borda da mandíbula e alinhamento do queixo (mento) para desenhar uma transição nítida com o pescoço, reduzindo a sensação visual de flacidez e valorizando o perfil facial com alta elegância.
+                    Definição nítida do maxilar e alinhamento do queixo para valorizar o perfil e desenhar uma separação limpa com o pescoço, reduzindo a sensação visual de flacidez com muita elegância.
                   </p>
                 </div>
               </div>
@@ -543,8 +551,7 @@
               <div class="region-item" data-region="4">
                 <button type="button" class="region-item-header" aria-expanded="false">
                   <div class="region-header-left">
-                    <span class="region-item-index">04</span>
-                    <h3 class="region-item-title">Lábios & Região da Boca (Volume e Contorno)</h3>
+                    <h3 class="region-item-title">Lábios & Região da Boca</h3>
                   </div>
                   <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <polyline points="6 9 12 15 18 9"></polyline>
@@ -552,7 +559,7 @@
                 </button>
                 <div class="region-item-body">
                   <p class="region-item-desc">
-                    Definição do arco do cupido, hidratação profunda e restauração de volume labial proporcional, além de suavizar as linhas finas ao redor da boca ("código de barras"), sempre respeitando o formato e a anatomia da sua boca.
+                    Hidratação profunda, contorno bem desenhado e volume sutil e proporcional ao formato da sua boca, além de suavizar as linhas finas ao redor dos lábios sem qualquer exagero.
                   </p>
                 </div>
               </div>
@@ -631,53 +638,53 @@
 
           <!-- Divisor e Título das 4 Etapas -->
           <div class="assessment-steps-header">
-            <span class="steps-mini-tag">JORNADA DA PACIENTE</span>
-            <h3 class="steps-main-title">As 4 etapas do seu atendimento exclusivo</h3>
-            <p class="steps-main-subtitle">Do diagnóstico ao retorno: cada etapa planejada para seu conforto.</p>
+            <span class="steps-mini-tag">COMO FUNCIONA SEU ATENDIMENTO</span>
+            <h3 class="steps-main-title">Do diagnóstico à revisão: seu cuidado em 4 passos</h3>
+            <p class="steps-main-subtitle">Cada etapa é pensada para seu conforto, privacidade e total segurança.</p>
           </div>
 
           <div class="assessment-steps-grid">
             <!-- Passo 1 -->
             <div class="assessment-step-card">
               <div class="step-card-header">
-                <span class="step-badge">Etapa 01</span>
+                <span class="step-card-num">1</span>
               </div>
-              <h3 class="step-card-title">Escuta & Análise de Proporções</h3>
+              <h3 class="step-card-title">Conversa & Avaliação Facial</h3>
               <p class="step-card-desc">
-                Compreendemos suas expectativas e realizamos o mapeamento anatômico completo da face em repouso e em movimento, avaliando simetrias, dinâmica muscular e vetores de sustentação.
+                Ouvimos o que te incomoda no espelho com calma e analisamos seu rosto em repouso e ao sorrir, para identificar os pontos certos a suavizar.
               </p>
             </div>
 
             <!-- Passo 2 -->
             <div class="assessment-step-card">
               <div class="step-card-header">
-                <span class="step-badge">Etapa 02</span>
+                <span class="step-card-num">2</span>
               </div>
-              <h3 class="step-card-title">Planejamento Anatômico Sob Medida</h3>
+              <h3 class="step-card-title">Planejamento Transparente</h3>
               <p class="step-card-desc">
-                Definimos com precisão milimétrica quais procedimentos e substâncias biocompatíveis são indicados para o seu perfil. Sem excessos, sem padronização artificial.
+                Apresentamos uma conduta sob medida para sua face, indicando substâncias homologadas na medida exata para um resultado discreto e elegante.
               </p>
             </div>
 
             <!-- Passo 3 -->
             <div class="assessment-step-card">
               <div class="step-card-header">
-                <span class="step-badge">Etapa 03</span>
+                <span class="step-card-num">3</span>
               </div>
-              <h3 class="step-card-title">Procedimento com Conforto Absoluto</h3>
+              <h3 class="step-card-title">Aplicação Tranquila</h3>
               <p class="step-card-desc">
-                Aplicação rápida e segura no consultório com anestésico tópico potente e instrumental de alta precisão, garantindo máximo conforto e retorno imediato às atividades.
+                Procedimento rápido no consultório com anestésico tópico de alta eficácia e agulhas ultrafinas. Você retorna à sua rotina no mesmo dia.
               </p>
             </div>
 
             <!-- Passo 4 -->
             <div class="assessment-step-card">
               <div class="step-card-header">
-                <span class="step-badge">Etapa 04</span>
+                <span class="step-card-num">4</span>
               </div>
-              <h3 class="step-card-title">Acompanhamento e Revisão</h3>
+              <h3 class="step-card-title">Acompanhamento e Retorno</h3>
               <p class="step-card-desc">
-                Orientação detalhada para o pós-procedimento e consulta de retorno agendada para avaliar a acomodação dos tecidos e certificar a perfeita simetria e naturalidade.
+                Orientamos detalhadamente os cuidados pós-sessão e agendamos uma consulta de revisão para certificar a perfeita acomodação e harmonia.
               </p>
             </div>
           </div>
@@ -798,259 +805,81 @@
           </div>
         </div>
 
-        <div class="marquee-wrapper">
-          <div class="marquee-track">
-            <!-- Testimonial 1 -->
-            <article class="testimonial-card">
-              <div class="testimonial-header">
-                <div class="stars-row" aria-label="5 de 5 estrelas">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
+        <div class="container">
+          <!-- Selo Verificado do Google -->
+          <div class="google-badge-card">
+            <div class="google-badge-left">
+              <svg class="google-icon" width="28" height="28" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17Z"/>
+                <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24Z"/>
+                <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15Z"/>
+                <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98Z"/>
+              </svg>
+              <div>
+                <strong class="google-badge-title">Avaliações Verificadas no Google</strong>
+                <p class="google-badge-subtitle">Clínica Pink Luxo no Tatuapé</p>
+              </div>
+            </div>
+            <div class="google-badge-right">
+              <span class="google-badge-score">4.9</span>
+              <div class="google-stars-wrap">
+                <div class="stars-gold">★★★★★</div>
+                <span class="google-count">+300 pacientes avaliadas</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid Estático de Depoimentos Autênticos -->
+          <div class="reviews-static-grid">
+            <!-- Review 1 -->
+            <article class="review-card">
+              <div class="review-card-top">
+                <div class="review-author-info">
+                  <div class="review-avatar">M</div>
+                  <div>
+                    <h4 class="review-author-name">Mariana S.</h4>
+                    <span class="review-time">Tatuapé &middot; Avaliação no Google</span>
+                  </div>
                 </div>
-                <span class="testimonial-verified">Google Review</span>
+                <div class="stars-row">★★★★★</div>
               </div>
-              <p class="testimonial-quote">
-                "Fiz a harmonização facial na Pink Luxo e ficou surreal de natural! Tinha muito receio de ficar com cara congelada ou diferente, mas meu rosto está leve, descansado e jovem."
+              <p class="review-text">
+                "Fiz a harmonização facial na Pink Luxo e ficou muito natural! Tinha receio de ficar diferente ou artificial, mas meu rosto está descansado, jovem e leve. Super recomendo!"
               </p>
-              <div class="testimonial-author">
-                <span class="author-name">Mariana S.</span>
-                <span class="author-location">Tatuapé &middot; São Paulo</span>
-              </div>
             </article>
 
-            <!-- Testimonial 2 -->
-            <article class="testimonial-card">
-              <div class="testimonial-header">
-                <div class="stars-row" aria-label="5 de 5 estrelas">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
+            <!-- Review 2 -->
+            <article class="review-card">
+              <div class="review-card-top">
+                <div class="review-author-info">
+                  <div class="review-avatar">C</div>
+                  <div>
+                    <h4 class="review-author-name">Camila R.</h4>
+                    <span class="review-time">São Paulo &middot; Avaliação no Google</span>
+                  </div>
                 </div>
-                <span class="testimonial-verified">Google Review</span>
+                <div class="stars-row">★★★★★</div>
               </div>
-              <p class="testimonial-quote">
-                "As marcas na testa e os pés de galinha me incomodavam muito. Após a avaliação, o plano foi super delicado. Todo mundo elogia dizendo que pareço mais serena. Clínica impecável!"
+              <p class="review-text">
+                "As marquinhas na testa me incomodavam muito nas fotos. A profissional foi super atenciosa, explicou cada detalhe e o resultado ficou incrível. Clínica limpa e acolhedora."
               </p>
-              <div class="testimonial-author">
-                <span class="author-name">Camila R.</span>
-                <span class="author-location">São Paulo &middot; SP</span>
-              </div>
             </article>
 
-            <!-- Testimonial 3 -->
-            <article class="testimonial-card">
-              <div class="testimonial-header">
-                <div class="stars-row" aria-label="5 de 5 estrelas">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
+            <!-- Review 3 -->
+            <article class="review-card">
+              <div class="review-card-top">
+                <div class="review-author-info">
+                  <div class="review-avatar">J</div>
+                  <div>
+                    <h4 class="review-author-name">Juliana P.</h4>
+                    <span class="review-time">Anália Franco &middot; Avaliação no Google</span>
+                  </div>
                 </div>
-                <span class="testimonial-verified">Google Review</span>
+                <div class="stars-row">★★★★★</div>
               </div>
-              <p class="testimonial-quote">
-                "Atendimento de altíssimo nível. A profissional me explicou cada passo e aplicou o anestésico com todo cuidado, não senti dor. O resultado respeitou totalmente meus traços originais."
+              <p class="review-text">
+                "Atendimento impecável! Não senti dor nenhuma durante a aplicação. O resultado valorizou meu rosto mantendo totalmente a minha identidade. Indico de olhos fechados."
               </p>
-              <div class="testimonial-author">
-                <span class="author-name">Juliana P.</span>
-                <span class="author-location">Anália Franco &middot; SP</span>
-              </div>
-            </article>
-
-            <!-- Testimonial 4 -->
-            <article class="testimonial-card">
-              <div class="testimonial-header">
-                <div class="stars-row" aria-label="5 de 5 estrelas">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <span class="testimonial-verified">Google Review</span>
-              </div>
-              <p class="testimonial-quote">
-                "Ambiente discreto, equipe acolhedora e pontualidade. Me senti ouvida de verdade na consulta de avaliação. Indico para quem busca elegância e segurança."
-              </p>
-              <div class="testimonial-author">
-                <span class="author-name">Beatriz T.</span>
-                <span class="author-location">Mooca &middot; SP</span>
-              </div>
-            </article>
-
-            <!-- Testimonial 5 -->
-            <article class="testimonial-card">
-              <div class="testimonial-header">
-                <div class="stars-row" aria-label="5 de 5 estrelas">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <span class="testimonial-verified">Google Review</span>
-              </div>
-              <p class="testimonial-quote">
-                "Muito prático para quem tem rotina corrida. Fiz a aplicação na hora do almoço e voltei ao trabalho normalmente. Em poucos dias vi o efeito completo e harmônico."
-              </p>
-              <div class="testimonial-author">
-                <span class="author-name">Amanda C.</span>
-                <span class="author-location">Tatuapé &middot; SP</span>
-              </div>
-            </article>
-
-            <!-- Testimonial 6 -->
-            <article class="testimonial-card">
-              <div class="testimonial-header">
-                <div class="stars-row" aria-label="5 de 5 estrelas">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <span class="testimonial-verified">Google Review</span>
-              </div>
-              <p class="testimonial-quote">
-                "O arqueamento suave da sobrancelha abriu meu olhar e tirou aquele aspecto cansado do final do dia. Um luxo de clínica e atenção aos mínimos detalhes."
-              </p>
-              <div class="testimonial-author">
-                <span class="author-name">Larissa M.</span>
-                <span class="author-location">São Paulo &middot; SP</span>
-              </div>
-            </article>
-
-            <!-- Conjunto Clonado para Loop Infinito Contínuo (Sem Saltos) -->
-            <!-- Testimonial 1 (clone) -->
-            <article class="testimonial-card" aria-hidden="true">
-              <div class="testimonial-header">
-                <div class="stars-row">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <span class="testimonial-verified">Google Review</span>
-              </div>
-              <p class="testimonial-quote">
-                "Fiz a harmonização facial na Pink Luxo e ficou surreal de natural! Tinha muito receio de ficar com cara congelada ou diferente, mas meu rosto está leve, descansado e jovem."
-              </p>
-              <div class="testimonial-author">
-                <span class="author-name">Mariana S.</span>
-                <span class="author-location">Tatuapé &middot; São Paulo</span>
-              </div>
-            </article>
-
-            <!-- Testimonial 2 (clone) -->
-            <article class="testimonial-card" aria-hidden="true">
-              <div class="testimonial-header">
-                <div class="stars-row">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <span class="testimonial-verified">Google Review</span>
-              </div>
-              <p class="testimonial-quote">
-                "As marcas na testa e os pés de galinha me incomodavam muito. Após a avaliação, o plano foi super delicado. Todo mundo elogia dizendo que pareço mais serena. Clínica impecável!"
-              </p>
-              <div class="testimonial-author">
-                <span class="author-name">Camila R.</span>
-                <span class="author-location">São Paulo &middot; SP</span>
-              </div>
-            </article>
-
-            <!-- Testimonial 3 (clone) -->
-            <article class="testimonial-card" aria-hidden="true">
-              <div class="testimonial-header">
-                <div class="stars-row">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <span class="testimonial-verified">Google Review</span>
-              </div>
-              <p class="testimonial-quote">
-                "Atendimento de altíssimo nível. A profissional me explicou cada passo e aplicou o anestésico com todo cuidado, não senti dor. O resultado respeitou totalmente meus traços originais."
-              </p>
-              <div class="testimonial-author">
-                <span class="author-name">Juliana P.</span>
-                <span class="author-location">Anália Franco &middot; SP</span>
-              </div>
-            </article>
-
-            <!-- Testimonial 4 (clone) -->
-            <article class="testimonial-card" aria-hidden="true">
-              <div class="testimonial-header">
-                <div class="stars-row">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <span class="testimonial-verified">Google Review</span>
-              </div>
-              <p class="testimonial-quote">
-                "Ambiente discreto, equipe acolhedora e pontualidade. Me senti ouvida de verdade na consulta de avaliação. Indico para quem busca elegância e segurança."
-              </p>
-              <div class="testimonial-author">
-                <span class="author-name">Beatriz T.</span>
-                <span class="author-location">Mooca &middot; SP</span>
-              </div>
-            </article>
-
-            <!-- Testimonial 5 (clone) -->
-            <article class="testimonial-card" aria-hidden="true">
-              <div class="testimonial-header">
-                <div class="stars-row">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <span class="testimonial-verified">Google Review</span>
-              </div>
-              <p class="testimonial-quote">
-                "Muito prático para quem tem rotina corrida. Fiz a aplicação na hora do almoço e voltei ao trabalho normalmente. Em poucos dias vi o efeito completo e harmônico."
-              </p>
-              <div class="testimonial-author">
-                <span class="author-name">Amanda C.</span>
-                <span class="author-location">Tatuapé &middot; SP</span>
-              </div>
-            </article>
-
-            <!-- Testimonial 6 (clone) -->
-            <article class="testimonial-card" aria-hidden="true">
-              <div class="testimonial-header">
-                <div class="stars-row">
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                  <span class="star-icon">&#9733;</span>
-                </div>
-                <span class="testimonial-verified">Google Review</span>
-              </div>
-              <p class="testimonial-quote">
-                "O arqueamento suave da sobrancelha abriu meu olhar e tirou aquele aspecto cansado do final do dia. Um luxo de clínica e atenção aos mínimos detalhes."
-              </p>
-              <div class="testimonial-author">
-                <span class="author-name">Larissa M.</span>
-                <span class="author-location">São Paulo &middot; SP</span>
-              </div>
             </article>
           </div>
         </div>
