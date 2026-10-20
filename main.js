@@ -388,13 +388,10 @@ function initRegionsAccordion() {
   const items = Array.from(accordion.querySelectorAll('.region-item'));
 
   const regionNames = {
-    '1': 'Foco: Testa & Glabela',
-    '2': 'Foco: Maçãs do Rosto',
-    '3': 'Foco: Linha Mandibular',
-    '4': 'Foco: Mento (Queixo)',
-    '5': 'Foco: Área Periocular',
-    '6': 'Foco: Lábios & Perioral',
-    '7': 'Foco: Rinomodelação'
+    '1': 'Foco: Testa, Glabela & Olhos',
+    '2': 'Foco: Maçãs & Bigode Chinês',
+    '3': 'Foco: Mandíbula & Contorno',
+    '4': 'Foco: Lábios & Região da Boca'
   };
 
   function activateRegion(regionId, shouldOpen = true) {
