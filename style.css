@@ -1429,6 +1429,10 @@ button {
   background-color: var(--bg-soft);
 }
 
+.assessment-section .section-header {
+  margin-bottom: 2rem;
+}
+
 /* ==========================================================================
    CASO REAL EM VÍDEO — DESIGN LIMPO, HUMANO E OBJETIVO
    ========================================================================== */
