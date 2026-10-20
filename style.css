@@ -2080,39 +2080,4 @@ button {
   display: contents;
 }
 
-/* ==========================================================================
-   BOTÃO FLUTUANTE DE WHATSAPP
-   ========================================================================== */
 
-.btn-wpp-flutuante {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  z-index: 80;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 50%;
-  background-color: #25d366;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 24px -2px rgba(37, 211, 102, 0.42), 0 2px 8px rgba(0, 0, 0, 0.12);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  text-decoration: none;
-}
-
-.btn-wpp-flutuante:hover {
-  transform: scale(1.08) translateY(-2px);
-  box-shadow: 0 12px 30px -2px rgba(37, 211, 102, 0.55), 0 4px 12px rgba(0, 0, 0, 0.16);
-  color: #ffffff;
-}
-
-@media (max-width: 640px) {
-  .btn-wpp-flutuante {
-    bottom: 1.25rem;
-    right: 1.25rem;
-    width: 3.25rem;
-    height: 3.25rem;
-  }
-}
