@@ -1427,7 +1427,7 @@ button {
 .step-card-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: 1.25rem;
 }
 
@@ -1441,13 +1441,6 @@ button {
   border: 1px solid var(--rose-border);
   padding: 0.25rem 0.65rem;
   border-radius: var(--radius-pill);
-}
-
-.step-icon-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--rose-primary);
 }
 
 .step-card-title {
