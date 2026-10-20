@@ -182,7 +182,17 @@ button {
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(190, 112, 118, 0.18);
   transition: all var(--transition-fast);
-  white-space: nowrap;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .btn-primary {
+    white-space: normal;
+    padding: 0.75rem 1.15rem;
+    font-size: 0.85rem;
+  }
 }
 
 .btn-primary:hover {
@@ -873,11 +883,20 @@ button {
   background-color: #ffffff;
   border: 1px solid var(--border-card);
   border-radius: var(--radius-md);
-  padding: 2.25rem 1.85rem;
+  padding: 1.5rem 1.25rem;
   display: flex;
   flex-direction: column;
   box-shadow: none;
   transition: border-color 0.2s ease, transform 0.2s ease;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .benefit-card {
+    padding: 2.25rem 1.85rem;
+  }
 }
 
 .benefit-card:hover {
@@ -1460,23 +1479,36 @@ button {
 
 .assessment-video-showcase {
   margin-bottom: 3.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .video-case-container {
   background-color: #ffffff;
   border: 1px solid var(--border-card);
   border-radius: var(--radius-lg);
-  padding: 1.5rem;
+  padding: 1.25rem 1rem;
   box-shadow: none;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.75rem;
   align-items: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .video-case-container {
+    padding: 1.75rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .video-case-container {
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 320px minmax(0, 1fr);
     padding: 2.25rem 2.5rem;
     gap: 3rem;
   }
@@ -1493,6 +1525,7 @@ button {
   max-width: 320px;
   margin: 0 auto;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .transformation-video-player {
@@ -1507,6 +1540,9 @@ button {
   display: flex;
   flex-direction: column;
   gap: 1.15rem;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .video-case-tag {
@@ -1545,10 +1581,18 @@ button {
   background-color: #faf9f8;
   border: 1px solid var(--champagne-border);
   border-radius: var(--radius-sm);
-  padding: 1.25rem 1.35rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .video-case-summary {
+    padding: 1.25rem 1.35rem;
+  }
 }
 
 .summary-row {
@@ -1581,6 +1625,19 @@ button {
 
 .video-case-cta {
   margin-top: 0.35rem;
+  width: 100%;
+}
+
+.video-case-cta .btn-primary {
+  width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .video-case-cta .btn-primary {
+    width: auto;
+  }
 }
 
 /* Divisor e cabeçalho das etapas */
@@ -1648,10 +1705,19 @@ button {
   background-color: #ffffff;
   border: 1px solid var(--border-card);
   border-radius: var(--radius-md);
-  padding: 1.85rem 1.6rem;
+  padding: 1.5rem 1.25rem;
   display: flex;
   flex-direction: column;
   transition: border-color var(--transition-fast);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .assessment-step-card {
+    padding: 1.85rem 1.6rem;
+  }
 }
 
 .assessment-step-card:hover {
@@ -1700,16 +1766,20 @@ button {
   background-color: #ffffff;
   border: 1px solid var(--champagne-border);
   border-radius: var(--radius-md);
-  padding: 2.25rem 2.5rem;
+  padding: 1.5rem 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
   align-items: flex-start;
   box-shadow: none;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 @media (min-width: 1024px) {
   .assessment-callout {
+    padding: 2.25rem 2.5rem;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
