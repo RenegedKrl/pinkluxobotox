@@ -947,9 +947,9 @@ button {
   filter: contrast(1.04);
 }
 
-/* Crops e enquadramentos focados em cada região anatômica da ilustração */
+/* Crops e enquadramentos focados em cada região anatômica da fotografia clínica real */
 .crop-terco-superior {
-  transform-origin: 65% 24%;
+  transform-origin: 48% 20%;
   transform: scale(2.2);
 }
 .region-card:hover .crop-terco-superior {
@@ -957,7 +957,7 @@ button {
 }
 
 .crop-malar {
-  transform-origin: 74% 46%;
+  transform-origin: 62% 46%;
   transform: scale(2.2);
 }
 .region-card:hover .crop-malar {
@@ -965,7 +965,7 @@ button {
 }
 
 .crop-mandibula {
-  transform-origin: 26% 62%;
+  transform-origin: 58% 64%;
   transform: scale(2.2);
 }
 .region-card:hover .crop-mandibula {
@@ -973,7 +973,7 @@ button {
 }
 
 .crop-mento {
-  transform-origin: 18% 63%;
+  transform-origin: 46% 68%;
   transform: scale(2.4);
 }
 .region-card:hover .crop-mento {
@@ -981,7 +981,7 @@ button {
 }
 
 .crop-periocular {
-  transform-origin: 70% 40%;
+  transform-origin: 58% 38%;
   transform: scale(2.4);
 }
 .region-card:hover .crop-periocular {
@@ -989,7 +989,7 @@ button {
 }
 
 .crop-labios {
-  transform-origin: 63% 59%;
+  transform-origin: 46% 58%;
   transform: scale(2.4);
 }
 .region-card:hover .crop-labios {
@@ -997,7 +997,7 @@ button {
 }
 
 .crop-rinomodelacao {
-  transform-origin: 14% 48%;
+  transform-origin: 44% 46%;
   transform: scale(2.3);
 }
 .region-card:hover .crop-rinomodelacao {
