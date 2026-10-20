@@ -849,129 +849,215 @@ button {
 }
 
 /* ==========================================================================
-   SEÇÃO 3 — REGIÕES DO ROSTO (100% ESTÁTICO, SEM BUG DE STICKY / PULO)
+   SEÇÃO 3 — REGIÕES DO ROSTO (CARDS INDIVIDUAIS COM FOTO / ANATOMIA)
+   Conforme solicitado: cada região possui sua foto/crop próprio no fluxo normal
+   da página, eliminando qualquer elemento arrastando ou pulando na rolagem.
    ========================================================================== */
 
 .regions-section {
   background-color: var(--bg-soft);
 }
 
-.regions-layout {
+.regions-cards-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem;
-  align-items: start;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .regions-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
-  .regions-layout {
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 3.5rem;
+  .regions-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
   }
 }
 
-/* Card Visual da Anatomia: 100% estático no fluxo, sem position: sticky bugado */
-.regions-visual-card {
-  position: static;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
+.region-card {
   background-color: #ffffff;
   border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
   box-shadow: var(--shadow-card);
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
-@media (max-width: 1023px) {
-  .regions-visual-card {
-    max-width: 400px;
-    margin: 0 auto 1.5rem;
-  }
+.region-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--rose-border);
+  box-shadow: var(--shadow-hover);
 }
 
-.regions-visual-inner {
+.region-card-media {
   position: relative;
   width: 100%;
+  height: 190px;
+  overflow: hidden;
+  background-color: #f7f1ee;
 }
 
-.regions-visual-img {
+.region-card-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(247, 241, 238, 0.4) 0%, transparent 40%);
+}
+
+.region-img-crop {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s var(--ease-editorial);
 }
 
-.regions-visual-caption {
-  padding: 1.25rem 1.5rem;
-  background-color: #ffffff;
-  border-top: 1px solid var(--champagne-hairline);
+.region-card:hover .region-img-crop {
+  filter: contrast(1.04);
 }
 
-.visual-caption-badge {
-  display: inline-block;
+/* Crops e enquadramentos focados em cada região anatômica da ilustração */
+.crop-terco-superior {
+  transform-origin: 65% 24%;
+  transform: scale(2.2);
+}
+.region-card:hover .crop-terco-superior {
+  transform: scale(2.3);
+}
+
+.crop-malar {
+  transform-origin: 74% 46%;
+  transform: scale(2.2);
+}
+.region-card:hover .crop-malar {
+  transform: scale(2.3);
+}
+
+.crop-mandibula {
+  transform-origin: 26% 62%;
+  transform: scale(2.2);
+}
+.region-card:hover .crop-mandibula {
+  transform: scale(2.3);
+}
+
+.crop-mento {
+  transform-origin: 18% 63%;
+  transform: scale(2.4);
+}
+.region-card:hover .crop-mento {
+  transform: scale(2.5);
+}
+
+.crop-periocular {
+  transform-origin: 70% 40%;
+  transform: scale(2.4);
+}
+.region-card:hover .crop-periocular {
+  transform: scale(2.5);
+}
+
+.crop-labios {
+  transform-origin: 63% 59%;
+  transform: scale(2.4);
+}
+.region-card:hover .crop-labios {
+  transform: scale(2.5);
+}
+
+.crop-rinomodelacao {
+  transform-origin: 14% 48%;
+  transform: scale(2.3);
+}
+.region-card:hover .crop-rinomodelacao {
+  transform: scale(2.4);
+}
+
+.region-pin-badge {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.75rem;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(190, 112, 118, 0.25);
+  border-radius: var(--radius-pill);
   font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-secondary);
+  box-shadow: 0 4px 12px rgba(45, 30, 35, 0.08);
+}
+
+.region-pin-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--rose-primary);
+  box-shadow: 0 0 0 2px rgba(190, 112, 118, 0.25);
+}
+
+.region-card-body {
+  padding: 1.5rem 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.region-card-tag {
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--rose-deep);
-  background-color: var(--rose-subtle);
-  border: 1px solid var(--rose-border);
-  padding: 0.2rem 0.6rem;
-  border-radius: var(--radius-pill);
-  margin-bottom: 0.4rem;
-}
-
-.visual-caption-text {
-  font-size: 0.8125rem;
-  color: var(--ink-muted);
-  line-height: 1.5;
-}
-
-.regions-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.region-item {
-  background-color: #ffffff;
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-lg);
-  padding: 1.35rem 1.6rem;
-  transition: all var(--transition-fast);
-}
-
-.region-item:hover {
-  border-color: var(--rose-border);
-  box-shadow: var(--shadow-subtle);
-  transform: translateX(3px);
-}
-
-.region-item-header {
-  display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
   margin-bottom: 0.45rem;
 }
 
-.region-item-index {
-  font-size: 0.8125rem;
-  font-weight: 700;
-  color: var(--rose-primary);
-  letter-spacing: 0.05em;
-}
-
-.region-item-title {
-  font-size: 1.125rem;
+.region-card-title {
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--ink-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.65rem;
+  line-height: 1.25;
 }
 
-.region-item-desc {
+.region-card-desc {
   font-size: 0.9rem;
   line-height: 1.6;
   color: var(--ink-muted);
-  padding-left: 1.85rem;
+}
+
+/* Card 7 Wide no Desktop */
+@media (min-width: 1024px) {
+  .region-card-wide {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 360px 1fr;
+  }
+
+  .region-card-wide .region-card-media {
+    height: 100%;
+    min-height: 190px;
+  }
+
+  .region-card-wide .region-card-body {
+    justify-content: center;
+    padding: 2rem 2.5rem;
+  }
 }
 
 /* ==========================================================================
