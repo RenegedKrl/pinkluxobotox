@@ -2,31 +2,35 @@
 
 const resultsData = [
   {
-    title: 'Caso Clínico 01 — Terço Superior & Periocular',
+    title: 'Caso Clínico 01 — Harmonização Global & Sustentação',
+    desc: 'Atenuação notável de sulcos e linhas de expressão com suporte malar e rejuvenescimento harmônico da face.'
+  },
+  {
+    title: 'Caso Clínico 02 — Terço Superior & Periocular',
     desc: 'Suavização equilibrada das rugas na testa e contorno dos olhos, mantendo a vivacidade e o brilho espontâneo do olhar.'
   },
   {
-    title: 'Caso Clínico 02 — Glabela & Músculos Corrugadores',
+    title: 'Caso Clínico 03 — Glabela & Músculos Corrugadores',
     desc: 'Alívio perceptível da tensão entre as sobrancelhas (marcas de bravo), devolvendo serenidade e descanso ao rosto.'
   },
   {
-    title: 'Caso Clínico 03 — Evolução e Acompanhamento Clínico',
+    title: 'Caso Clínico 04 — Evolução e Acompanhamento Clínico',
     desc: 'Acompanhamento fotográfico de sustentação tecidual e uniformização da textura da pele com protocolo sob medida.'
   },
   {
-    title: 'Caso Clínico 04 — Suavização Notável em Sessão Única',
+    title: 'Caso Clínico 05 — Suavização Notável em Sessão Única',
     desc: 'Atenuação expressiva de linhas dinâmicas profundas preservando integralmente a mímica facial da paciente.'
   },
   {
-    title: 'Caso Clínico 05 — Área dos Olhos & Têmporas',
+    title: 'Caso Clínico 06 — Área dos Olhos & Têmporas',
     desc: 'Atenuação das marcas perioculares ao sorrir com contorno leve, sem sensação de rigidez.'
   },
   {
-    title: 'Caso Clínico 06 — Linhas Frontais & Testa',
+    title: 'Caso Clínico 07 — Linhas Frontais & Testa',
     desc: 'Relaxamento muscular preciso das linhas horizontais proporcionando um visual descansado e rejuvenescido.'
   },
   {
-    title: 'Caso Clínico 07 — Rejuvenescimento e Textura Cutânea',
+    title: 'Caso Clínico 08 — Rejuvenescimento e Textura Cutânea',
     desc: 'Harmonização global com melhora evidente da qualidade da pele e alinhamento dos traços faciais.'
   }
 ];
