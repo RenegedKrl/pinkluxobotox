@@ -1820,7 +1820,7 @@ button {
    ========================================================================== */
 
 .faq-section {
-  background-color: #ffffff;
+  background-color: var(--bg-soft);
 }
 
 .faq-container {
@@ -1836,16 +1836,18 @@ button {
 }
 
 .faq-item {
-  background-color: var(--bg-page);
+  background-color: #ffffff;
   border: 1px solid var(--border-card);
   border-radius: var(--radius-md);
   overflow: hidden;
-  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+  box-shadow: var(--shadow-subtle);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .faq-item.open {
   border-color: var(--rose-border);
   background-color: #ffffff;
+  box-shadow: var(--shadow-card);
 }
 
 .faq-trigger {
@@ -1902,7 +1904,7 @@ button {
    ========================================================================== */
 
 .contact-section {
-  background-color: var(--bg-soft);
+  background-color: #ffffff;
 }
 
 .contact-grid {
