@@ -912,18 +912,7 @@ button {
    ========================================================================== */
 
 .regions-section {
-  background-color: var(--bg-soft);
-}
-
-/* --- VERSÃO DESKTOP (Apenas >= 1024px) --- */
-/* ==========================================================================
-   SEÇÃO 3 — REGIÕES DO ROSTO (FOTO INTERATIVA + ABINHAS EXPANSÍVEIS)
-   Conforme solicitado: a imagem complementa o foco anatômico enquanto
-   o usuário rola a página ou clica abrindo abinha por abinha.
-   ========================================================================== */
-
-.regions-section {
-  background-color: var(--bg-soft);
+  background-color: #ffffff;
 }
 
 .regions-layout {
@@ -1203,7 +1192,7 @@ button {
    ========================================================================== */
 
 .results-section {
-  background-color: #ffffff;
+  background-color: var(--bg-soft);
 }
 
 .results-carousel-wrapper {

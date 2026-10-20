@@ -77,8 +77,8 @@
 
         <nav class="nav-desktop" aria-label="Navegação Principal">
           <a href="#beneficios" class="nav-link">Benefícios</a>
-          <a href="#regioes" class="nav-link">Regiões</a>
           <a href="#resultados" class="nav-link">Resultados</a>
+          <a href="#regioes" class="nav-link">Regiões</a>
           <a href="#avaliacao" class="nav-link">Avaliação</a>
           <a href="#sobre" class="nav-link">A Clínica</a>
           <a href="#depoimentos" class="nav-link">Depoimentos</a>
@@ -113,8 +113,8 @@
       <nav id="navMobile" class="nav-mobile" aria-label="Navegação Mobile">
         <ul class="nav-mobile-list">
           <li><a href="#beneficios">Benefícios</a></li>
-          <li><a href="#regioes">Regiões do Rosto</a></li>
           <li><a href="#resultados">Resultados Reais</a></li>
+          <li><a href="#regioes">Regiões do Rosto</a></li>
           <li><a href="#avaliacao">Avaliação Personalizada</a></li>
           <li><a href="#sobre">Sobre a Pink Luxo</a></li>
           <li><a href="#depoimentos">Depoimentos</a></li>
@@ -265,130 +265,7 @@
       </section>
 
       <!-- =====================================================================
-           SEÇÃO 3 — REGIÕES DO ROSTO (Cards Individuais com Foco Anatômico)
-           Conforme o áudio: Ao descer, cada região tem sua respectiva foto/visual
-           sem elementos arrastando ou pulando na tela.
-           ===================================================================== -->
-      <section id="regioes" class="section regions-section">
-        <div class="container">
-          <div class="section-header">
-            <p class="section-tag">ANATOMIA FACIAL & POSSIBILIDADES</p>
-            <h2 class="section-title">Regiões e Objetivos de Tratamento</h2>
-            <p class="section-subtitle">
-              Cada área da face possui dinâmica e necessidades particulares. Conheça as regiões tratadas na clínica com rigor anatômico e absoluta naturalidade.
-            </p>
-          </div>
-
-          <!-- =================================================================
-               SEÇÃO DE REGIÕES: FOTO CLÍNICA INTERATIVA + ABINHAS EXPANSÍVEIS
-               Conforme solicitado: a imagem complementa o foco anatômico enquanto
-               o usuário rola a página ou clica abrindo abinha por abinha.
-               ================================================================= -->
-          <div class="regions-layout">
-            <!-- Card Visual Interativo com Fotografia Clínica Real e Foco Dinâmico -->
-            <div class="regions-visual-card">
-              <div class="regions-visual-inner">
-                <img 
-                  id="regionsDynamicImg"
-                  src="images/mapeamento-facial-real.jpg" 
-                  alt="Mapeamento Clínico e Regiões Faciais com Demarcação de Vetores" 
-                  class="regions-visual-img focus-region-1"
-                  loading="lazy"
-                />
-                <div class="region-pin-badge" id="regionsDynamicBadge">
-                  <span class="region-pin-dot"></span>
-                  <span id="regionsBadgeText">Foco: Testa, Glabela & Olhos</span>
-                </div>
-              </div>
-              <div class="regions-visual-caption">
-                <span class="visual-caption-badge">Planejamento Facial</span>
-                <p class="visual-caption-text">
-                  Cada ponto de aplicação é calculado milimetricamente para preservar a identidade e harmonia individual do seu rosto.
-                </p>
-              </div>
-            </div>
-
-            <!-- Lista de Abinhas Interativas (As 4 Principais Queixas e Regiões Faciais) -->
-            <div class="regions-list" id="regionsAccordion">
-              <!-- Abinha 1: Terço Superior / Rugas de Expressão -->
-              <div class="region-item active" data-region="1">
-                <button type="button" class="region-item-header" aria-expanded="true">
-                  <div class="region-header-left">
-                    <span class="region-item-index">01</span>
-                    <h3 class="region-item-title">Rugas de Expressão (Testa, Glabela e Olhos)</h3>
-                  </div>
-                  <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                  </svg>
-                </button>
-                <div class="region-item-body">
-                  <p class="region-item-desc">
-                    Suavização precisa das rugas dinâmicas na fronte, da marca de tensão entre as sobrancelhas ("cara de brava") e dos pés de galinha ao redor dos olhos, devolvendo um olhar descansado e luminoso sem congelar sua expressão natural.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Abinha 2: Terço Médio / Maçãs e Bigode Chinês -->
-              <div class="region-item" data-region="2">
-                <button type="button" class="region-item-header" aria-expanded="false">
-                  <div class="region-header-left">
-                    <span class="region-item-index">02</span>
-                    <h3 class="region-item-title">Maçãs do Rosto & Bigode Chinês (Sustentação)</h3>
-                  </div>
-                  <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                  </svg>
-                </button>
-                <div class="region-item-body">
-                  <p class="region-item-desc">
-                    Reposição estrutural do volume no terço médio da face, recuperando o ponto de luz e criando um efeito lifting sutil que suspende os tecidos e ameniza diretamente o sulco nasogeniano ("bigode chinês").
-                  </p>
-                </div>
-              </div>
-
-              <!-- Abinha 3: Terço Inferior / Linha Mandibular e Queixo -->
-              <div class="region-item" data-region="3">
-                <button type="button" class="region-item-header" aria-expanded="false">
-                  <div class="region-header-left">
-                    <span class="region-item-index">03</span>
-                    <h3 class="region-item-title">Contorno Mandibular & Queixo (Definição)</h3>
-                  </div>
-                  <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                  </svg>
-                </button>
-                <div class="region-item-body">
-                  <p class="region-item-desc">
-                    Estruturação da borda da mandíbula e alinhamento do queixo (mento) para desenhar uma transição nítida com o pescoço, reduzindo a sensação visual de flacidez e valorizando o perfil facial com alta elegância.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Abinha 4: Lábios e Perioral -->
-              <div class="region-item" data-region="4">
-                <button type="button" class="region-item-header" aria-expanded="false">
-                  <div class="region-header-left">
-                    <span class="region-item-index">04</span>
-                    <h3 class="region-item-title">Lábios & Região da Boca (Volume e Contorno)</h3>
-                  </div>
-                  <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                  </svg>
-                </button>
-                <div class="region-item-body">
-                  <p class="region-item-desc">
-                    Definição do arco do cupido, hidratação profunda e restauração de volume labial proporcional, além de suavizar as linhas finas ao redor da boca ("código de barras"), sempre respeitando o formato e a anatomia da sua boca.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- =====================================================================
-           SEÇÃO 4 — RESULTADOS REAIS (Galeria Autêntica com Contexto Clínico)
-           Removido o box de disclaimer conforme solicitação (Imagem 2)
+           SEÇÃO 3 — RESULTADOS REAIS (Galeria Autêntica com Contexto Clínico)
            ===================================================================== -->
       <section id="resultados" class="section results-section">
         <div class="container">
@@ -547,6 +424,128 @@
           <p id="lightboxTitle" class="lightbox-title"></p>
         </div>
       </div>
+
+      <!-- =====================================================================
+           SEÇÃO 4 — REGIÕES DO ROSTO (Cards Individuais com Foco Anatômico)
+           Conforme o áudio: Ao descer, cada região tem sua respectiva foto/visual
+           sem elementos arrastando ou pulando na tela.
+           ===================================================================== -->
+      <section id="regioes" class="section regions-section">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-tag">ANATOMIA FACIAL & POSSIBILIDADES</p>
+            <h2 class="section-title">Regiões e Objetivos de Tratamento</h2>
+            <p class="section-subtitle">
+              Cada área da face possui dinâmica e necessidades particulares. Conheça as regiões tratadas na clínica com rigor anatômico e absoluta naturalidade.
+            </p>
+          </div>
+
+          <!-- =================================================================
+               SEÇÃO DE REGIÕES: FOTO CLÍNICA INTERATIVA + ABINHAS EXPANSÍVEIS
+               Conforme solicitado: a imagem complementa o foco anatômico enquanto
+               o usuário rola a página ou clica abrindo abinha por abinha.
+               ================================================================= -->
+          <div class="regions-layout">
+            <!-- Card Visual Interativo com Fotografia Clínica Real e Foco Dinâmico -->
+            <div class="regions-visual-card">
+              <div class="regions-visual-inner">
+                <img 
+                  id="regionsDynamicImg"
+                  src="images/mapeamento-facial-real.jpg" 
+                  alt="Mapeamento Clínico e Regiões Faciais com Demarcação de Vetores" 
+                  class="regions-visual-img focus-region-1"
+                  loading="lazy"
+                />
+                <div class="region-pin-badge" id="regionsDynamicBadge">
+                  <span class="region-pin-dot"></span>
+                  <span id="regionsBadgeText">Foco: Testa, Glabela & Olhos</span>
+                </div>
+              </div>
+              <div class="regions-visual-caption">
+                <span class="visual-caption-badge">Planejamento Facial</span>
+                <p class="visual-caption-text">
+                  Cada ponto de aplicação é calculado milimetricamente para preservar a identidade e harmonia individual do seu rosto.
+                </p>
+              </div>
+            </div>
+
+            <!-- Lista de Abinhas Interativas (As 4 Principais Queixas e Regiões Faciais) -->
+            <div class="regions-list" id="regionsAccordion">
+              <!-- Abinha 1: Terço Superior / Rugas de Expressão -->
+              <div class="region-item active" data-region="1">
+                <button type="button" class="region-item-header" aria-expanded="true">
+                  <div class="region-header-left">
+                    <span class="region-item-index">01</span>
+                    <h3 class="region-item-title">Rugas de Expressão (Testa, Glabela e Olhos)</h3>
+                  </div>
+                  <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="region-item-body">
+                  <p class="region-item-desc">
+                    Suavização precisa das rugas dinâmicas na fronte, da marca de tensão entre as sobrancelhas ("cara de brava") e dos pés de galinha ao redor dos olhos, devolvendo um olhar descansado e luminoso sem congelar sua expressão natural.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Abinha 2: Terço Médio / Maçãs e Bigode Chinês -->
+              <div class="region-item" data-region="2">
+                <button type="button" class="region-item-header" aria-expanded="false">
+                  <div class="region-header-left">
+                    <span class="region-item-index">02</span>
+                    <h3 class="region-item-title">Maçãs do Rosto & Bigode Chinês (Sustentação)</h3>
+                  </div>
+                  <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="region-item-body">
+                  <p class="region-item-desc">
+                    Reposição estrutural do volume no terço médio da face, recuperando o ponto de luz e criando um efeito lifting sutil que suspende os tecidos e ameniza diretamente o sulco nasogeniano ("bigode chinês").
+                  </p>
+                </div>
+              </div>
+
+              <!-- Abinha 3: Terço Inferior / Linha Mandibular e Queixo -->
+              <div class="region-item" data-region="3">
+                <button type="button" class="region-item-header" aria-expanded="false">
+                  <div class="region-header-left">
+                    <span class="region-item-index">03</span>
+                    <h3 class="region-item-title">Contorno Mandibular & Queixo (Definição)</h3>
+                  </div>
+                  <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="region-item-body">
+                  <p class="region-item-desc">
+                    Estruturação da borda da mandíbula e alinhamento do queixo (mento) para desenhar uma transição nítida com o pescoço, reduzindo a sensação visual de flacidez e valorizando o perfil facial com alta elegância.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Abinha 4: Lábios e Perioral -->
+              <div class="region-item" data-region="4">
+                <button type="button" class="region-item-header" aria-expanded="false">
+                  <div class="region-header-left">
+                    <span class="region-item-index">04</span>
+                    <h3 class="region-item-title">Lábios & Região da Boca (Volume e Contorno)</h3>
+                  </div>
+                  <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="region-item-body">
+                  <p class="region-item-desc">
+                    Definição do arco do cupido, hidratação profunda e restauração de volume labial proporcional, além de suavizar as linhas finas ao redor da boca ("código de barras"), sempre respeitando o formato e a anatomia da sua boca.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- =====================================================================
            SEÇÃO 5 — AVALIAÇÃO PERSONALIZADA (Como Funciona o Planejamento)
