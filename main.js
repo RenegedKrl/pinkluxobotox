@@ -383,51 +383,87 @@ function initFaqAccordion() {
   });
 }
 
-// Accordion de Regiões Faciais com Seletor Antes/Depois de Caso Clínico Real
+// Accordion Interativo das Regiões Faciais com Sincronização Dinâmica da Fotografia Clínica
 function initRegionsAccordion() {
   const accordion = document.getElementById('regionsAccordion');
   const dynamicImg = document.getElementById('regionsDynamicImg');
-  const btnAntes = document.getElementById('btnMapAntes');
-  const btnDepois = document.getElementById('btnMapDepois');
-
-  if (btnAntes && btnDepois && dynamicImg) {
-    btnAntes.addEventListener('click', () => {
-      btnAntes.classList.add('active');
-      btnDepois.classList.remove('active');
-      dynamicImg.src = 'images/mapeamento-antes.jpg';
-      dynamicImg.alt = 'Mapeamento Clínico Real — Demarcação Inicial das Queixas';
-    });
-
-    btnDepois.addEventListener('click', () => {
-      btnDepois.classList.add('active');
-      btnAntes.classList.remove('active');
-      dynamicImg.src = 'images/mapeamento-depois.jpg';
-      dynamicImg.alt = 'Mapeamento Clínico Real — Resultado Harmonizado Natural';
-    });
-  }
-
-  if (!accordion) return;
+  const badgeText = document.getElementById('regionsBadgeText');
+  if (!accordion || !dynamicImg) return;
 
   const items = Array.from(accordion.querySelectorAll('.region-item'));
 
+  const regionNames = {
+    '1': 'Foco: Testa, Glabela & Olhos',
+    '2': 'Foco: Maçãs & Bigode Chinês',
+    '3': 'Foco: Mandíbula & Contorno',
+    '4': 'Foco: Lábios & Região da Boca'
+  };
+
+  function activateRegion(regionId, shouldOpen = true) {
+    items.forEach(item => {
+      const isTarget = item.getAttribute('data-region') === String(regionId);
+      const btn = item.querySelector('.region-item-header');
+      if (isTarget) {
+        if (shouldOpen) {
+          item.classList.add('active');
+          if (btn) btn.setAttribute('aria-expanded', 'true');
+        }
+      } else {
+        item.classList.remove('active');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    dynamicImg.className = `regions-visual-img focus-region-${regionId}`;
+    if (badgeText && regionNames[regionId]) {
+      badgeText.textContent = regionNames[regionId];
+    }
+  }
+
+  // Interação ao clicar na abinha
   items.forEach(item => {
     const header = item.querySelector('.region-item-header');
+    const regionId = item.getAttribute('data-region');
+
     if (header) {
       header.addEventListener('click', () => {
         const isOpen = item.classList.contains('active');
-        items.forEach(other => {
-          other.classList.remove('active');
-          const otherHeader = other.querySelector('.region-item-header');
-          if (otherHeader) otherHeader.setAttribute('aria-expanded', 'false');
-        });
-
-        if (!isOpen) {
-          item.classList.add('active');
-          header.setAttribute('aria-expanded', 'true');
+        if (isOpen) {
+          item.classList.remove('active');
+          header.setAttribute('aria-expanded', 'false');
+        } else {
+          activateRegion(regionId, true);
         }
       });
     }
+
+    // No desktop, hover leve atualiza o foco dinamicamente
+    item.addEventListener('mouseenter', () => {
+      if (window.innerWidth >= 1024) {
+        activateRegion(regionId, true);
+      }
+    });
   });
+
+  // No mobile, enquanto rola a página, abre abinha por abinha e atualiza o foco
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      if (window.innerWidth >= 1024) return;
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const regionId = entry.target.getAttribute('data-region');
+          if (regionId) {
+            activateRegion(regionId, true);
+          }
+        }
+      });
+    }, {
+      rootMargin: '-25% 0px -45% 0px',
+      threshold: 0.1
+    });
+
+    items.forEach(item => observer.observe(item));
+  }
 }
 
 // Vídeo de Antes e Depois em Movimento
