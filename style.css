@@ -2014,35 +2014,24 @@ button {
 .about-highlights-list {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  margin-bottom: 2.5rem;
+  gap: 1.15rem;
+  margin-bottom: 2.25rem;
 }
 
 .highlight-item {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.highlight-icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  background-color: var(--rose-subtle);
-  color: var(--rose-deep);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  border: 1px solid var(--rose-border);
+  flex-direction: column;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--rose-border);
 }
 
 .highlight-title {
   font-family: var(--font-montserrat);
   font-size: 0.975rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--ink-primary);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
 }
 
 .highlight-desc {
