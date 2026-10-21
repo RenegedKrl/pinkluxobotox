@@ -810,22 +810,28 @@ button {
    ========================================================================== */
 
 .section {
-  padding: 5rem 0;
+  padding: 2.75rem 0;
   background-color: #ffffff;
   border-top: 1px solid var(--champagne-hairline);
-  scroll-margin-top: 4.5rem;
+  scroll-margin-top: 4rem;
 }
 
 @media (min-width: 768px) {
   .section {
-    padding: 6rem 0;
+    padding: 3.75rem 0;
   }
 }
 
 .section-header {
   text-align: left;
   max-width: 44rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .section-header {
+    margin-bottom: 2.25rem;
+  }
 }
 
 .section-tag {
@@ -835,7 +841,7 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--rose-primary);
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.5rem;
   display: inline-block;
   background: none;
   border: none;
@@ -854,9 +860,9 @@ button {
 
 .section-subtitle {
   font-family: var(--font-editorial);
-  margin-top: 0.75rem;
+  margin-top: 0.65rem;
   font-size: 0.95rem;
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--ink-muted);
   font-weight: 400;
   text-wrap: pretty;
@@ -1304,7 +1310,7 @@ button {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 2.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .result-dot {
@@ -1417,7 +1423,7 @@ button {
 }
 
 .assessment-section .section-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 /* ==========================================================================
@@ -1425,7 +1431,7 @@ button {
    ========================================================================== */
 
 .assessment-video-showcase {
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.25rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -1674,7 +1680,7 @@ button {
 .assessment-steps-header {
   text-align: left;
   max-width: 42rem;
-  margin: 0 0 2.25rem 0;
+  margin: 0 0 1.35rem 0;
 }
 
 .steps-mini-tag {
@@ -1851,14 +1857,14 @@ button {
 }
 
 .assessment-callout {
-  margin-top: 3.5rem;
+  margin-top: 2.25rem;
   background-color: #ffffff;
   border: 1px solid var(--champagne-border);
   border-radius: var(--radius-md);
   padding: 1.5rem 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.35rem;
   align-items: flex-start;
   box-shadow: none;
   width: 100%;
@@ -1914,13 +1920,14 @@ button {
 .about-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3.5rem;
+  gap: 2rem;
   align-items: center;
 }
 
 @media (min-width: 1024px) {
   .about-grid {
     grid-template-columns: 1.15fr 0.85fr;
+    gap: 2.75rem;
   }
 }
 
@@ -1930,23 +1937,23 @@ button {
   line-height: 1.6;
   font-weight: 500;
   color: var(--ink-secondary);
-  margin-top: 1.25rem;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.85rem;
 }
 
 .about-paragraph {
   font-family: var(--font-montserrat);
   font-size: 0.9375rem;
-  line-height: 1.7;
+  line-height: 1.65;
   color: var(--ink-muted);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .about-highlights-list {
   display: flex;
   flex-direction: column;
-  gap: 1.15rem;
-  margin-bottom: 2.25rem;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
 }
 
 .highlight-item {
@@ -2075,7 +2082,7 @@ button {
 
 .marquee-wrapper {
   position: relative;
-  margin-top: 3.25rem;
+  margin-top: 1.75rem;
   overflow: hidden;
   mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
@@ -2267,12 +2274,13 @@ button {
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem;
+  gap: 1.75rem;
 }
 
 @media (min-width: 1024px) {
   .contact-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 2.25rem;
   }
 }
 
@@ -2280,7 +2288,7 @@ button {
   background-color: #ffffff;
   border: 1px solid var(--border-card);
   border-radius: var(--radius-md);
-  padding: 2.25rem 2rem;
+  padding: 1.75rem 1.5rem;
   box-shadow: none;
   display: flex;
   flex-direction: column;
@@ -2396,7 +2404,7 @@ button {
 .site-footer {
   background-color: #ffffff;
   border-top: 1px solid var(--champagne-hairline);
-  padding: 3.5rem 0 3rem;
+  padding: 2.5rem 0 2rem;
 }
 
 .footer-inner {
