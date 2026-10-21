@@ -1888,25 +1888,32 @@ button {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--rose-deep);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
   display: block;
 }
 
 .callout-title {
   font-family: var(--font-montserrat);
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--ink-primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
   letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+@media (min-width: 768px) {
+  .callout-title {
+    font-size: 1.35rem;
+  }
 }
 
 .callout-text {
   font-family: var(--font-montserrat);
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
   color: var(--ink-muted);
-  max-width: 44rem;
-  line-height: 1.6;
+  max-width: 40rem;
+  line-height: 1.5;
 }
 
 /* ==========================================================================
