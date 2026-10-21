@@ -450,32 +450,7 @@
                o usuário rola a página ou clica abrindo abinha por abinha.
                ================================================================= -->
           <div class="regions-layout">
-            <!-- Card Visual Interativo com Fotografia Clínica Real e Foco Dinâmico -->
-            <div class="regions-visual-card">
-              <div class="regions-visual-inner">
-                <img 
-                  id="regionsDynamicImg"
-                  src="images/mapeamento-facial-real.jpg" 
-                  alt="Mapeamento Clínico e Regiões Faciais com Demarcação de Vetores" 
-                  class="regions-visual-img focus-region-1"
-                  loading="lazy"
-                  draggable="false"
-                  oncontextmenu="return false;"
-                />
-                <div class="region-pin-badge" id="regionsDynamicBadge">
-                  <span class="region-pin-dot"></span>
-                  <span id="regionsBadgeText">Foco: Testa, Glabela & Olhos</span>
-                </div>
-              </div>
-              <div class="regions-visual-caption">
-                <h4 class="visual-caption-title">Planejamento Facial</h4>
-                <p class="visual-caption-text">
-                  Cada ponto de aplicação é calculado milimetricamente para preservar a identidade e harmonia individual do seu rosto.
-                </p>
-              </div>
-            </div>
-
-            <!-- Lista de Abinhas Interativas (As 4 Principais Queixas e Regiões Faciais) -->
+            <!-- Lista de Abinhas Interativas (Accordion com Foto Compacta em Cada Região) -->
             <div class="regions-list" id="regionsAccordion">
               <!-- Abinha 1: Terço Superior / Rugas de Expressão -->
               <div class="region-item active" data-region="1">
@@ -489,6 +464,20 @@
                   </svg>
                 </button>
                 <div class="region-item-body">
+                  <div class="region-thumb-wrapper">
+                    <img 
+                      src="images/mapeamento-facial-real.jpg" 
+                      alt="Mapeamento e Foco: Testa, Glabela &amp; Olhos" 
+                      class="region-thumb-img focus-region-1" 
+                      loading="lazy" 
+                      draggable="false" 
+                      oncontextmenu="return false;"
+                    />
+                    <div class="region-pin-badge">
+                      <span class="region-pin-dot"></span>
+                      <span>Foco: Testa, Glabela &amp; Olhos</span>
+                    </div>
+                  </div>
                   <p class="region-item-desc">
                     Suavização precisa das rugas dinâmicas na fronte, da marca de tensão entre as sobrancelhas ("cara de brava") e dos pés de galinha ao redor dos olhos, devolvendo um olhar descansado e luminoso sem congelar sua expressão natural.
                   </p>
@@ -500,13 +489,27 @@
                 <button type="button" class="region-item-header" aria-expanded="false">
                   <div class="region-header-left">
                     <span class="region-item-index">02</span>
-                    <h3 class="region-item-title">Maçãs do Rosto & Bigode Chinês (Sustentação)</h3>
+                    <h3 class="region-item-title">Maçãs do Rosto &amp; Bigode Chinês (Sustentação)</h3>
                   </div>
                   <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
                 </button>
                 <div class="region-item-body">
+                  <div class="region-thumb-wrapper">
+                    <img 
+                      src="images/mapeamento-facial-real.jpg" 
+                      alt="Mapeamento e Foco: Maçãs &amp; Bigode Chinês" 
+                      class="region-thumb-img focus-region-2" 
+                      loading="lazy" 
+                      draggable="false" 
+                      oncontextmenu="return false;"
+                    />
+                    <div class="region-pin-badge">
+                      <span class="region-pin-dot"></span>
+                      <span>Foco: Maçãs &amp; Bigode Chinês</span>
+                    </div>
+                  </div>
                   <p class="region-item-desc">
                     Reposição estrutural do volume no terço médio da face, recuperando o ponto de luz e criando um efeito lifting sutil que suspende os tecidos e ameniza diretamente o sulco nasogeniano ("bigode chinês").
                   </p>
@@ -518,13 +521,27 @@
                 <button type="button" class="region-item-header" aria-expanded="false">
                   <div class="region-header-left">
                     <span class="region-item-index">03</span>
-                    <h3 class="region-item-title">Contorno Mandibular & Queixo (Definição)</h3>
+                    <h3 class="region-item-title">Contorno Mandibular &amp; Queixo (Definição)</h3>
                   </div>
                   <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
                 </button>
                 <div class="region-item-body">
+                  <div class="region-thumb-wrapper">
+                    <img 
+                      src="images/mapeamento-facial-real.jpg" 
+                      alt="Mapeamento e Foco: Mandíbula &amp; Contorno" 
+                      class="region-thumb-img focus-region-3" 
+                      loading="lazy" 
+                      draggable="false" 
+                      oncontextmenu="return false;"
+                    />
+                    <div class="region-pin-badge">
+                      <span class="region-pin-dot"></span>
+                      <span>Foco: Mandíbula &amp; Contorno</span>
+                    </div>
+                  </div>
                   <p class="region-item-desc">
                     Estruturação da borda da mandíbula e alinhamento do queixo (mento) para desenhar uma transição nítida com o pescoço, reduzindo a sensação visual de flacidez e valorizando o perfil facial com alta elegância.
                   </p>
@@ -536,13 +553,27 @@
                 <button type="button" class="region-item-header" aria-expanded="false">
                   <div class="region-header-left">
                     <span class="region-item-index">04</span>
-                    <h3 class="region-item-title">Lábios & Região da Boca (Volume e Contorno)</h3>
+                    <h3 class="region-item-title">Lábios &amp; Região da Boca (Volume e Contorno)</h3>
                   </div>
                   <svg class="region-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
                 </button>
                 <div class="region-item-body">
+                  <div class="region-thumb-wrapper">
+                    <img 
+                      src="images/mapeamento-facial-real.jpg" 
+                      alt="Mapeamento e Foco: Lábios &amp; Região da Boca" 
+                      class="region-thumb-img focus-region-4" 
+                      loading="lazy" 
+                      draggable="false" 
+                      oncontextmenu="return false;"
+                    />
+                    <div class="region-pin-badge">
+                      <span class="region-pin-dot"></span>
+                      <span>Foco: Lábios &amp; Região da Boca</span>
+                    </div>
+                  </div>
                   <p class="region-item-desc">
                     Definição do arco do cupido, hidratação profunda e restauração de volume labial proporcional, além de suavizar as linhas finas ao redor da boca ("código de barras"), sempre respeitando o formato e a anatomia da sua boca.
                   </p>

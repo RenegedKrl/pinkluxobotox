@@ -964,187 +964,18 @@ button {
 }
 
 .regions-layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: start;
-}
-
-@media (min-width: 1024px) {
-  .regions-layout {
-    grid-template-columns: 0.95fr 1.05fr;
-    gap: 3.5rem;
-  }
-}
-
-/* Card Visual Interativo com a Fotografia Clínica Real */
-.regions-visual-card {
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  background-color: #ffffff;
-  border: 1px solid var(--border-card);
-  box-shadow: var(--shadow-card);
+  display: flex;
+  justify-content: center;
   width: 100%;
 }
 
-@media (min-width: 1024px) {
-  .regions-visual-card {
-    position: sticky;
-    top: 6rem;
-  }
-}
-
-@media (max-width: 1023px) {
-  .regions-visual-card {
-    position: sticky;
-    top: 4.25rem;
-    z-index: 10;
-    max-width: 540px;
-    margin: 0 auto 0.75rem;
-    border-radius: var(--radius-lg);
-  }
-}
-
-.regions-visual-inner {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  background-color: #ffffff;
-}
-
-@media (min-width: 640px) {
-  .regions-visual-inner {
-    height: 260px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .regions-visual-inner {
-    height: auto;
-    aspect-ratio: 1 / 1;
-  }
-}
-
-.regions-visual-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
-  transform-origin: 48% 20%;
-  transform: scale(2.2);
-}
-
-/* Foco dinâmico em cada região da foto clínica real */
-.regions-visual-img.focus-region-all {
-  transform-origin: center center;
-  transform: scale(1);
-}
-
-.regions-visual-img.focus-region-1 {
-  transform-origin: 50% 28%;
-  transform: scale(2.1);
-}
-
-.regions-visual-img.focus-region-2 {
-  transform-origin: 62% 46%;
-  transform: scale(2.2);
-}
-
-.regions-visual-img.focus-region-3 {
-  transform-origin: 54% 68%;
-  transform: scale(2.2);
-}
-
-.regions-visual-img.focus-region-4 {
-  transform-origin: 46% 58%;
-  transform: scale(2.5);
-}
-
-.region-pin-badge {
-  position: absolute;
-  bottom: 0.75rem;
-  left: 0.75rem;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.35rem 0.75rem;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-sm);
-  font-family: var(--font-editorial);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--ink-secondary);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-  transition: all 0.25s ease;
-}
-
-.region-pin-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--rose-primary);
-}
-
-.regions-visual-caption {
-  padding: 1.15rem 1.4rem;
-  background-color: #ffffff;
-  border-top: 1px solid var(--champagne-hairline);
-}
-
-@media (max-width: 1023px) {
-  .regions-visual-caption {
-    display: none;
-  }
-}
-
-.visual-caption-title {
-  font-family: var(--font-editorial);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--rose-primary);
-  margin-bottom: 0.25rem;
-}
-
-.visual-caption-badge {
-  display: inline-block;
-  font-family: var(--font-editorial);
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--rose-primary);
-  margin-bottom: 0.25rem;
-}
-
-.visual-caption-text {
-  font-family: var(--font-editorial);
-  font-size: 0.8125rem;
-  color: var(--ink-muted);
-  line-height: 1.5;
-}
-
-/* Lista de Abinhas Interativas (Accordion / Abinha por Abinha) */
 .regions-list {
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
   width: 100%;
-  max-width: 580px;
+  max-width: 44rem;
   margin: 0 auto;
-}
-
-@media (min-width: 1024px) {
-  .regions-list {
-    max-width: none;
-    gap: 0.85rem;
-  }
 }
 
 .region-item {
@@ -1162,7 +993,6 @@ button {
 
 .region-item.active {
   border-color: var(--rose-primary);
-  box-shadow: none;
   background-color: #ffffff;
 }
 
@@ -1172,13 +1002,19 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 0.85rem;
-  padding: 1.25rem 1.4rem;
+  padding: 1.15rem 1.25rem;
   background: transparent;
   border: none;
   cursor: pointer;
   text-align: left;
   font-family: var(--font-editorial);
   transition: color var(--transition-fast);
+}
+
+@media (min-width: 640px) {
+  .region-item-header {
+    padding: 1.25rem 1.4rem;
+  }
 }
 
 .region-header-left {
@@ -1198,11 +1034,17 @@ button {
 
 .region-item-title {
   font-family: var(--font-editorial);
-  font-size: 1rem;
+  font-size: 0.975rem;
   font-weight: 600;
   color: var(--ink-primary);
   letter-spacing: -0.01em;
   transition: color var(--transition-fast);
+}
+
+@media (min-width: 640px) {
+  .region-item-title {
+    font-size: 1rem;
+  }
 }
 
 .region-item.active .region-item-title {
@@ -1226,20 +1068,109 @@ button {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
-  padding: 0 1.4rem;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .region-item-body {
+    padding: 0 1.4rem;
+  }
 }
 
 .region-item.active .region-item-body {
-  max-height: 200px;
-  padding: 0 1.4rem 1.35rem 1.4rem;
+  max-height: 500px;
+  padding: 0 1.25rem 1.25rem 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .region-item.active .region-item-body {
+    padding: 0 1.4rem 1.4rem 1.4rem;
+  }
+}
+
+/* Imagem Compacta e Focada Dentro de Cada Aba */
+.region-thumb-wrapper {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background-color: #faf5f6;
+  margin-bottom: 0.85rem;
+  border: 1px solid var(--border-card);
+}
+
+@media (min-width: 640px) {
+  .region-thumb-wrapper {
+    height: 135px;
+  }
+}
+
+.region-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.region-thumb-img.focus-region-1 {
+  transform-origin: 50% 28%;
+  transform: scale(2.1);
+}
+
+.region-thumb-img.focus-region-2 {
+  transform-origin: 62% 46%;
+  transform: scale(2.2);
+}
+
+.region-thumb-img.focus-region-3 {
+  transform-origin: 54% 68%;
+  transform: scale(2.2);
+}
+
+.region-thumb-img.focus-region-4 {
+  transform-origin: 46% 58%;
+  transform: scale(2.5);
+}
+
+.region-thumb-wrapper .region-pin-badge {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.6rem;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-montserrat);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--ink-secondary);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.region-pin-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--rose-primary);
 }
 
 .region-item-desc {
-  font-size: 0.9rem;
+  font-family: var(--font-montserrat);
+  font-size: 0.8875rem;
   line-height: 1.6;
   color: var(--ink-muted);
   border-top: 1px solid var(--champagne-hairline);
   padding-top: 0.85rem;
+  margin: 0;
 }
 
 /* ==========================================================================

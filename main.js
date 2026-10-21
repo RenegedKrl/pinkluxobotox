@@ -388,87 +388,43 @@ function initFaqAccordion() {
   });
 }
 
-// Accordion Interativo das Regiões Faciais com Sincronização Dinâmica da Fotografia Clínica
+// Accordion Interativo das Regiões Faciais (Uma aba aberta por vez com foto compacta integrada)
 function initRegionsAccordion() {
   const accordion = document.getElementById('regionsAccordion');
-  const dynamicImg = document.getElementById('regionsDynamicImg');
-  const badgeText = document.getElementById('regionsBadgeText');
-  if (!accordion || !dynamicImg) return;
+  if (!accordion) return;
 
   const items = Array.from(accordion.querySelectorAll('.region-item'));
 
-  const regionNames = {
-    '1': 'Foco: Testa, Glabela & Olhos',
-    '2': 'Foco: Maçãs & Bigode Chinês',
-    '3': 'Foco: Mandíbula & Contorno',
-    '4': 'Foco: Lábios & Região da Boca'
-  };
-
-  function activateRegion(regionId, shouldOpen = true) {
+  function closeAllExcept(targetItem) {
     items.forEach(item => {
-      const isTarget = item.getAttribute('data-region') === String(regionId);
-      const btn = item.querySelector('.region-item-header');
-      if (isTarget) {
-        if (shouldOpen) {
-          item.classList.add('active');
-          if (btn) btn.setAttribute('aria-expanded', 'true');
-        }
-      } else {
+      if (item !== targetItem) {
         item.classList.remove('active');
+        const btn = item.querySelector('.region-item-header');
         if (btn) btn.setAttribute('aria-expanded', 'false');
       }
     });
-
-    dynamicImg.className = `regions-visual-img focus-region-${regionId}`;
-    if (badgeText && regionNames[regionId]) {
-      badgeText.textContent = regionNames[regionId];
-    }
   }
 
-  // Interação ao clicar na abinha
   items.forEach(item => {
     const header = item.querySelector('.region-item-header');
-    const regionId = item.getAttribute('data-region');
+    if (!header) return;
 
-    if (header) {
-      header.addEventListener('click', () => {
-        const isOpen = item.classList.contains('active');
-        if (isOpen) {
-          item.classList.remove('active');
-          header.setAttribute('aria-expanded', 'false');
-        } else {
-          activateRegion(regionId, true);
-        }
-      });
-    }
+    header.addEventListener('click', () => {
+      const isCurrentlyOpen = item.classList.contains('active');
 
-    // No desktop, hover leve atualiza o foco dinamicamente
-    item.addEventListener('mouseenter', () => {
-      if (window.innerWidth >= 1024) {
-        activateRegion(regionId, true);
+      // Fecha/recolhe todas as outras abas
+      closeAllExcept(item);
+
+      // Alterna o estado da aba clicada
+      if (isCurrentlyOpen) {
+        item.classList.remove('active');
+        header.setAttribute('aria-expanded', 'false');
+      } else {
+        item.classList.add('active');
+        header.setAttribute('aria-expanded', 'true');
       }
     });
   });
-
-  // No mobile, enquanto rola a página, abre abinha por abinha e atualiza o foco
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      if (window.innerWidth >= 1024) return;
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const regionId = entry.target.getAttribute('data-region');
-          if (regionId) {
-            activateRegion(regionId, true);
-          }
-        }
-      });
-    }, {
-      rootMargin: '-25% 0px -45% 0px',
-      threshold: 0.1
-    });
-
-    items.forEach(item => observer.observe(item));
-  }
 }
 
 // Vídeo de Antes e Depois em Movimento com Player Minimalista e Seguro
