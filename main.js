@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initScrollSpy();
   initSmoothScroll();
+  initScrollReveal();
   initResultsCarousel();
   initLightbox();
   initFaqAccordion();
@@ -531,6 +532,40 @@ function initMediaProtection() {
     if (isCtrlOrCmd && (key === 's' || key === 'u')) {
       e.preventDefault();
       return false;
+    }
+  });
+}
+
+// Animações Suaves de Revelação ao Rolar a Página (Scroll Reveal)
+function initScrollReveal() {
+  const revealElements = Array.from(document.querySelectorAll('.reveal-on-scroll, .reveal-stagger'));
+  if (!revealElements.length) return;
+
+  // Se o navegador não suportar IntersectionObserver ou o usuário preferir menos movimento
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    revealElements.forEach(el => el.classList.add('is-revealed'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.05
+  });
+
+  revealElements.forEach(el => {
+    // Revela imediatamente se já estiver visível na janela
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 30) {
+      el.classList.add('is-revealed');
+    } else {
+      observer.observe(el);
     }
   });
 }
