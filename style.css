@@ -1965,6 +1965,21 @@ button {
   line-height: 1.5;
 }
 
+.callout-action {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .callout-action {
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
 /* ==========================================================================
    SEÇÃO 6 — SOBRE A PINK LUXO
    ========================================================================== */
