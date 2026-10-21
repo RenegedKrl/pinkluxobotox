@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initRegionsAccordion();
   initTransformationVideo();
+  initMediaProtection();
 });
 
 // Header Scroll — Fundo translúcido no topo e sólido elegante com sombra suave ao rolar
@@ -466,11 +467,144 @@ function initRegionsAccordion() {
   }
 }
 
-// Vídeo de Antes e Depois em Movimento
+// Vídeo de Antes e Depois em Movimento com Player Seguro sem Opção de Download
 function initTransformationVideo() {
+  const container = document.getElementById('videoContainer') || document.querySelector('.video-player-wrapper');
   const video = document.getElementById('transformationVideo');
+  const playToggle = document.getElementById('videoPlayToggle');
+  const playBadge = document.getElementById('videoPlayBadge');
+  const soundToggle = document.getElementById('videoSoundToggle');
+  const soundText = document.getElementById('soundBtnText');
+  const progressBar = document.getElementById('videoProgressBar');
+
   if (!video) return;
 
+  // Inicia silenciado por padrão para permitir autoplay sem bloqueios do navegador
   video.muted = true;
   video.play().catch(() => {});
+
+  // Função para alternar reprodução / pausa
+  function togglePlayback() {
+    if (video.paused) {
+      video.play().then(() => {
+        container?.classList.remove('is-paused');
+        if (playBadge) {
+          playBadge.classList.add('pulse');
+          setTimeout(() => playBadge.classList.remove('pulse'), 500);
+        }
+      }).catch(() => {});
+    } else {
+      video.pause();
+      container?.classList.add('is-paused');
+    }
+  }
+
+  // Toque / clique em qualquer ponto do vídeo alterna Play / Pause
+  if (playToggle) {
+    playToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      togglePlayback();
+    });
+  }
+
+  // Toque direto no elemento de vídeo
+  video.addEventListener('click', (e) => {
+    e.stopPropagation();
+    togglePlayback();
+  });
+
+  // Controle de Som Customizado (Mudo / Ativo)
+  if (soundToggle) {
+    soundToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      video.muted = !video.muted;
+      if (video.muted) {
+        container?.classList.remove('is-unmuted');
+        if (soundText) soundText.textContent = 'Ativar som';
+        soundToggle.setAttribute('aria-label', 'Ativar som do vídeo');
+        soundToggle.setAttribute('title', 'Ativar som');
+      } else {
+        container?.classList.add('is-unmuted');
+        if (soundText) soundText.textContent = 'Silenciar';
+        soundToggle.setAttribute('aria-label', 'Silenciar vídeo');
+        soundToggle.setAttribute('title', 'Silenciar vídeo');
+        if (video.paused) {
+          video.play().then(() => container?.classList.remove('is-paused')).catch(() => {});
+        }
+      }
+    });
+  }
+
+  // Atualiza barra de progresso customizada
+  video.addEventListener('timeupdate', () => {
+    if (progressBar && video.duration) {
+      const percentage = (video.currentTime / video.duration) * 100;
+      progressBar.style.width = `${percentage}%`;
+    }
+  });
+
+  // Sincroniza estado de classes
+  video.addEventListener('play', () => {
+    container?.classList.remove('is-paused');
+  });
+
+  video.addEventListener('pause', () => {
+    container?.classList.add('is-paused');
+  });
+
+  // Otimização: pausa o vídeo quando sai da tela e retoma quando visível
+  if ('IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          if (!video.paused) {
+            video.pause();
+            video.dataset.pausedByScroll = 'true';
+          }
+        } else {
+          if (video.paused && video.dataset.pausedByScroll === 'true') {
+            video.play().catch(() => {});
+            delete video.dataset.pausedByScroll;
+          }
+        }
+      });
+    }, { threshold: 0.25 });
+    videoObserver.observe(video);
+  }
+}
+
+// Sistema de Proteção Anti-Download para Imagens e Vídeos
+function initMediaProtection() {
+  // 1. Bloqueia menu de contexto com botão direito em qualquer mídia ou área de apresentação
+  document.addEventListener('contextmenu', (e) => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+      return;
+    }
+    e.preventDefault();
+    return false;
+  }, { passive: false });
+
+  // 2. Bloqueia arrastar imagens, vídeos ou cartões para fora
+  document.addEventListener('dragstart', (e) => {
+    const target = e.target;
+    if (
+      target.tagName === 'IMG' ||
+      target.tagName === 'VIDEO' ||
+      target.tagName === 'PICTURE' ||
+      target.closest('img, video, picture, .video-player-wrapper, .result-slide-card, .lightbox-image')
+    ) {
+      e.preventDefault();
+      return false;
+    }
+  }, { passive: false });
+
+  // 3. Bloqueia atalhos de salvar página/mídia (Ctrl+S, Cmd+S, Ctrl+U, Cmd+U)
+  window.addEventListener('keydown', (e) => {
+    const isCtrlOrCmd = e.ctrlKey || e.metaKey;
+    const key = (e.key || '').toLowerCase();
+    if (isCtrlOrCmd && (key === 's' || key === 'u')) {
+      e.preventDefault();
+      return false;
+    }
+  });
 }
