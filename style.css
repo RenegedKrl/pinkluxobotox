@@ -230,32 +230,6 @@ button {
   width: 100%;
 }
 
-/* Micro-Provas de Confiança abaixo dos CTAs */
-.cta-micro-trust {
-  font-family: var(--font-montserrat);
-  font-size: 0.75rem;
-  color: var(--ink-muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin-top: 0.65rem;
-  text-align: center;
-  letter-spacing: 0.01em;
-  line-height: 1.4;
-}
-
-.cta-micro-trust .trust-star {
-  color: #df9b2d;
-  font-size: 0.85rem;
-  line-height: 1;
-}
-
-.cta-micro-trust strong {
-  color: var(--ink-primary);
-  font-weight: 600;
-}
 
 /* ==========================================================================
    HEADER / NAVBAR (TRANSPARENTE NO TOPO & SÓLIDO AO ROLAR)
