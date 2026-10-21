@@ -580,53 +580,37 @@
                   disablePictureInPicture
                   oncontextmenu="return false;"
                   draggable="false"
-                  aria-label="Vídeo de antes e depois de harmonização facial na Pink Luxo"
+                  aria-label="Vídeo demonstrativo de harmonização facial na Pink Luxo"
                 ></video>
 
-                <!-- Overlay de toque para Play/Pause com indicador central -->
-                <button 
-                  type="button" 
-                  class="video-play-overlay" 
-                  id="videoPlayToggle" 
-                  aria-label="Pausar ou reproduzir vídeo"
-                >
-                  <div class="video-play-badge" id="videoPlayBadge" aria-hidden="true">
-                    <svg class="badge-icon-pause" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                      <rect x="6" y="4" width="4" height="16" rx="1"></rect>
-                      <rect x="14" y="4" width="4" height="16" rx="1"></rect>
-                    </svg>
-                    <svg class="badge-icon-play" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                    </svg>
-                  </div>
-                </button>
+                <!-- Indicador sutil de pausa (visível somente quando pausado) -->
+                <div class="video-pause-indicator" id="videoPauseIndicator" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="6 4 20 12 6 20 6 4"></polygon>
+                  </svg>
+                </div>
 
-                <!-- Botão de controle de som customizado sem menu de download -->
+                <!-- Botão sutil e minimalista no cantinho direito inferior -->
                 <button 
                   type="button" 
                   class="video-sound-btn" 
                   id="videoSoundToggle" 
-                  aria-label="Ativar som do vídeo"
-                  title="Ativar som"
+                  aria-label="Desmutar áudio do vídeo"
+                  title="Desmutar áudio"
                 >
                   <!-- Ícone mudo -->
-                  <svg class="sound-icon-muted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg class="sound-icon-muted" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                     <line x1="23" y1="9" x2="17" y2="15"></line>
                     <line x1="17" y1="9" x2="23" y2="15"></line>
                   </svg>
                   <!-- Ícone com som -->
-                  <svg class="sound-icon-active" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg class="sound-icon-active" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
                   </svg>
-                  <span class="sound-btn-text" id="soundBtnText">Ativar som</span>
                 </button>
-
-                <!-- Barra de progresso discreta -->
-                <div class="video-progress-track" aria-hidden="true">
-                  <div class="video-progress-bar" id="videoProgressBar"></div>
-                </div>
               </div>
 
               <div class="video-case-info">

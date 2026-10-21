@@ -813,6 +813,7 @@ button {
   padding: 5rem 0;
   background-color: #ffffff;
   border-top: 1px solid var(--champagne-hairline);
+  scroll-margin-top: 4.5rem;
 }
 
 @media (min-width: 768px) {
@@ -1534,10 +1535,10 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   background-color: #000000;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   max-width: 320px;
   margin: 0 auto;
   width: 100%;
@@ -1551,109 +1552,71 @@ button {
   display: block;
   background-color: #000000;
   cursor: pointer;
-}
-
-/* Overlay Interativo de Toque / Play / Pause */
-.video-play-overlay {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  background: transparent;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Badge Circular de Play / Pause */
-.video-play-badge {
-  width: 58px;
-  height: 58px;
+/* Indicador Sutil de Pausa — Discreto, sem excesso visual de IA */
+.video-pause-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: rgba(18, 18, 18, 0.65);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transform: scale(0.85);
-  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 2;
 }
 
-.video-play-badge .badge-icon-pause {
-  display: none;
+.video-pause-indicator svg {
+  margin-left: 2px;
 }
 
-.video-play-badge .badge-icon-play {
-  display: block;
-  margin-left: 3px;
-}
-
-/* Quando pausado, o botão de play fica fixo visível */
-.video-player-wrapper.is-paused .video-play-badge {
+.video-player-wrapper.is-paused .video-pause-indicator {
   opacity: 1;
-  transform: scale(1);
-  background: rgba(18, 18, 18, 0.78);
 }
 
-.video-play-badge.pulse {
-  animation: badgePulse 0.5s ease-out forwards;
-}
-
-@keyframes badgePulse {
-  0% {
-    opacity: 0.9;
-    transform: scale(0.85);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.2);
-  }
-}
-
-/* Botão de Som Discreto no Topo */
+/* Botão Sutil e Minimalista no Cantinho Direito Inferior */
 .video-sound-btn {
   position: absolute;
-  top: 14px;
-  right: 14px;
-  z-index: 4;
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 7px 13px;
-  border-radius: 999px;
-  background: rgba(18, 18, 18, 0.65);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  bottom: 12px;
+  right: 12px;
+  z-index: 3;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.22);
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   color: #ffffff;
-  font-family: var(--font-montserrat);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: all 0.25s ease;
+  padding: 0;
+  margin: 0;
+  transition: background-color 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
   -webkit-tap-highlight-color: transparent;
 }
 
 .video-sound-btn:hover {
-  background: rgba(18, 18, 18, 0.85);
-  border-color: rgba(255, 255, 255, 0.45);
-  transform: translateY(-1px);
+  background-color: rgba(0, 0, 0, 0.65);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.video-sound-btn:active {
+  transform: scale(0.92);
 }
 
 .video-sound-btn .sound-icon-muted {
@@ -1670,26 +1633,6 @@ button {
 
 .video-player-wrapper.is-unmuted .video-sound-btn .sound-icon-active {
   display: block;
-  color: var(--rose-primary);
-}
-
-/* Barra de Progresso Discreta na Base */
-.video-progress-track {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.25);
-  z-index: 3;
-  pointer-events: none;
-}
-
-.video-progress-bar {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, var(--rose-primary), #d9999f);
-  transition: width 0.1s linear;
 }
 
 .video-case-info {

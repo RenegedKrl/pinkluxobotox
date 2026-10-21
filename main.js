@@ -56,7 +56,7 @@ function initHeaderScroll() {
   if (!header) return;
 
   function updateHeader() {
-    if (window.scrollY > 30) {
+    if (window.scrollY > 15) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
@@ -64,7 +64,11 @@ function initHeaderScroll() {
   }
 
   window.addEventListener('scroll', updateHeader, { passive: true });
+  window.addEventListener('resize', updateHeader, { passive: true });
+  window.addEventListener('hashchange', updateHeader, { passive: true });
   updateHeader();
+  setTimeout(updateHeader, 50);
+  setTimeout(updateHeader, 250);
 }
 
 // Menu Mobile
@@ -467,15 +471,11 @@ function initRegionsAccordion() {
   }
 }
 
-// Vídeo de Antes e Depois em Movimento com Player Seguro sem Opção de Download
+// Vídeo de Antes e Depois em Movimento com Player Minimalista e Seguro
 function initTransformationVideo() {
   const container = document.getElementById('videoContainer') || document.querySelector('.video-player-wrapper');
   const video = document.getElementById('transformationVideo');
-  const playToggle = document.getElementById('videoPlayToggle');
-  const playBadge = document.getElementById('videoPlayBadge');
   const soundToggle = document.getElementById('videoSoundToggle');
-  const soundText = document.getElementById('soundBtnText');
-  const progressBar = document.getElementById('videoProgressBar');
 
   if (!video) return;
 
@@ -483,51 +483,30 @@ function initTransformationVideo() {
   video.muted = true;
   video.play().catch(() => {});
 
-  // Função para alternar reprodução / pausa
-  function togglePlayback() {
+  // Alterna Play/Pause com toque no próprio vídeo
+  video.addEventListener('click', (e) => {
+    e.stopPropagation();
     if (video.paused) {
-      video.play().then(() => {
-        container?.classList.remove('is-paused');
-        if (playBadge) {
-          playBadge.classList.add('pulse');
-          setTimeout(() => playBadge.classList.remove('pulse'), 500);
-        }
-      }).catch(() => {});
+      video.play().then(() => container?.classList.remove('is-paused')).catch(() => {});
     } else {
       video.pause();
       container?.classList.add('is-paused');
     }
-  }
-
-  // Toque / clique em qualquer ponto do vídeo alterna Play / Pause
-  if (playToggle) {
-    playToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      togglePlayback();
-    });
-  }
-
-  // Toque direto no elemento de vídeo
-  video.addEventListener('click', (e) => {
-    e.stopPropagation();
-    togglePlayback();
   });
 
-  // Controle de Som Customizado (Mudo / Ativo)
+  // Botão sutil e minimalista no cantinho direito inferior para mutar/desmutar
   if (soundToggle) {
     soundToggle.addEventListener('click', (e) => {
       e.stopPropagation();
       video.muted = !video.muted;
       if (video.muted) {
         container?.classList.remove('is-unmuted');
-        if (soundText) soundText.textContent = 'Ativar som';
-        soundToggle.setAttribute('aria-label', 'Ativar som do vídeo');
-        soundToggle.setAttribute('title', 'Ativar som');
+        soundToggle.setAttribute('aria-label', 'Desmutar áudio do vídeo');
+        soundToggle.setAttribute('title', 'Desmutar áudio');
       } else {
         container?.classList.add('is-unmuted');
-        if (soundText) soundText.textContent = 'Silenciar';
-        soundToggle.setAttribute('aria-label', 'Silenciar vídeo');
-        soundToggle.setAttribute('title', 'Silenciar vídeo');
+        soundToggle.setAttribute('aria-label', 'Mutar áudio do vídeo');
+        soundToggle.setAttribute('title', 'Mutar áudio');
         if (video.paused) {
           video.play().then(() => container?.classList.remove('is-paused')).catch(() => {});
         }
@@ -535,15 +514,6 @@ function initTransformationVideo() {
     });
   }
 
-  // Atualiza barra de progresso customizada
-  video.addEventListener('timeupdate', () => {
-    if (progressBar && video.duration) {
-      const percentage = (video.currentTime / video.duration) * 100;
-      progressBar.style.width = `${percentage}%`;
-    }
-  });
-
-  // Sincroniza estado de classes
   video.addEventListener('play', () => {
     container?.classList.remove('is-paused');
   });
@@ -552,7 +522,7 @@ function initTransformationVideo() {
     container?.classList.add('is-paused');
   });
 
-  // Otimização: pausa o vídeo quando sai da tela e retoma quando visível
+  // Pausa ao sair de vista para economizar bateria e retoma ao voltar
   if ('IntersectionObserver' in window) {
     const videoObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
