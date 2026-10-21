@@ -1144,11 +1144,11 @@ button {
   }
 }
 
-/* Imagem Compacta e Focada Dentro de Cada Aba (Proporção 16:9) */
+/* Imagem das Regiões (Proporção Exata 16:9 com Alta Fidelidade) */
 .region-thumb-wrapper {
   position: relative;
   width: 100%;
-  height: 240px;
+  aspect-ratio: 16 / 9;
   border-radius: var(--radius-sm);
   overflow: hidden;
   background-color: #faf5f6;
@@ -1156,38 +1156,17 @@ button {
   border: 1px solid var(--border-card);
 }
 
-@media (min-width: 640px) {
-  .region-thumb-wrapper {
-    height: 300px;
-  }
-}
-
 .region-thumb-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
-  transition: transform 0.35s ease;
+  transition: transform var(--transition-smooth);
 }
 
-.region-thumb-img.focus-region-1 {
-  transform-origin: 50% 22%;
-  transform: scale(1.85);
-}
-
-.region-thumb-img.focus-region-2 {
-  transform-origin: 62% 40%;
-  transform: scale(1.95);
-}
-
-.region-thumb-img.focus-region-3 {
-  transform-origin: 54% 60%;
-  transform: scale(1.95);
-}
-
-.region-thumb-img.focus-region-4 {
-  transform-origin: 48% 58%;
-  transform: scale(1.95);
+.region-item:hover .region-thumb-img {
+  transform: scale(1.02);
 }
 
 .region-thumb-wrapper .region-pin-badge {

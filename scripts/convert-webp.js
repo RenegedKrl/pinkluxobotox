@@ -46,6 +46,35 @@ async function convert() {
     console.log(`✓ ${imgName} (${(statOrig.size / 1024).toFixed(0)} KB) -> ${(statWebp.size / 1024).toFixed(0)} KB (-${diffPercent}%)`);
   }
 
+  // Regiões Anatômicas (Fotos do Usuário)
+  const regionMaps = [
+    { in: 'fotos/01.png', out: 'regiao-01-rugas-expressao.webp' },
+    { in: 'fotos/02.png', out: 'regiao-02-macas-bigode-chines.webp' },
+    { in: 'fotos/03.png', out: 'regiao-03-contorno-mandibular.webp' },
+    { in: 'fotos/04.png', out: 'regiao-04-labios.webp' }
+  ];
+
+  for (const reg of regionMaps) {
+    const inputPath = path.join(imagesDir, reg.in);
+    const outputPath = path.join(imagesDir, reg.out);
+
+    if (fs.existsSync(inputPath)) {
+      const statOrig = fs.statSync(inputPath);
+      totalOrig += statOrig.size;
+
+      await sharp(inputPath)
+        .resize({ width: 1280, height: 720, fit: 'cover' })
+        .webp({ quality: 86, effort: 6 })
+        .toFile(outputPath);
+
+      const statWebp = fs.statSync(outputPath);
+      totalWebp += statWebp.size;
+
+      const diffPercent = (((statOrig.size - statWebp.size) / statOrig.size) * 100).toFixed(1);
+      console.log(`✓ ${reg.in} (${(statOrig.size / 1024).toFixed(0)} KB) -> ${reg.out} ${(statWebp.size / 1024).toFixed(0)} KB (-${diffPercent}%)`);
+    }
+  }
+
   console.log('---------------------------------------------------------');
   console.log(`Tamanho Total Original: ${(totalOrig / 1024).toFixed(0)} KB`);
   console.log(`Tamanho Total WebP:     ${(totalWebp / 1024).toFixed(0)} KB`);
