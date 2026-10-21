@@ -36,9 +36,10 @@
   --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.05);
   --shadow-modal: 0 20px 48px rgba(0, 0, 0, 0.25);
 
-  /* Tipografia — 100% Montserrat em Todo o Site (Inclusive na Sessão Hero) */
+  /* Tipografia: Serifa Fina de Alta Costura (Cormorant Garamond) + Montserrat para Leitura */
+  --font-serif: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
   --font-editorial: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
   --font-montserrat: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-outfit: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
@@ -620,43 +621,43 @@ button {
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Título Principal — Montserrat Clean & Premium (Sem Sombra de IA) */
+/* Título Principal — Serifa Fina de Alta Costura (Estilo Vogue / Clinique La Prairie) */
 .hero-title {
-  font-family: var(--font-montserrat), -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: clamp(1.85rem, 5.8vw, 3rem);
-  line-height: 1.25;
-  font-weight: 600;
+  font-family: var(--font-serif);
+  font-size: clamp(2.35rem, 7.5vw, 4.15rem);
+  line-height: 1.12;
+  font-weight: 500;
   color: #ffffff;
-  letter-spacing: -0.015em;
-  margin-bottom: 1.35rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.4rem;
   text-wrap: balance;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 @media (min-width: 640px) {
   .hero-title {
-    font-size: 2.65rem;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
+    font-size: 3.35rem;
+    line-height: 1.1;
+    margin-bottom: 1.65rem;
   }
 }
 
 @media (min-width: 1024px) {
   .hero-title {
-    font-size: 3.25rem;
-    line-height: 1.18;
-    margin-bottom: 1.75rem;
-    max-width: 620px;
+    font-size: 4.25rem;
+    line-height: 1.06;
+    margin-bottom: 1.85rem;
+    max-width: 660px;
   }
 }
 
-/* Destaque no Tom Rosa Suave da Marca */
+/* Destaque em Itálico Editorial no Tom Rosa da Marca */
 .hero-highlight,
 .hero-italic {
   display: inline;
   font-family: inherit;
-  font-style: normal;
-  font-weight: 600;
+  font-style: italic;
+  font-weight: 400;
   color: #f8c2c5;
   background: none;
   -webkit-text-fill-color: initial;
@@ -824,11 +825,11 @@ button {
 }
 
 .section-title {
-  font-family: var(--font-editorial);
-  font-size: clamp(1.75rem, 3.5vw, 2.35rem);
-  line-height: 1.25;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.2vw, 2.75rem);
+  line-height: 1.18;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--ink-primary);
   text-wrap: balance;
 }
